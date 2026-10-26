@@ -39,7 +39,13 @@ export async function survey(login: string, data: DataDesk, zetaris: ZetarisClie
   if (zetaris.mode === "live") {
     const ddl = builderDdl(l);
     const results: string[] = [];
-    for (const sql of ddl) results.push(await registerSource(data, zetaris, trace, contract, sql, "Surveyor"));
+    try {
+      for (const sql of ddl) results.push(await registerSource(data, zetaris, trace, contract, sql, "Surveyor"));
+    } catch (e) {
+      // GitHub answered with an error (no such user, or rate limited): say so plainly.
+      trace.log({ agent_name: "Surveyor", action: "builder_missing", status: "error", input_summary: `GitHub user ${l}`, output_summary: `GitHub has no public profile for ${l} (or is rate limiting): ${(e as Error).message.split("\n")[0].slice(0, 140)}` });
+      return { sources, total, builder: { login: l, status: "missing", repos: 0 }, evidence };
+    }
     const fresh = results[0] === "created";
     if (!fresh) {
       // Seen before: re-fetch so the profile reflects today's repos.
