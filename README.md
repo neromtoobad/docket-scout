@@ -2,7 +2,7 @@
 
 **Open Agent Hackathon 2026 · Wildcard [Tinkerer]: Bring Your Own Project**
 
-**Demo video (1:44):** https://youtu.be/W6-gIdMzWU8
+**Demo video (1:44):** https://youtu.be/W6-gIdMzWU8 · **Deck:** https://scout.nerom.site/slidedeck
 
 There are hundreds of hackathons open at any moment, spread across platforms that don't talk to each other. Each platform has its own date format, prizes come in dollars, rupees and euros, and the same event can be listed twice. Builders find them through X threads and spreadsheets, and pick by prize size, which is the wrong number.
 
