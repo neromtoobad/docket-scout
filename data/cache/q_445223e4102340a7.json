@@ -1,0 +1,54 @@
+{
+ "sql": "SELECT language, COUNT(*) AS repos FROM scout.repos_karpathy WHERE is_fork = 0 AND language IS NOT NULL GROUP BY language ORDER BY repos DESC",
+ "columns": [
+  "language",
+  "repos"
+ ],
+ "rows": [
+  [
+   "Python",
+   "24"
+  ],
+  [
+   "Jupyter Notebook",
+   "8"
+  ],
+  [
+   "JavaScript",
+   "5"
+  ],
+  [
+   "HTML",
+   "5"
+  ],
+  [
+   "C++",
+   "2"
+  ],
+  [
+   "Cuda",
+   "1"
+  ],
+  [
+   "Rust",
+   "1"
+  ],
+  [
+   "Matlab",
+   "1"
+  ],
+  [
+   "C",
+   "1"
+  ],
+  [
+   "CSS",
+   "1"
+  ],
+  [
+   "Lua",
+   "1"
+  ]
+ ],
+ "recordedAt": "2026-10-26T10:59:05.996Z"
+}

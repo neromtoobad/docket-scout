@@ -1,0 +1,30 @@
+{
+ "sql": "SELECT source, state, COUNT(*) AS n, SUM(online) AS online FROM scout.hackathons GROUP BY source, state ORDER BY source, state",
+ "columns": [
+  "source",
+  "state",
+  "n",
+  "online"
+ ],
+ "rows": [
+  [
+   "Devfolio",
+   "open",
+   "12",
+   "1"
+  ],
+  [
+   "Devpost",
+   "open",
+   "51",
+   "40"
+  ],
+  [
+   "Devpost",
+   "upcoming",
+   "40",
+   "21"
+  ]
+ ],
+ "recordedAt": "2026-10-26T11:03:21.564Z"
+}

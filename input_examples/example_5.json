@@ -1,0 +1,9 @@
+{
+ "input": {
+  "query": "I won the Qloo Agentic Hackathon",
+  "github": "neromtoobad"
+ },
+ "options": {
+  "sample_mode": true
+ }
+}

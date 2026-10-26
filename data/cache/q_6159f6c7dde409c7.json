@@ -1,0 +1,12 @@
+{
+ "sql": "SELECT COUNT(*) AS n FROM scout.fx",
+ "columns": [
+  "n"
+ ],
+ "rows": [
+  [
+   "1"
+  ]
+ ],
+ "recordedAt": "2026-10-26T10:38:51.761Z"
+}

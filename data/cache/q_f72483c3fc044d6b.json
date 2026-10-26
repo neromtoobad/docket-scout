@@ -1,0 +1,12 @@
+{
+ "sql": "SELECT COUNT(*) AS n FROM scout.hackathons",
+ "columns": [
+  "n"
+ ],
+ "rows": [
+  [
+   "103"
+  ]
+ ],
+ "recordedAt": "2026-10-26T10:38:50.973Z"
+}

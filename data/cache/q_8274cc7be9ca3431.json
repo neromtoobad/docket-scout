@@ -1,0 +1,672 @@
+{
+ "sql": "SELECT name, language, description, topics, stars, pushed_at, homepage FROM scout.repos_neromtoobad WHERE is_fork = 0 ORDER BY pushed_at DESC",
+ "columns": [
+  "name",
+  "language",
+  "description",
+  "topics",
+  "stars",
+  "pushed_at",
+  "homepage"
+ ],
+ "rows": [
+  [
+   "terms",
+   "TypeScript",
+   "Terms: an AI trade-credit desk. Real SEC filings via Zetaris, Meterless engines, NVIDIA Nemotron. Decides credit limits within signed authority and learns from outcomes.",
+   "",
+   "0",
+   "2026-10-26T07:54:13Z",
+   null
+  ],
+  [
+   "ropes-elysium",
+   "Solidity",
+   "ROPES on Elysium: one minute of Hyperliquid, on a rope. An oracle-quoted binary market on Kinetiq's Hyperliquid L2.",
+   "elysium,hyperliquid,prediction-market,solidity",
+   "0",
+   "2026-10-25T13:17:39Z",
+   "https://ropes.nerom.site"
+  ],
+  [
+   "syncly",
+   "TypeScript",
+   "Syncly: AI agents do the work, an AI CFO runs the money. A real business on Arc: jobs paid into escrow in USDC, agents paying their own tools by x402, every CFO decision signed.",
+   "ai-agents,arc,circle,usdc,x402",
+   "6",
+   "2026-10-25T12:20:39Z",
+   "https://hiresyncly.site"
+  ],
+  [
+   "owo",
+   "HTML",
+   "Owo: borrow against your BTC on Mezo, get naira in any Nigerian bank. MUSD cash-out desk via Paycrest.",
+   "",
+   "0",
+   "2026-10-25T07:11:04Z",
+   "https://owo.nerom.site"
+  ],
+  [
+   "causa",
+   "TypeScript",
+   "The analyst firm that tells you why: AI agents explain why a business metric moved, with every claim tied to its Zetaris query (Open Agent Hackathon 2026)",
+   "",
+   "0",
+   "2026-10-25T06:45:13Z",
+   null
+  ],
+  [
+   "arc-agent-commerce",
+   "Solidity",
+   "Escrow, a bounded AI-run treasury, fiat-funded escrow, single-payee invoices and capped autopay: Solidity primitives for agent commerce on Arc, in production at Syncly",
+   "ai-agents,arc,circle,escrow,solidity,usdc",
+   "0",
+   "2026-10-23T06:53:02Z",
+   "https://hiresyncly.site"
+  ],
+  [
+   "ropes-perps",
+   "TypeScript",
+   "Every open perp on dreamDEX as a climber. Rope up, climb on real leverage, BAIL before the fall. dreamDEX Perps Builder Bounty.",
+   "",
+   "0",
+   "2026-10-20T18:37:23Z",
+   "https://ropesperps.nerom.site"
+  ],
+  [
+   "longshot",
+   "TypeScript",
+   "LONGSHOT — autonomous prediction-agent league on Arc. Agents buy sub-cent x402 evidence via Circle Gateway, predict real World Cup scores, and rank by accuracy + ROI.",
+   "",
+   "0",
+   "2026-10-20T15:10:45Z",
+   "https://longshot-league.up.railway.app"
+  ],
+  [
+   "tideland",
+   "JavaScript",
+   "A shared world the tide is always taking back. Every house is an Arkiv entity; whatever nobody tends sinks.",
+   "",
+   "0",
+   "2026-10-18T12:16:25Z",
+   "https://tideland-lake.vercel.app"
+  ],
+  [
+   "vial",
+   "JavaScript",
+   "Lab results anyone can verify and only the patient can read. Built on Arkiv.",
+   "",
+   "0",
+   "2026-10-16T15:35:14Z",
+   "https://vial.nerom.site"
+  ],
+  [
+   "chogstack",
+   "JavaScript",
+   "One shared tower built live on Monad from all 1,969 Chog NFTs. Traits forge each block. Chogathon 2026.",
+   "",
+   "0",
+   "2026-10-16T06:37:29Z",
+   null
+  ],
+  [
+   "mango-raid",
+   "JavaScript",
+   "MANGO RAID: a first-person catapult game in a Lagos lane. Twigpine Project Treetop Round 01.",
+   "",
+   "0",
+   "2026-10-15T23:41:29Z",
+   "https://mango-raid.vercel.app"
+  ],
+  [
+   "koso",
+   "JavaScript",
+   "KOSO: a spinning-top battle game from the compound. Twigpine Project Treetop Round 01.",
+   "",
+   "0",
+   "2026-10-14T07:54:27Z",
+   "https://koso-six.vercel.app"
+  ],
+  [
+   "loft",
+   "TypeScript",
+   "Send dollars home in one tap: AUSD on Monad with Mera passkeys, a gasless relayer, Chainlink CRE standing orders and an Envio indexer.",
+   "hackathon,monad,passkeys,remittance,stablecoin",
+   "0",
+   "2026-10-13T08:31:13Z",
+   null
+  ],
+  [
+   "parallax",
+   "TypeScript",
+   "An AI agency that checks every answer from two angles. neatHack 2026.",
+   "",
+   "0",
+   "2026-10-12T11:35:23Z",
+   null
+  ],
+  [
+   "optic-bitget",
+   "TypeScript",
+   "Optic for Bitget: crash-test a trade idea on a Bitget stock perp. Car 07 drives it through every similar window in the perp's history, Qwen's Bull and Bear argue citing only that evidence, and a judge is scored in public. Never trades. Bitget AI Hackathon S2 · Track 3 · Decision Stress Testing.",
+   "ai-agents,bitget,decision-support,hackathon,llm,mcp,perpetual-futures,qwen,research-tool,tokenized-stocks,trading,typescript",
+   "0",
+   "2026-10-08T16:32:56Z",
+   "https://optic.nerom.site"
+  ],
+  [
+   "nand-arena",
+   "Solidity",
+   "NAND Arena: a hardware bot league on TapeOut × X Layer. Bots are NAND/LATCH circuits, refereed on-chain.",
+   "",
+   "0",
+   "2026-10-08T06:47:39Z",
+   "https://nandarena.nerom.site"
+  ],
+  [
+   "9jasega-relay",
+   "JavaScript",
+   null,
+   "",
+   "0",
+   "2026-10-08T02:13:39Z",
+   null
+  ],
+  [
+   "roost",
+   "TypeScript",
+   "Adopt a Fledgling — a collectible creature that is also a trading rule, on BNB Smart Chain. Built for BNB Hack: Tokenized Stocks Edition.",
+   "",
+   "0",
+   "2026-10-06T07:27:03Z",
+   "https://roost.nerom.site"
+  ],
+  [
+   "my-todo-task",
+   "TypeScript",
+   "my personal todo app",
+   "",
+   "0",
+   "2026-10-06T06:49:59Z",
+   null
+  ],
+  [
+   "nerom-site",
+   "HTML",
+   "nerom.site — portfolio: AI agents, web apps, payments and on-chain systems",
+   "",
+   "0",
+   "2026-10-05T14:33:38Z",
+   "https://nerom.site"
+  ],
+  [
+   "aliquot",
+   "TypeScript",
+   "Bench-side lab protocol agent on Sanity Context: Knowledge Base + GROQ ledger, sourced claims, computed PCR programs. DEV × Sanity Challenge.",
+   "",
+   "0",
+   "2026-10-04T21:40:34Z",
+   null
+  ],
+  [
+   "kibble",
+   "TypeScript",
+   "A collectible AI pet that trades tokenized-stock perpetuals on Bitget while the shares are shut. Funding is its hunger, liquidation makes it faint. Bitget AI Base Camp Hackathon S2 · Track 2.",
+   "",
+   "0",
+   "2026-10-03T19:10:18Z",
+   null
+  ],
+  [
+   "glasstown",
+   "TypeScript",
+   "Learn to use Zcash privately in about 10 minutes: a beginner game for ZECATHON",
+   "",
+   "0",
+   "2026-10-03T17:33:40Z",
+   "https://neromtoobad.github.io/glasstown/"
+  ],
+  [
+   "tote",
+   "TypeScript",
+   "Tote: hands-free voice picking copilot for warehouses, built on the AssemblyAI Voice Agent API",
+   "assemblyai,logistics,speech-to-text,voice-agent,voice-ai,warehouse",
+   "0",
+   "2026-09-29T14:27:00Z",
+   "https://tote-voice.up.railway.app"
+  ],
+  [
+   "neromtoobad",
+   null,
+   "Profile README — AI agent infrastructure, on-chain systems, full-stack.",
+   "",
+   "0",
+   "2026-09-28T07:33:10Z",
+   null
+  ],
+  [
+   "gameweek",
+   "TypeScript",
+   "Fantasy football for tokenized stocks. Pick five real Coinbase Tokenized Stocks on Base, one wears the armband, a contract reads Chainlink and pays the pot.",
+   "",
+   "2",
+   "2026-09-27T09:29:54Z",
+   "https://gameweek-bay.vercel.app"
+  ],
+  [
+   "stockback",
+   "TypeScript",
+   "Every receipt buys you a piece of the company. SERV Reasoning + stock tokens on Robinhood Chain via a Coinbase AgentKit wallet.",
+   "",
+   "0",
+   "2026-09-27T09:29:38Z",
+   null
+  ],
+  [
+   "zama-fhevm-skill",
+   "TypeScript",
+   "FHEVM skill file for AI coding agents — build confidential smart contracts on Zama Protocol without digging through docs",
+   "",
+   "0",
+   "2026-09-27T09:29:23Z",
+   null
+  ],
+  [
+   "delphi-duel",
+   "TypeScript",
+   "The second opinion engine for Delphi prediction markets. Two AI agents debate any market P2P over Gensyn AXL.",
+   "ai-agents,axl,delphi,gensyn,gensyn-axl,nextjs,p2p,typescript",
+   "2",
+   "2026-09-27T09:28:41Z",
+   ""
+  ],
+  [
+   "docpilot-mcp",
+   "TypeScript",
+   null,
+   "",
+   "0",
+   "2026-09-27T09:28:00Z",
+   null
+  ],
+  [
+   "arc-network",
+   "TypeScript",
+   "an on-chain arena where two AI agents debate crypto topics across multiple rounds.",
+   "",
+   "0",
+   "2026-09-27T09:27:49Z",
+   "https://arc-network-two.vercel.app"
+  ],
+  [
+   "kejiai-chapter-writer",
+   "TypeScript",
+   "Stateless chapter writer for Nigerian university researchers — upload research data, get an APA-formatted academic chapter with real statistics, real charts, and DOCX/PDF export in under 60 seconds.",
+   "",
+   "2",
+   "2026-09-27T09:27:35Z",
+   "https://kejiai-chapter-writer.vercel.app"
+  ],
+  [
+   "skins",
+   "TypeScript",
+   "Skins — brief breakdown  **What it is:** an MCP server that turns any AI coding agent (Claude, Codex) into a top-1%-of-the-web designer. Describe a vibe — or point it at a site you love — and it hands the model a complete **build brief** that produces an award-grade, animated, on-brand page instead of generic AI output. ",
+   "",
+   "0",
+   "2026-09-27T08:42:13Z",
+   ""
+  ],
+  [
+   "ropes",
+   "TypeScript",
+   "ROPES — a battle royale on Bitcoin. Every minute a real dreamDEX 1m event contract decides who lives; pick UP or DOWN, your stack compounds or you fall. Somnia × dreamDEX hackathon.",
+   "",
+   "2",
+   "2026-09-27T08:41:53Z",
+   "https://playropes.vercel.app"
+  ],
+  [
+   "receipts",
+   "Python",
+   "A league of AI pundits that learn which informants to trust, and pay for the privilege. Built on Sibyl Memory, x402 on Base, and Virtuals ACP.",
+   "agent-memory,ai-agents,base,sibyl-memory,virtuals-protocol,x402",
+   "1",
+   "2026-09-09T22:06:30Z",
+   null
+  ],
+  [
+   "doom",
+   "TypeScript",
+   "A private prediction market on Starknet. Visible odds, invisible bettors — bet sizes and prices stay public so the market stays accurate, while who is betting is hidden. Live on mainnet through the STRK20 privacy pool.",
+   "",
+   "2",
+   "2026-09-06T09:38:15Z",
+   "https://neromtoobad.github.io/doom/"
+  ],
+  [
+   "optic-binance",
+   "TypeScript",
+   "Optic for Binance — one agent that reads the Binance exchange, onchain, prediction markets and social attention as one economy, and reports where they stop agreeing. Built on Binance Agent OS.",
+   "agentic-ai,ai-agent,binance,binance-agent-os,bnb-chain,crypto,market-data,mcp,model-context-protocol,typescript",
+   "1",
+   "2026-09-05T19:13:38Z",
+   null
+  ],
+  [
+   "portfolio",
+   "HTML",
+   "my portfolio",
+   "",
+   "0",
+   "2026-09-04T10:27:16Z",
+   "https://portfolio-moren808s-projects.vercel.app"
+  ],
+  [
+   "optic",
+   "HTML",
+   null,
+   "",
+   "0",
+   "2026-09-03T13:15:48Z",
+   null
+  ],
+  [
+   "reverse-captcha",
+   null,
+   "A CAPTCHA proves you are human. This proves the opposite. Freshness-bound sequential proof-of-work tied to a did:key, verifiable offline by anyone.",
+   "",
+   "1",
+   "2026-08-31T09:56:06Z",
+   null
+  ],
+  [
+   "tcagent",
+   "Shell",
+   "Portable, restart-safe client for technocore.chat's signed lane. Fixes macOS portability, monotonic nonces, timeout-safe writes, the sharded DID path, and the 7-day note lease.",
+   "",
+   "0",
+   "2026-08-31T09:34:18Z",
+   null
+  ],
+  [
+   "telegraph-wasm-check",
+   "Go",
+   "Validate a Telegraph scoring module before you spend gas registering it. Runs the published Stage 1 gates, Stage 2 behavioural probes, determinism checks, and your own ordering assertions — through wazero, the same runtime the node uses.",
+   "hackathon,scoring,telegraph,wasm,wazero,webassembly",
+   "0",
+   "2026-08-31T06:05:23Z",
+   null
+  ],
+  [
+   "getagent-semis-orb",
+   "Python",
+   "Semiconductor open-range breakout basket for GetAgent Studio — package at repo root",
+   "",
+   "0",
+   "2026-08-27T12:59:02Z",
+   null
+  ],
+  [
+   "getagent-playbooks",
+   "Python",
+   "Trading Playbook packages for GetAgent Studio — semiconductor open-range breakout basket on Bitget RWA perpetuals, with reproducible research",
+   "",
+   "0",
+   "2026-08-27T07:39:23Z",
+   null
+  ],
+  [
+   "vibecode-bootcamp",
+   "CSS",
+   "Kids Vibecode Bootcamp — Learn. Create. Build with AI. A registration site for Top Training Camp, Abuja.",
+   "",
+   "0",
+   "2026-08-26T13:24:16Z",
+   "https://vibecode-bootcamp.vercel.app"
+  ],
+  [
+   "student-results-dashboard",
+   "HTML",
+   "Interactive student results dashboard — upload Excel/CSV, get KPIs, charts, slicers & session timeline. Zero dependencies, all in-browser.",
+   "",
+   "0",
+   "2026-08-03T15:05:38Z",
+   null
+  ],
+  [
+   "agent-reel",
+   "TypeScript",
+   "Agent Reel — a creative studio for the agent economy. Promo videos, hero images, brand kits, image edits and mint-ready packaging, paid per call over x402 on X Layer. OKX.AI agent #6731.",
+   "",
+   "0",
+   "2026-07-26T07:17:37Z",
+   null
+  ],
+  [
+   "demorun",
+   "TypeScript",
+   "DEMORUN — turn any URL or product into a 15–30s demo video. 1 USDT per call. Built for the OKX.AI Genesis Hackathon.",
+   "",
+   "0",
+   "2026-07-04T12:41:42Z",
+   null
+  ],
+  [
+   "sooth",
+   "TypeScript",
+   "SOOTH — the market-priced oracle for the agent economy. Prediction markets on Casper where AI agents pay x402 for data, trade their beliefs, and sell the price as truth. truth, priced live.",
+   "",
+   "0",
+   "2026-07-04T08:19:29Z",
+   null
+  ],
+  [
+   "watchdog-agent",
+   "TypeScript",
+   "Behavioral intelligence layer for autonomous trading agents - the credit score every Bitget agent should run behind. Live trust scoring, predictive forecasts, AI incident diagnosis, public fleet leaderboard.",
+   "",
+   "0",
+   "2026-06-25T07:35:17Z",
+   "https://bitget-indol.vercel.app"
+  ],
+  [
+   "pay-per-call-settlement",
+   "Solidity",
+   "x402-style pay-per-call settlement skill for Pharos AI agents — voucher payment channels, metered micropayments, settle N calls in one tx. On-chain on Pharos Atlantic.",
+   "",
+   "0",
+   "2026-06-18T10:03:13Z",
+   null
+  ],
+  [
+   "commit-reveal-coordination",
+   "Solidity",
+   "Sealed commit-reveal coordination skill for Pharos AI agents — sealed-bid auctions, blind votes, private predictions. On-chain on Pharos Atlantic.",
+   "",
+   "0",
+   "2026-06-18T10:03:11Z",
+   null
+  ],
+  [
+   "crossfire",
+   "TypeScript",
+   "Adversarial prediction-market agents on a chain-enforced mandate. MetaMask Smart Accounts Kit × 1Shot × Venice.",
+   "",
+   "3",
+   "2026-06-15T20:03:16Z",
+   "https://crossfire-nu.vercel.app"
+  ],
+  [
+   "suiiiiiii-beats",
+   "TypeScript",
+   "Suiiiiiii Beats — on-chain beat marketplace on Sui. Audio on Walrus, NFTs minted on Sui, all RPC via Tatum.",
+   "",
+   "0",
+   "2026-06-04T12:41:40Z",
+   "https://walrusbeat.vercel.app"
+  ],
+  [
+   "nerom-test-audio-match-",
+   "JavaScript",
+   null,
+   "",
+   "0",
+   "2026-05-31T19:38:09Z",
+   null
+  ],
+  [
+   "suiiiiiii-beats-old",
+   "TypeScript",
+   "Suiiiiiii Beats — on-chain beat marketplace on Sui. Audio stored on Walrus, beats minted as NFTs, all RPC via Tatum.",
+   "",
+   "0",
+   "2026-05-29T12:26:28Z",
+   "https://walrusbeat.vercel.app"
+  ],
+  [
+   "cybro",
+   "HTML",
+   null,
+   "",
+   "0",
+   "2026-05-26T19:18:23Z",
+   "https://cybro-eta.vercel.app"
+  ],
+  [
+   "forum",
+   "JavaScript",
+   "FORUM — Arc-native prediction market with an AI bookmaker. Claude prices binary events, users bet USDC, contracts settle on Arc in sub-second.",
+   "",
+   "0",
+   "2026-05-21T19:06:56Z",
+   "https://forum-xi-eight.vercel.app"
+  ],
+  [
+   "bluff-",
+   "TypeScript",
+   "AI agents debating crypto truth. real USDC bets. settled on Arc Network in under a second. powered by Circle.",
+   "",
+   "0",
+   "2026-05-18T07:16:22Z",
+   "https://bluff-alpha.vercel.app"
+  ],
+  [
+   "specter",
+   "TypeScript",
+   "Privacy-first blind auctions on Solana, powered by Arcium MPC",
+   "",
+   "0",
+   "2026-05-08T10:24:31Z",
+   null
+  ],
+  [
+   "rock-paper-sicssors",
+   "HTML",
+   null,
+   "",
+   "0",
+   "2026-05-03T16:31:18Z",
+   "https://rock-paper-sicssors.vercel.app"
+  ],
+  [
+   "memory-game",
+   "HTML",
+   "testing cysic cyops",
+   "",
+   "0",
+   "2026-05-01T16:39:40Z",
+   "https://memory-game-mocha-beta.vercel.app"
+  ],
+  [
+   "rebalancex",
+   null,
+   null,
+   "",
+   "0",
+   "2026-04-14T12:50:42Z",
+   null
+  ],
+  [
+   "soundness-milestone-card",
+   "TypeScript",
+   "a card generator",
+   "",
+   "0",
+   "2025-11-28T07:57:41Z",
+   null
+  ],
+  [
+   "nerom-quiz-",
+   "TypeScript",
+   "how well do you know nerom",
+   "",
+   "0",
+   "2025-11-21T23:00:31Z",
+   null
+  ],
+  [
+   "prisma-x-",
+   "TypeScript",
+   "a robo card generator",
+   "",
+   "0",
+   "2025-11-19T12:26:48Z",
+   null
+  ],
+  [
+   "cysic-ai-assister",
+   "TypeScript",
+   "a voice ai assistant ",
+   "",
+   "0",
+   "2025-11-07T18:05:23Z",
+   null
+  ],
+  [
+   "memory-garden-irys",
+   "TypeScript",
+   "just a cool visualizer of your data",
+   "",
+   "0",
+   "2025-11-05T17:59:07Z",
+   null
+  ],
+  [
+   "gensyn-abc",
+   "TypeScript",
+   "easy guide to everything sentient",
+   "",
+   "0",
+   "2025-11-01T11:01:24Z",
+   null
+  ],
+  [
+   "gensyn-game",
+   "TypeScript",
+   "just a cool game",
+   "",
+   "0",
+   "2025-10-30T13:10:07Z",
+   null
+  ],
+  [
+   "moren808",
+   null,
+   null,
+   "",
+   "0",
+   "2025-02-11T14:16:02Z",
+   null
+  ],
+  [
+   "MorenSzn",
+   null,
+   "Config files for my GitHub profile.",
+   "config,github-config",
+   "0",
+   "2022-03-23T09:45:05Z",
+   "https://github.com/MorenSzn"
+  ]
+ ],
+ "recordedAt": "2026-10-26T11:03:29.845Z"
+}

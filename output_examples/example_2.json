@@ -1,0 +1,5951 @@
+{
+ "run_id": "run-2026-10-26-73ac30",
+ "status": "success",
+ "agents": [
+  {
+   "name": "Intake",
+   "role": "Scout Intent: binds the builder and their hours, guards the request, signs the contract that fixes the scout's authority"
+  },
+  {
+   "name": "Surveyor",
+   "role": "Takes stock of the live sources in Zetaris and registers a new builder's GitHub as Zetaris tables at run time"
+  },
+  {
+   "name": "Profiler",
+   "role": "Builds the scouting card from the builder's repos and the wins table on their profile README"
+  },
+  {
+   "name": "Reconciler",
+   "role": "One federated query over every platform plus FX; merges duplicates, parses deadlines, spots changes"
+  },
+  {
+   "name": "Archivist",
+   "role": "H-MEM record of wins, results and plans per skill tag; World Model case file of builder, repos and fixtures"
+  },
+  {
+   "name": "Scout",
+   "role": "Proposes fit, verdict, head-start repo and hours for each hackathon on Nemotron Ultra"
+  },
+  {
+   "name": "Coach",
+   "role": "Holds every proposal to the eligibility rules, computes the odds and $/hour, keeps the plan within the hours"
+  },
+  {
+   "name": "Executor",
+   "role": "Writes the docket shortlist and a deadline calendar; never registers, submits or messages"
+  }
+ ],
+ "memory": {
+  "recalled": 0,
+  "stored": 1
+ },
+ "engines": {
+  "scout_intent": "contract c3682f1c refreshed 4x",
+  "hmem": "0 recalled, 0 wins stored, plan stored",
+  "world_model": "838 case-file events",
+  "markovian": "4 bounded steps (completed)"
+ },
+ "cost": {
+  "quote": {
+   "maxRounds": 5,
+   "maxQueries": 22,
+   "maxModelCalls": 18,
+   "maxSeconds": 600,
+   "rationale": "karpathy: 24 candidate hackathons in 4 bounded steps"
+  },
+  "spent": {
+   "modelCalls": 5,
+   "queries": 7,
+   "rounds": 4,
+   "estTokens": 17398,
+   "seconds": 66
+  },
+  "escalations": []
+ },
+ "data_sources": {
+  "live": 7
+ },
+ "trace_id": "run-2026-10-26-73ac30",
+ "log_file": "logs/trace-run-2026-10-26-73ac30.jsonl",
+ "execution_time_seconds": 66.1,
+ "output": {
+  "summary": "karpathy: 103 live hackathons across 2 platforms. Enter 1 this week (12h of 20h): AWS Communication Developer Services (CDS) Agentic AI Partner Hackathon ($99/h). 43 on the bench, 59 out.",
+  "fixtures": [
+   {
+    "hackathon": {
+     "key": "awscommunicationdeveloperservicescdsagenticaipartner",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31052",
+       "url": "https://aws-cds-partner.devpost.com/"
+      }
+     ],
+     "name": "AWS Communication Developer Services (CDS) Agentic AI Partner Hackathon",
+     "organizer": "AWS",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-28",
+     "daysLeft": 2,
+     "prizeText": "$40,000",
+     "prizeUsd": 40000,
+     "registrations": 1038,
+     "themes": [
+      "Communication",
+      "Mobile",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "agents",
+      "devtools",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 93,
+    "verdict": "START",
+    "repo": "nanochat",
+    "why": "nanochat is a production-grade agentic chat system with real-time communication primitives that maps directly to AWS CDS's agentic AI and communication themes.",
+    "hours": 12,
+    "pWin": 0.099,
+    "evPerHour": 99,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "cosmohacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30455",
+       "url": "https://cosmohacks.devpost.com/"
+      }
+     ],
+     "name": "Cosmo Hacks 2026",
+     "organizer": "Cosmo Hacks",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-18",
+     "daysLeft": 84,
+     "prizeText": "$196,955",
+     "prizeUsd": 196955,
+     "registrations": 493,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Education"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 76,
+    "verdict": "BENCH",
+    "repo": "nn-zero-to-hero",
+    "why": "nn-zero-to-hero is a polished educational course repo, but Cosmo Hacks' beginner-friendly, open-ended theme dilutes the advantage of Karpathy's advanced ML depth.",
+    "hours": 18,
+    "pWin": 0.078,
+    "evPerHour": 257,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "kiroween",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31667",
+       "url": "https://kiroween.devpost.com/"
+      }
+     ],
+     "name": "Kiroween 2026",
+     "organizer": "Kiro",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-12-04",
+     "daysLeft": 39,
+     "prizeText": "$100,000",
+     "prizeUsd": 100000,
+     "registrations": 1387,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 78,
+    "verdict": "BENCH",
+    "repo": "LLM101n",
+    "why": "LLM101n is a storyteller-building course that fits the ML/education overlap, yet the 1,387 registrants and broad themes make signal-to-noise unfavorable for a focused build.",
+    "hours": 16,
+    "pWin": 0.066,
+    "evPerHour": 123,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "qlooagentic",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31054",
+       "url": "https://qloo.devpost.com/"
+      }
+     ],
+     "name": "Qloo Agentic Hackathon",
+     "organizer": "Qloo",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "$25,000",
+     "prizeUsd": 25000,
+     "registrations": 2473,
+     "themes": [
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "agents",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 91,
+    "verdict": "BENCH",
+    "repo": "autoresearch",
+    "why": "autoresearch demonstrates autonomous research agents on single GPU\u2014exactly the agentic ML workflow Qloo rewards\u2014with proven training loops from nanoGPT lineage.",
+    "hours": 14,
+    "pWin": 0.079,
+    "evPerHour": 43,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Benched: not enough hours left this week (8h free, needs 14h)."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "codexxtwitchcon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31742",
+       "url": "https://twitchcon-codex.devpost.com/"
+      }
+     ],
+     "name": "Codex x TwitchCon Hackathon",
+     "organizer": "Twitch",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-02",
+     "daysLeft": 7,
+     "prizeText": "$25,000",
+     "prizeUsd": 25000,
+     "registrations": 813,
+     "themes": [
+      "Communication",
+      "Gaming",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "trading",
+      "games",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 71,
+    "verdict": "BENCH",
+    "repo": "notpygamejs",
+    "why": "notpygamejs gives a canvas game engine head start for the Gaming theme, but the 813-registrant crowd and mixed trading/games/ML scope dilute Karpathy's agentic ML edge.",
+    "hours": 18,
+    "pWin": 0.061,
+    "evPerHour": 25,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "lifeaftercode",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31503",
+       "url": "https://gitlab-transcend.devpost.com/"
+      }
+     ],
+     "name": "Life After Code",
+     "organizer": "GitLab",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-27",
+     "daysLeft": 1,
+     "prizeText": "$45,000",
+     "prizeUsd": 45000,
+     "registrations": 3239,
+     "themes": [
+      "DevOps",
+      "Machine Learning/AI",
+      "Productivity"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "devtools",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 51,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Closes in 1 day with 3.2k registrants; no repo gives a meaningful head start for DevOps/productivity tooling in that window.",
+    "hours": 16,
+    "pWin": 0.024,
+    "evPerHour": 20,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Kept on the bench: no rule rules it out."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "checkpoint1gamesforgood",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31222",
+       "url": "https://checkpoint-1.devpost.com/"
+      }
+     ],
+     "name": "checkpoint 1 \u2014 games for good",
+     "organizer": "Checkpoint",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-10",
+     "daysLeft": 76,
+     "prizeText": "$11,960",
+     "prizeUsd": 11960,
+     "registrations": 60,
+     "themes": [
+      "Gaming",
+      "Machine Learning/AI",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "games",
+      "education",
+      "impact",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 64,
+    "verdict": "BENCH",
+    "repo": "notpygamejs",
+    "why": "notpygamejs provides a browser game foundation, yet the social-good gaming theme and small 60-registrant field don't leverage Karpathy's core agentic ML strengths.",
+    "hours": 20,
+    "pWin": 0.104,
+    "evPerHour": 19,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "paypalai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31302",
+       "url": "https://paypalaihackathon.devpost.com/"
+      }
+     ],
+     "name": "PayPal AI Hackathon",
+     "organizer": "PayPal",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-12",
+     "daysLeft": 17,
+     "prizeText": "$67,500",
+     "prizeUsd": 67500,
+     "registrations": 21629,
+     "themes": [
+      "Low/No Code",
+      "Machine Learning/AI",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "payments",
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 54,
+    "verdict": "BENCH",
+    "repo": "calorie",
+    "why": "calorie shows fullstack chops for a payments-adjacent web app, but 21k registrants and a Low/No Code theme make signal-to-noise unfavorable despite the $68k prize.",
+    "hours": 22,
+    "pWin": 0.019,
+    "evPerHour": 18,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "unitedhacksv8",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30819",
+       "url": "https://unitedhacksv8.devpost.com/"
+      }
+     ],
+     "name": "United Hacks V8",
+     "organizer": "Hack United",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-10",
+     "daysLeft": 76,
+     "prizeText": "$13,700",
+     "prizeUsd": 13700,
+     "registrations": 294,
+     "themes": [
+      "Beginner Friendly",
+      "Design",
+      "Education"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 68,
+    "verdict": "BENCH",
+    "repo": "calorie",
+    "why": "calorie shows fullstack chops for a beginner-friendly hack, but the $14k prize and design-heavy themes don't leverage Karpathy's core agentic/ML strengths.",
+    "hours": 20,
+    "pWin": 0.072,
+    "evPerHour": 15,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "arbiterhacksv1",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30789",
+       "url": "https://arbiter-hacks-v1.devpost.com/"
+      }
+     ],
+     "name": "Arbiter Hacks V1",
+     "organizer": "Arbiter ",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-12-21",
+     "daysLeft": 56,
+     "prizeText": "$7,800",
+     "prizeUsd": 7800,
+     "registrations": 559,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 72,
+    "verdict": "BENCH",
+    "repo": "reinforcejs",
+    "why": "reinforcejs provides browser-based RL agents for education/ML themes, but the small prize and generic beginner-friendly scope don't justify prioritizing over the agentic-focused hackathons.",
+    "hours": 18,
+    "pWin": 0.068,
+    "evPerHour": 9,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hackwithaditya",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31737",
+       "url": "https://hackwithaditya.devpost.com/"
+      }
+     ],
+     "name": "HackWithAditya",
+     "organizer": "Aditya University",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-25",
+     "daysLeft": 30,
+     "prizeText": "\u20b9 500,000",
+     "prizeUsd": 5254,
+     "registrations": 83,
+     "themes": [
+      "Education",
+      "Health",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "bio",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 61,
+    "verdict": "BENCH",
+    "repo": "nn-zero-to-hero",
+    "why": "nn-zero-to-hero is a polished ML education course repo fitting the Education/Health/ML themes, but the small \u20b95L prize and 83 registrants don't justify prioritizing over stronger agentic fits.",
+    "hours": 18,
+    "pWin": 0.084,
+    "evPerHour": 7,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "aiagentsforfounderschallengehetic",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31480",
+       "url": "https://ai-agents-founders-hetic-26.devpost.com/"
+      }
+     ],
+     "name": "AI Agents for Founders Challenge \u2014 HETIC 2026",
+     "organizer": "HETIC",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-12-18",
+     "daysLeft": 53,
+     "prizeText": "\u20ac997",
+     "prizeUsd": 1118,
+     "registrations": 119,
+     "themes": [
+      "Low/No Code",
+      "Machine Learning/AI",
+      "Productivity"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "agents",
+      "devtools",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 93,
+    "verdict": "BENCH",
+    "repo": "autoresearch",
+    "why": "autoresearch is a production-grade autonomous research agent on single GPU\u2014exactly the agentic founder tooling this hackathon rewards\u2014with proven training loops from nanoGPT lineage.",
+    "hours": 14,
+    "pWin": 0.174,
+    "evPerHour": 4,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet",
+     "Benched: about $4/h expected, under the $25/h floor."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "brewingcodes40",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "29135",
+       "url": "https://brewing-codes-4-0.devpost.com/"
+      }
+     ],
+     "name": "Brewing Codes 4.0",
+     "organizer": "HARD MODE",
+     "online": true,
+     "location": "Online",
+     "closes": "2028-03-27",
+     "daysLeft": 518,
+     "prizeText": "\u20b9 100,000",
+     "prizeUsd": 1051,
+     "registrations": 83,
+     "themes": [
+      "Low/No Code",
+      "Machine Learning/AI",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 76,
+    "verdict": "BENCH",
+    "repo": "nn-zero-to-hero",
+    "why": "nn-zero-to-hero is a complete, polished ML education course that maps directly to the ML/AI and Education themes, giving Karpathy a massive head start on a fullstack web build.",
+    "hours": 14,
+    "pWin": 0.13,
+    "evPerHour": 3,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet",
+     "Benched: about $3/h expected, under the $25/h floor."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "dakarbitcoinbybtrust",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "26475",
+       "url": "https://dakar-bitcoin-hack-2026.devpost.com/"
+      }
+     ],
+     "name": "Dakar Bitcoin Hack by BTrust",
+     "organizer": "Dakar Bitcoin Days",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-20",
+     "daysLeft": 25,
+     "prizeText": "$900",
+     "prizeUsd": 900,
+     "registrations": 19,
+     "themes": [
+      "Blockchain",
+      "Fintech",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "payments",
+      "onchain",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 70,
+    "verdict": "BENCH",
+    "repo": "cryptos",
+    "why": "cryptos is a from-scratch Bitcoin implementation in pure Python\u2014exactly the onchain/fintech depth this BTrust hackathon rewards\u2014and Karpathy's ML background adds a unique ML/AI angle.",
+    "hours": 16,
+    "pWin": 0.164,
+    "evPerHour": 3,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Benched: about $3/h expected, under the $25/h floor."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "herhack",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31664",
+       "url": "https://herhack.devpost.com/"
+      }
+     ],
+     "name": "Herhack",
+     "organizer": "Echelon institute of technology",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-10",
+     "daysLeft": 15,
+     "prizeText": "\u20b9 200,000",
+     "prizeUsd": 2102,
+     "registrations": 73,
+     "themes": [
+      "Beginner Friendly",
+      "Blockchain",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "onchain"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 55,
+    "verdict": "BENCH",
+    "repo": "cryptos",
+    "why": "cryptos provides onchain fundamentals, but the beginner-friendly, open-ended theme and small prize don't justify prioritizing over the stronger ML/agentic fits.",
+    "hours": 18,
+    "pWin": 0.071,
+    "evPerHour": 2,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "neuralstorm",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31815",
+       "url": "https://neuralstorm.devpost.com/"
+      }
+     ],
+     "name": "Neural Storm",
+     "organizer": "JNTUH",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-04",
+     "daysLeft": 9,
+     "prizeText": "\u20b9 20,000",
+     "prizeUsd": 210,
+     "registrations": 38,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 71,
+    "verdict": "BENCH",
+    "repo": "nn-zero-to-hero",
+    "why": "nn-zero-to-hero fits the ML/AI education theme perfectly, yet the tiny prize and 9-day window make it a bench candidate unless bandwidth opens up.",
+    "hours": 14,
+    "pWin": 0.152,
+    "evPerHour": 1,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "codeforhumanity",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30740",
+       "url": "https://code-for-humanity.devpost.com/"
+      }
+     ],
+     "name": "Code for Humanity",
+     "organizer": "nill",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-15",
+     "daysLeft": 81,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 679,
+     "themes": [
+      "Education",
+      "Machine Learning/AI",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "BENCH",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Plays to Education and ML; pytorch-normalizing-flows is a head start.",
+    "hours": 10,
+    "pWin": 0.067,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "stem2connectai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31789",
+       "url": "https://stem2connect-online-hackathon.devpost.com/"
+      }
+     ],
+     "name": "STEM2Connect AI Hackathon",
+     "organizer": "STEM2Connect",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-21",
+     "daysLeft": 26,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 146,
+     "themes": [
+      "Beginner Friendly",
+      "Education",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "BENCH",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Plays to Education and ML; pytorch-normalizing-flows is a head start.",
+    "hours": 10,
+    "pWin": 0.1,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "ostadpresentsyunetaignitebuildathon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31580",
+       "url": "https://yunet-aignite26.devpost.com/"
+      }
+     ],
+     "name": "Ostad Presents YUNet AIgnite Buildathon 2026",
+     "organizer": "Youth Upskill Network - YUNet",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-05",
+     "daysLeft": 10,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 241,
+     "themes": [
+      "Education",
+      "Low/No Code",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "BENCH",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Plays to Education and ML; pytorch-normalizing-flows is a head start.",
+    "hours": 10,
+    "pWin": 0.087,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "buildyourownwebsite",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31683",
+       "url": "https://buildyourownwebsite.devpost.com/"
+      }
+     ],
+     "name": "BuildyourOwnWebsite",
+     "organizer": "Roxten Studios",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-25",
+     "daysLeft": 30,
+     "prizeText": "\u20b9 0",
+     "prizeUsd": 0,
+     "registrations": 45,
+     "themes": [
+      "Beginner Friendly",
+      "Education",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "fullstack",
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "BENCH",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Plays to Education; pytorch-normalizing-flows is a head start.",
+    "hours": 10,
+    "pWin": 0.15,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "globalaibuilderschallenge",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31826",
+       "url": "https://global-ai-builders-challenge.devpost.com/"
+      }
+     ],
+     "name": "Global AI Builder\u2019s Challenge",
+     "organizer": "Refactor The World",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-28",
+     "daysLeft": 33,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 37,
+     "themes": [
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "BENCH",
+    "repo": "convnetjs",
+    "why": "Plays to Education and ML; convnetjs is a head start.",
+    "hours": 10,
+    "pWin": 0.163,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "internationalcodethecure",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31474",
+       "url": "https://codethecure-hackathon-26.devpost.com/"
+      }
+     ],
+     "name": "2026 International CodeTheCure Hackathon",
+     "organizer": "CodeTheCure",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-28",
+     "daysLeft": 2,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 245,
+     "themes": [
+      "Beginner Friendly",
+      "Education",
+      "Health"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "bio",
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "BENCH",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Plays to Education; pytorch-normalizing-flows is a head start.",
+    "hours": 10,
+    "pWin": 0.064,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "ethnohack",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31489",
+       "url": "https://ethnohack2026.devpost.com/"
+      }
+     ],
+     "name": "EthnoHack",
+     "organizer": "ETHCSTWIN",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "\u20ac0",
+     "prizeUsd": 0,
+     "registrations": 146,
+     "themes": [
+      "Databases",
+      "Health",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "bio",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "BENCH",
+    "repo": "convnetjs",
+    "why": "Plays to Education and ML; convnetjs is a head start.",
+    "hours": 10,
+    "pWin": 0.075,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "mathematicsforsystemssecurity",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31666",
+       "url": "https://mathematics-systems-security.devpost.com/"
+      }
+     ],
+     "name": "Mathematics for systems security",
+     "organizer": "Software Engineering Club (DEV)",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-01",
+     "daysLeft": 6,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 88,
+     "themes": [
+      "Communication",
+      "Cybersecurity",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "privacy",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 52,
+    "verdict": "BENCH",
+    "repo": "convnetjs",
+    "why": "Plays to Education and ML; convnetjs is a head start.",
+    "hours": 10,
+    "pWin": 0.06,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "305empowheroctober305hackathonsvercelapp",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31731",
+       "url": "https://305empowheroct2026.devpost.com/"
+      }
+     ],
+     "name": "305 EmpowHER Edition October 2026 \u2014 305Hackathons.vercel.app",
+     "organizer": "CODE CRUNCH",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 37,
+     "themes": [
+      "Beginner Friendly",
+      "Cybersecurity",
+      "Education"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "fullstack",
+      "privacy",
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 52,
+    "verdict": "BENCH",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Plays to Education; pytorch-normalizing-flows is a head start.",
+    "hours": 10,
+    "pWin": 0.083,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "stemergenthacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31187",
+       "url": "https://stemergent-hacks.devpost.com/"
+      }
+     ],
+     "name": "STEMergent Hacks 2026",
+     "organizer": "STEMergent",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 147,
+     "themes": [
+      "Low/No Code",
+      "Machine Learning/AI",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "education",
+      "impact",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 52,
+    "verdict": "BENCH",
+    "repo": "convnetjs",
+    "why": "Plays to Education and ML; convnetjs is a head start.",
+    "hours": 10,
+    "pWin": 0.051,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "bridgegaphacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30456",
+       "url": "https://sq-hacks.devpost.com/"
+      }
+     ],
+     "name": "Bridge The Gap Hacks",
+     "organizer": "Bridge The Gap Hacks",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-21",
+     "daysLeft": 26,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 56,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "education",
+      "impact",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 52,
+    "verdict": "BENCH",
+    "repo": "convnetjs",
+    "why": "Plays to Education and ML; convnetjs is a head start.",
+    "hours": 10,
+    "pWin": 0.07,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "accessedhacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31795",
+       "url": "https://accessed-hacks.devpost.com/"
+      }
+     ],
+     "name": "AccessED Hacks",
+     "organizer": "AccessEDnpo",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-20",
+     "daysLeft": 25,
+     "prizeText": "$225",
+     "prizeUsd": 225,
+     "registrations": 70,
+     "themes": [
+      "Beginner Friendly",
+      "Education",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "education",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 51,
+    "verdict": "BENCH",
+    "repo": "arxiv-sanity-lite",
+    "why": "arxiv-sanity-lite is an education/research tool that aligns with the Education and Social Good themes, but the tiny prize and low-code focus don't leverage Karpathy's core strengths.",
+    "hours": 16,
+    "pWin": 0.062,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "codesprintbyelitecoders",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31515",
+       "url": "https://codesprint-by-elitecoders.devpost.com/"
+      }
+     ],
+     "name": "CodeSprint by Elite Coders",
+     "organizer": "elite coders",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "\u20b9 30,000",
+     "prizeUsd": 315,
+     "registrations": 344,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "fullstack"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 43,
+    "verdict": "BENCH",
+    "repo": "calorie",
+    "why": "calorie shows fullstack chops for a web-focused sprint, but the small \u20b930k prize and beginner-friendly scope don't justify prioritizing over stronger agentic fits.",
+    "hours": 20,
+    "pWin": 0.027,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "pumpkinplayground",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31619",
+       "url": "https://pumpkin-playground.devpost.com/"
+      }
+     ],
+     "name": "Pumpkin Playground",
+     "organizer": "ACM Long Beach",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "$30",
+     "prizeUsd": 30,
+     "registrations": 145,
+     "themes": [
+      "Design",
+      "Gaming",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "games",
+      "fullstack"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 43,
+    "verdict": "BENCH",
+    "repo": "notpygamejs",
+    "why": "Little on the profile matches Design, Gaming.",
+    "hours": 18,
+    "pWin": 0.035,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "aqxsportsanalyticsdatabowl40",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31793",
+       "url": "https://aqxanalyticsfour.devpost.com/"
+      }
+     ],
+     "name": "AQX Sports Analytics Data Bowl 4.0",
+     "organizer": "Devpost",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-01",
+     "daysLeft": 6,
+     "prizeText": "$50",
+     "prizeUsd": 50,
+     "registrations": 111,
+     "themes": [
+      "Beginner Friendly",
+      "Databases",
+      "Gaming"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "games",
+      "dataviz"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 43,
+    "verdict": "BENCH",
+    "repo": "jobs",
+    "why": "Little on the profile matches Beginner Friendly, Databases.",
+    "hours": 18,
+    "pWin": 0.038,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "evensonarisnord",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "27097",
+       "url": "https://evensonarisnord.devpost.com/"
+      }
+     ],
+     "name": "evensonarisnord",
+     "organizer": "HoustonHacks2026",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-12-31",
+     "daysLeft": 66,
+     "prizeText": "$150",
+     "prizeUsd": 150,
+     "registrations": 121,
+     "themes": [
+      "Communication",
+      "Databases"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 40,
+    "verdict": "BENCH",
+    "repo": "nanochat",
+    "why": "nanochat's real-time communication primitives align with the Communication theme, but the $150 prize and generic Database theme don't warrant a START.",
+    "hours": 16,
+    "pWin": 0.032,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "dshhacksv2100kinprizes",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30500",
+       "url": "https://dsh-hacks-v2.devpost.com/"
+      }
+     ],
+     "name": "DSH Hacks V2 ($100k+ in prizes!)",
+     "organizer": "STEMise",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 727,
+     "themes": [
+      "Beginner Friendly",
+      "Low/No Code",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Low/No Code.",
+    "hours": 28,
+    "pWin": 0.019,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "tofuture",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31792",
+       "url": "https://hack-to-the-missing-future-ai.devpost.com/"
+      }
+     ],
+     "name": "Hack to the Future",
+     "organizer": "HackathonForEveryone",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-27",
+     "daysLeft": 1,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 44,
+     "themes": [
+      "Beginner Friendly"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly.",
+    "hours": 8,
+    "pWin": 0.043,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hackodisha60",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "c84b90d65eff4ae083366fc1cc549e81",
+       "url": "https://hackodisha-6a.devfolio.co"
+      }
+     ],
+     "name": "hackodisha-6.0",
+     "organizer": "",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-01",
+     "daysLeft": 6,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 1289,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches this brief.",
+    "hours": 28,
+    "pWin": 0.017,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "girlswhocodehhs",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31748",
+       "url": "https://gwchhs-hackathon-2026.devpost.com/"
+      }
+     ],
+     "name": "Girls Who Code HHS Hackathon 2026",
+     "organizer": "Girls Who Code HHS",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-29",
+     "daysLeft": 3,
+     "prizeText": "$50",
+     "prizeUsd": 50,
+     "registrations": 49,
+     "themes": [
+      "Beginner Friendly",
+      "Gaming",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "games",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 33,
+    "verdict": "BENCH",
+    "repo": "notpygamejs",
+    "why": "Little on the profile matches Beginner Friendly, Gaming.",
+    "hours": 18,
+    "pWin": 0.03,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "innovartartandtechnologyday",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31108",
+       "url": "https://innovart2027.devpost.com/"
+      }
+     ],
+     "name": "InnovArt 2027: Art and Technology Hack Day",
+     "organizer": "Binnovative",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-02",
+     "daysLeft": 68,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 250,
+     "themes": [
+      "Music/Art",
+      "Beginner Friendly",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Music/Art, Beginner Friendly.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "safespacehacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31796",
+       "url": "https://safespace-hacks.devpost.com/"
+      }
+     ],
+     "name": "SafeSpace Hacks",
+     "organizer": "SafeSpace",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-22",
+     "daysLeft": 27,
+     "prizeText": "$280",
+     "prizeUsd": 280,
+     "registrations": 151,
+     "themes": [
+      "Beginner Friendly",
+      "Cybersecurity",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "privacy",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Cybersecurity.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "greenshifthacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31797",
+       "url": "https://green-shift-hacks.devpost.com/"
+      }
+     ],
+     "name": "Green Shift Hacks",
+     "organizer": "HackathonForEveryone",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-17",
+     "daysLeft": 22,
+     "prizeText": "$125",
+     "prizeUsd": 125,
+     "registrations": 75,
+     "themes": [
+      "Beginner Friendly",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Social Good.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "codefordfw",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31504",
+       "url": "https://code-for-dfw.devpost.com/"
+      }
+     ],
+     "name": "Code For DFW",
+     "organizer": "n/a",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-25",
+     "daysLeft": 30,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 9,
+     "themes": [
+      "Open Ended",
+      "Social Good",
+      "Beginner Friendly"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Open Ended, Social Good.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hacktitan",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30340",
+       "url": "https://hacktitan.devpost.com/"
+      }
+     ],
+     "name": "HackTitan",
+     "organizer": "IWU",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-02-04",
+     "daysLeft": 101,
+     "prizeText": "$10,000",
+     "prizeUsd": 10000,
+     "registrations": 193,
+     "themes": [
+      "Beginner Friendly",
+      "Databases",
+      "DevOps"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "devtools"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Databases.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "buildbeyond",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31535",
+       "url": "https://build-beyond.devpost.com/"
+      }
+     ],
+     "name": "Build Beyond Hackathon",
+     "organizer": "OSC",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-03-15",
+     "daysLeft": 140,
+     "prizeText": "$5,000",
+     "prizeUsd": 5000,
+     "registrations": 45,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Productivity"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "devtools"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Open Ended.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "cscwintersparkathon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31682",
+       "url": "https://csc-winter-sparkathon.devpost.com/"
+      }
+     ],
+     "name": "CSC Winter Sparkathon",
+     "organizer": "The Webb Schools CSC",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-30",
+     "daysLeft": 35,
+     "prizeText": "$100",
+     "prizeUsd": 100,
+     "registrations": 41,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Open Ended.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "teenshouston",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30657",
+       "url": "https://tripleh.devpost.com/"
+      }
+     ],
+     "name": "Teens Hack Houston Hackathon",
+     "organizer": "HackClub  \u2713\u20dd",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-21",
+     "daysLeft": 26,
+     "prizeText": "$300",
+     "prizeUsd": 300,
+     "registrations": 24,
+     "themes": [
+      "Beginner Friendly",
+      "Low/No Code",
+      "Productivity"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "devtools"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Low/No Code.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "metavrstartdevelopercompetition",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31024",
+       "url": "https://start-developer-competition-26.devpost.com/"
+      }
+     ],
+     "name": "Meta VR Start Developer Competition 2026",
+     "organizer": "Meta",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-18",
+     "daysLeft": 23,
+     "prizeText": "$1,000,000",
+     "prizeUsd": 1000000,
+     "registrations": 4034,
+     "themes": [
+      "AR/VR",
+      "Machine Learning/AI",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "fullstack",
+      "devtools",
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "a VR headset"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: needs a VR headset, and nothing on the profile shows it.",
+    "hours": 10,
+    "pWin": 0.035,
+    "evPerHour": 1043,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs a VR headset, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "sustainathon20",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31534",
+       "url": "https://sustain-a-thon-2-0-31534.devpost.com/"
+      }
+     ],
+     "name": "SUSTAIN-A-THON 2.0",
+     "organizer": "Sharda University Greater Noida",
+     "online": false,
+     "location": "Block 45, Sharda University",
+     "closes": "2026-10-28",
+     "daysLeft": 2,
+     "prizeText": "$150,000",
+     "prizeUsd": 150000,
+     "registrations": 37,
+     "themes": [
+      "Blockchain",
+      "Cybersecurity",
+      "IoT"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "onchain",
+      "privacy",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 51,
+    "verdict": "OUT",
+    "repo": "rustbpe",
+    "why": "Out: in person (Block 45, Sharda University); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.079,
+    "evPerHour": 358,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Block 45, Sharda University); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "engage60codewithai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31821",
+       "url": "https://engage6.devpost.com/"
+      }
+     ],
+     "name": "Engage 6.0 \u2013 Code with AI Hackathon",
+     "organizer": "The Northcap University",
+     "online": false,
+     "location": "The NorthCap University",
+     "closes": "2026-10-27",
+     "daysLeft": 1,
+     "prizeText": "$45,000",
+     "prizeUsd": 45000,
+     "registrations": 18,
+     "themes": [
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (The NorthCap University); you asked for online only.",
+    "hours": 8,
+    "pWin": 0.178,
+    "evPerHour": 301,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (The NorthCap University); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "sinceai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30516",
+       "url": "https://sinceai2026.devpost.com/"
+      }
+     ],
+     "name": "Since AI 2026",
+     "organizer": "Since AI ry",
+     "online": false,
+     "location": "Kupittaa Campus, Turku",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "\u20ac50,000",
+     "prizeUsd": 56046,
+     "registrations": 94,
+     "themes": [
+      "Machine Learning/AI",
+      "Open Ended",
+      "Enterprise"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (Kupittaa Campus, Turku); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.115,
+    "evPerHour": 194,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Kupittaa Campus, Turku); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "ugreenonainas",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31552",
+       "url": "https://ugreenhackathon.devpost.com/"
+      }
+     ],
+     "name": "UGREEN Hackathon 2026 on AI NAS",
+     "organizer": "UGREEN",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-16",
+     "daysLeft": 21,
+     "prizeText": "$46,000",
+     "prizeUsd": 46000,
+     "registrations": 429,
+     "themes": [
+      "Lifehacks",
+      "Machine Learning/AI",
+      "Productivity"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "devtools",
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "NAS hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: needs NAS hardware, and nothing on the profile shows it.",
+    "hours": 10,
+    "pWin": 0.056,
+    "evPerHour": 77,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs NAS hardware, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "larphacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30731",
+       "url": "https://larphacks.devpost.com/"
+      }
+     ],
+     "name": "LarpHacks",
+     "organizer": "larphacks",
+     "online": false,
+     "location": "Toronto",
+     "closes": "2026-11-01",
+     "daysLeft": 6,
+     "prizeText": "$21,394",
+     "prizeUsd": 21394,
+     "registrations": 157,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (Toronto); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.098,
+    "evPerHour": 63,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Toronto); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "sheridandatathon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31146",
+       "url": "https://sheridandatathon2026.devpost.com/"
+      }
+     ],
+     "name": "Sheridan Datathon 2026",
+     "organizer": "GDG on Campus Sheridan College",
+     "online": false,
+     "location": "Sheridan College Hazel McCallion Campus",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$CAD 12,000",
+     "prizeUsd": 12000,
+     "registrations": 34,
+     "themes": [
+      "Beginner Friendly",
+      "Databases",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (Sheridan College Hazel McCallion Campus); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.169,
+    "evPerHour": 61,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Sheridan College Hazel McCallion Campus); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "bearhacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30689",
+       "url": "https://bearhacks2027.devpost.com/"
+      }
+     ],
+     "name": "BearHacks 2027",
+     "organizer": "BearHacks",
+     "online": false,
+     "location": "Sheridan College Hazel McCallion Campus",
+     "closes": "2027-04-25",
+     "daysLeft": 181,
+     "prizeText": "$CAD 10,000",
+     "prizeUsd": 10000,
+     "registrations": 34,
+     "themes": [
+      "Machine Learning/AI",
+      "Mobile",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (Sheridan College Hazel McCallion Campus); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.169,
+    "evPerHour": 51,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Sheridan College Hazel McCallion Campus); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "nebiusxnvidiaglobalai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30790",
+       "url": "https://nebiusglobalaihackathon.devpost.com/"
+      }
+     ],
+     "name": "Nebius x NVIDIA Global AI Hackathon",
+     "organizer": "nebius",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "$50,000",
+     "prizeUsd": 50000,
+     "registrations": 27625,
+     "themes": [
+      "Machine Learning/AI",
+      "Beginner Friendly",
+      "Robotic Process Automation"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: needs robot or IoT hardware, and nothing on the profile shows it.",
+    "hours": 10,
+    "pWin": 0.025,
+    "evPerHour": 38,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs robot or IoT hardware, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "opencvaicompetitionpoweredbyaws",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30984",
+       "url": "https://opencv26.devpost.com/"
+      }
+     ],
+     "name": "OpenCV AI Competition 2026, powered by AWS",
+     "organizer": "OpenCV",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-27",
+     "daysLeft": 1,
+     "prizeText": "$20,250",
+     "prizeUsd": 20250,
+     "registrations": 6174,
+     "themes": [
+      "IoT",
+      "Machine Learning/AI",
+      "Serverless"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: needs robot or IoT hardware, and nothing on the profile shows it.",
+    "hours": 8,
+    "pWin": 0.032,
+    "evPerHour": 25,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs robot or IoT hardware, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "awsxa10",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31660",
+       "url": "https://a10-x-aws-hack-26.devpost.com/"
+      }
+     ],
+     "name": "AWS x A10 Hack 2026",
+     "organizer": "Santa Clara University ACM",
+     "online": false,
+     "location": "Heafey Hall",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$7,500",
+     "prizeUsd": 7500,
+     "registrations": 54,
+     "themes": [
+      "Beginner Friendly",
+      "Cybersecurity",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "privacy",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 52,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (Heafey Hall); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.071,
+    "evPerHour": 16,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Heafey Hall); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "communihacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30699",
+       "url": "https://communihacks.devpost.com/"
+      }
+     ],
+     "name": "CommuniHacks",
+     "organizer": "CommuniHacks",
+     "online": false,
+     "location": "Builders Club",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$CAD 6,000",
+     "prizeUsd": 6000,
+     "registrations": 35,
+     "themes": [
+      "Design",
+      "Education",
+      "Social Good"
+     ],
+     "inviteOnly": true,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "education",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 52,
+    "verdict": "OUT",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Out: invite only.",
+    "hours": 10,
+    "pWin": 0.085,
+    "evPerHour": 15,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "developerweek",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30463",
+       "url": "https://developerweek-2027-hackathon.devpost.com/"
+      }
+     ],
+     "name": "DeveloperWeek 2027 Hackathon",
+     "organizer": "DevNetwork",
+     "online": false,
+     "location": "Santa Clara Convention Center + Online",
+     "closes": "2027-02-11",
+     "daysLeft": 108,
+     "prizeText": "$6,000",
+     "prizeUsd": 6000,
+     "registrations": 246,
+     "themes": [
+      "Enterprise",
+      "IoT",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "devtools",
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (Santa Clara Convention Center + Online); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.064,
+    "evPerHour": 12,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Santa Clara Convention Center + Online); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "change",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30836",
+       "url": "https://hack-the-change-2026.devpost.com/"
+      }
+     ],
+     "name": "Hack the Change 2026",
+     "organizer": "Code the Change YYC",
+     "online": false,
+     "location": "University of Calgary",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$CAD 5,000",
+     "prizeUsd": 5000,
+     "registrations": 37,
+     "themes": [
+      "Education",
+      "Social Good",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "fullstack",
+      "education",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 52,
+    "verdict": "OUT",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Out: in person (University of Calgary); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.083,
+    "evPerHour": 12,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (University of Calgary); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "icehacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31495",
+       "url": "https://icehacks.devpost.com/"
+      }
+     ],
+     "name": "IceHacks",
+     "organizer": "CodeStarters",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "$17,150",
+     "prizeUsd": 17150,
+     "registrations": 140,
+     "themes": [
+      "Beginner Friendly",
+      "Low/No Code",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 40,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "No repo gives a meaningful head start for the generic beginner-friendly, low-code themes, and the 140-registrant crowd dilutes Karpathy's agentic ML edge.",
+    "hours": 16,
+    "pWin": 0.031,
+    "evPerHour": 10,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "buildwithaibasics",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30447",
+       "url": "https://learn-ai-basics.devpost.com/"
+      }
+     ],
+     "name": "Build With AI: Basics",
+     "organizer": "Devpost",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-26",
+     "daysLeft": 0,
+     "prizeText": "$2,500",
+     "prizeUsd": 2500,
+     "registrations": 5018,
+     "themes": [
+      "Machine Learning/AI",
+      "Beginner Friendly",
+      "Education"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Out: closes in under a day.",
+    "hours": 4,
+    "pWin": 0.045,
+    "evPerHour": 8,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: closes in under a day."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "youcamapiskinaiandecommercevto",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31400",
+       "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/"
+      }
+     ],
+     "name": "YouCam API Skin AI & eCommerce VTO Hackathon",
+     "organizer": "Perfect Corp",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-02",
+     "daysLeft": 7,
+     "prizeText": "$6,000",
+     "prizeUsd": 6000,
+     "registrations": 1278,
+     "themes": [
+      "AR/VR",
+      "E-commerce/Retail",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "fullstack",
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "a VR headset"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: needs a VR headset, and nothing on the profile shows it.",
+    "hours": 10,
+    "pWin": 0.043,
+    "evPerHour": 8,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs a VR headset, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "learnarwithspecs",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31659",
+       "url": "https://learn-specs.devpost.com/"
+      }
+     ],
+     "name": "Learn AR with SPECS",
+     "organizer": "Devpost",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-09",
+     "daysLeft": 14,
+     "prizeText": "$2,500",
+     "prizeUsd": 2500,
+     "registrations": 754,
+     "themes": [
+      "AR/VR",
+      "Machine Learning/AI",
+      "Design"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "a VR headset"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: needs a VR headset, and nothing on the profile shows it.",
+    "hours": 10,
+    "pWin": 0.049,
+    "evPerHour": 4,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs a VR headset, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hackfwmadechallenge",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30548",
+       "url": "https://hackfw.devpost.com/"
+      }
+     ],
+     "name": "HackFW: MADE Challenge",
+     "organizer": "Fort Worth DAO",
+     "online": false,
+     "location": "Fort Worth",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "$1,900",
+     "prizeUsd": 1900,
+     "registrations": 163,
+     "themes": [
+      "IoT",
+      "Machine Learning/AI",
+      "Robotic Process Automation"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (Fort Worth); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.072,
+    "evPerHour": 4,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Fort Worth); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hackstorm30sensethinkandact",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31141",
+       "url": "https://hackstorm3.devpost.com/"
+      }
+     ],
+     "name": "HackStorm 3.0: Sense, Think and Act",
+     "organizer": "HackStorm",
+     "online": false,
+     "location": "San Francisco, California, USA",
+     "closes": "2027-01-17",
+     "daysLeft": 83,
+     "prizeText": "$5,200",
+     "prizeUsd": 5200,
+     "registrations": 30,
+     "themes": [
+      "DevOps",
+      "IoT",
+      "Robotic Process Automation"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "devtools",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 34,
+    "verdict": "OUT",
+    "repo": "llm-council",
+    "why": "Out: in person (San Francisco, California, USA); you asked for online only.",
+    "hours": 18,
+    "pWin": 0.039,
+    "evPerHour": 3,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (San Francisco, California, USA); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hybridmicromousechallenge",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31714",
+       "url": "https://hybrid-micro-mouse-challenge.devpost.com/"
+      }
+     ],
+     "name": "Hybrid Micro Mouse Challenge",
+     "organizer": "Alliance University",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-29",
+     "daysLeft": 3,
+     "prizeText": "\u20b9 55,000",
+     "prizeUsd": 578,
+     "registrations": 21,
+     "themes": [
+      "Education",
+      "IoT",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Out: needs robot or IoT hardware, and nothing on the profile shows it.",
+    "hours": 10,
+    "pWin": 0.133,
+    "evPerHour": 2,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs robot or IoT hardware, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "health30",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31866",
+       "url": "https://health-hackathon-3-0.devpost.com/"
+      }
+     ],
+     "name": "Health Hackathon 3.0",
+     "organizer": "VIT Bhopal University",
+     "online": false,
+     "location": "VIT Bhopal University",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "\u20b9 200,000",
+     "prizeUsd": 2102,
+     "registrations": 10,
+     "themes": [
+      "Health"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "bio"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 43,
+    "verdict": "OUT",
+    "repo": "covid-sanity",
+    "why": "Out: in person (VIT Bhopal University); you asked for online only.",
+    "hours": 18,
+    "pWin": 0.062,
+    "evPerHour": 2,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (VIT Bhopal University); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hackrpi",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "28217",
+       "url": "https://hackrpi-2026.devpost.com/"
+      }
+     ],
+     "name": "HackRPI 2026",
+     "organizer": "HackRPI",
+     "online": false,
+     "location": "Darrin Communications Center",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$3,550",
+     "prizeUsd": 3550,
+     "registrations": 25,
+     "themes": [
+      "Beginner Friendly"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (Darrin Communications Center); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.051,
+    "evPerHour": 2,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Darrin Communications Center); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "nextsparkhacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31805",
+       "url": "https://nextspark-hacks.devpost.com/"
+      }
+     ],
+     "name": "NextSpark Hacks",
+     "organizer": "Independent Student Organizer",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-26",
+     "daysLeft": 0,
+     "prizeText": "$100",
+     "prizeUsd": 100,
+     "registrations": 250,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: closes in under a day.",
+    "hours": 4,
+    "pWin": 0.086,
+    "evPerHour": 1,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: closes in under a day."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "minearena10",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31694",
+       "url": "https://minearena-1-0.devpost.com/"
+      }
+     ],
+     "name": "MineArena 1.0",
+     "organizer": "Code commit",
+     "online": false,
+     "location": "SSM cultural centre",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "\u20b9 75,000",
+     "prizeUsd": 788,
+     "registrations": 323,
+     "themes": [
+      "Machine Learning/AI",
+      "Fintech",
+      "Health"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "payments",
+      "bio",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (SSM cultural centre); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.06,
+    "evPerHour": 1,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (SSM cultural centre); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "techtotreasure",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "28629",
+       "url": "https://techtotreasure.devpost.com/"
+      }
+     ],
+     "name": "Tech to Treasure Hackathon",
+     "organizer": "bin to better",
+     "online": false,
+     "location": "Tully Community Branch Library",
+     "closes": "2027-03-10",
+     "daysLeft": 135,
+     "prizeText": "$450",
+     "prizeUsd": 450,
+     "registrations": 80,
+     "themes": [
+      "Beginner Friendly",
+      "Education",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "education",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 52,
+    "verdict": "OUT",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Out: in person (Tully Community Branch Library); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.062,
+    "evPerHour": 1,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Tully Community Branch Library); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "devfestmnsteragenticai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30880",
+       "url": "https://devfest-ai-hackathon.devpost.com/"
+      }
+     ],
+     "name": "DevFest M\u00fcnster 2026: Agentic AI Hackathon",
+     "organizer": "GDG M\u00fcnster",
+     "online": false,
+     "location": "Volkshochschule",
+     "closes": "2026-11-21",
+     "daysLeft": 26,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 18,
+     "themes": [
+      "Beginner Friendly",
+      "Low/No Code",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "agents",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 90,
+    "verdict": "OUT",
+    "repo": "reinforcejs",
+    "why": "Out: in person (Volkshochschule); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.271,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Volkshochschule); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "createathon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31736",
+       "url": "https://graph-hacks.devpost.com/"
+      }
+     ],
+     "name": "CreateAThon",
+     "organizer": "Hacker's Unity",
+     "online": false,
+     "location": "Online, from anywhere",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 56,
+     "themes": [
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (Online, from anywhere); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.138,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Online, from anywhere); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "agnticosoftwarechido2026b",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31626",
+       "url": "https://hackathon-agentico-2026b.devpost.com/"
+      }
+     ],
+     "name": "Hackathon Ag\u00e9ntico SoftwareChido 2026B",
+     "organizer": "ITESO",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-25",
+     "daysLeft": 30,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 29,
+     "themes": [
+      "Education",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": true,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Out: invite only.",
+    "hours": 10,
+    "pWin": 0.178,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "aibuildindia",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31735",
+       "url": "https://sphinx-26.devpost.com/"
+      }
+     ],
+     "name": "AI Build India",
+     "organizer": "Hacker's Unity",
+     "online": false,
+     "location": "jaipur",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 16,
+     "themes": [
+      "Machine Learning/AI",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (jaipur); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.178,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (jaipur); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "buksisitesteminnovationandtalentexpoonlyforbukitsionstudents",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31257",
+       "url": "https://buksi-site-2026.devpost.com/"
+      }
+     ],
+     "name": "Buksi SITE (STEM Innovation & Talent Expo) 2026 - ONLY FOR BUKIT SION STUDENTS",
+     "organizer": "Bukit Sion School",
+     "online": false,
+     "location": "Bukit Sion Highschool",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 7,
+     "themes": [
+      "Beginner Friendly",
+      "Enterprise",
+      "Education"
+     ],
+     "inviteOnly": true,
+     "state": "open",
+     "tags": [
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Out: invite only.",
+    "hours": 10,
+    "pWin": 0.178,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "harvest",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31200",
+       "url": "https://hack-the-harvest.devpost.com/"
+      }
+     ],
+     "name": "Hack the Harvest",
+     "organizer": "HMCI",
+     "online": false,
+     "location": "Aggie Square",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 52,
+     "themes": [
+      "Education",
+      "Enterprise"
+     ],
+     "inviteOnly": true,
+     "state": "upcoming",
+     "tags": [
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Out: invite only.",
+    "hours": 10,
+    "pWin": 0.142,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "vibecodeanimatedmaps",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "29980",
+       "url": "https://vibecode-animated-maps.devpost.com/"
+      }
+     ],
+     "name": "Vibe Code Animated Maps",
+     "organizer": "Mappi Studio",
+     "online": false,
+     "location": "South Plainfield Library",
+     "closes": "2026-12-20",
+     "daysLeft": 55,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 27,
+     "themes": [
+      "Design",
+      "Education",
+      "Web"
+     ],
+     "inviteOnly": true,
+     "state": "upcoming",
+     "tags": [
+      "fullstack",
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 73,
+    "verdict": "OUT",
+    "repo": "pytorch-normalizing-flows",
+    "why": "Out: invite only.",
+    "hours": 10,
+    "pWin": 0.178,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "syntaxsummit",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30764",
+       "url": "https://syntax-summit.devpost.com/"
+      }
+     ],
+     "name": "Syntax Summit",
+     "organizer": "Student Organization",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-14",
+     "daysLeft": 80,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 375,
+     "themes": [
+      "DevOps",
+      "Machine Learning/AI",
+      "Robotic Process Automation"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "devtools",
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: needs robot or IoT hardware, and nothing on the profile shows it.",
+    "hours": 10,
+    "pWin": 0.058,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs robot or IoT hardware, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "biohacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30296",
+       "url": "https://biohacksmcmaster.devpost.com/"
+      }
+     ],
+     "name": "BioHacks",
+     "organizer": "BioEng4Youth",
+     "online": false,
+     "location": "McMaster University - PGCLL",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$CAD 0",
+     "prizeUsd": 0,
+     "registrations": 55,
+     "themes": [
+      "Health",
+      "Machine Learning/AI",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "bio",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 63,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (McMaster University - PGCLL); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.104,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (McMaster University - PGCLL); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "surat",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "0ad8f867250d46bd987623adb920028f",
+       "url": "https://surat-hack-2026.devfolio.co"
+      }
+     ],
+     "name": "Surat Hack 2026",
+     "organizer": "",
+     "online": false,
+     "location": "Surat, India",
+     "closes": "2026-11-01",
+     "daysLeft": 6,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 45,
+     "themes": [
+      "AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 58,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (Surat, India); you asked for online only.",
+    "hours": 20,
+    "pWin": 0.095,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Surat, India); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "tumblockchainandai",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "528f2495b98b4f38ae41139390594a3a",
+       "url": "https://tum.devfolio.co"
+      }
+     ],
+     "name": "TUM Blockchain & AI Hackathon",
+     "organizer": "",
+     "online": false,
+     "location": "M\u00fcnchen, Germany",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 674,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "onchain",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 55,
+    "verdict": "OUT",
+    "repo": "rustbpe",
+    "why": "Out: in person (M\u00fcnchen, Germany); you asked for online only.",
+    "hours": 10,
+    "pWin": 0.038,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (M\u00fcnchen, Germany); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "htcjproofaviationfutureschallenge",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30539",
+       "url": "https://htcj-aviation-futures.devpost.com/"
+      }
+     ],
+     "name": "HTCJ \u00d7 PROOF Aviation Futures Challenge",
+     "organizer": "hacktheconcretejungle ",
+     "online": false,
+     "location": "Boston Venture Week",
+     "closes": "2026-10-27",
+     "daysLeft": 1,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 127,
+     "themes": [
+      "Enterprise",
+      "Machine Learning/AI",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "trading",
+      "consumer",
+      "education",
+      "impact",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 52,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: in person (Boston Venture Week); you asked for online only.",
+    "hours": 8,
+    "pWin": 0.053,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Boston Venture Week); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "bdbixspacexsigrokathon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31811",
+       "url": "https://bdbi-x-spacexsi.devpost.com/"
+      }
+     ],
+     "name": "BDBI x SpaceXSI Grokathon",
+     "organizer": "SpaceXSI",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-02",
+     "daysLeft": 7,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 220,
+     "themes": [
+      "Machine Learning/AI",
+      "Open Ended",
+      "Social Good"
+     ],
+     "inviteOnly": true,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "dataviz",
+      "education",
+      "impact",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 52,
+    "verdict": "OUT",
+    "repo": "convnetjs",
+    "why": "Out: invite only.",
+    "hours": 10,
+    "pWin": 0.045,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "nextbytehacksv5",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31627",
+       "url": "https://next-byte-hacks-v5.devpost.com/"
+      }
+     ],
+     "name": "Next Byte Hacks V5",
+     "organizer": "Next Byte Hacks",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$100",
+     "prizeUsd": 100,
+     "registrations": 401,
+     "themes": [
+      "Beginner Friendly",
+      "Low/No Code",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 40,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Generic beginner-friendly, low-code themes with a tiny $100 prize and 401 registrants offer no leverage for Karpathy's agentic ML depth.",
+    "hours": 16,
+    "pWin": 0.023,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "mcaprojects",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "28603",
+       "url": "https://mca-2026-projects.devpost.com/"
+      }
+     ],
+     "name": "MCA 2026 projects",
+     "organizer": "Mizzou Computing Association",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-12-25",
+     "daysLeft": 60,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 30,
+     "themes": [
+      "Beginner Friendly"
+     ],
+     "inviteOnly": true,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: invite only.",
+    "hours": 28,
+    "pWin": 0.051,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "iccproyectodestacado",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31713",
+       "url": "https://icc-proyecto-destacado-2026.devpost.com/"
+      }
+     ],
+     "name": "ICC - Proyecto Destacado 2026",
+     "organizer": "CETYS",
+     "online": false,
+     "location": "Centro de ense\u00f1anza t\u00e9cnica y superior",
+     "closes": "2026-11-03",
+     "daysLeft": 8,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 4,
+     "themes": [
+      "Beginner Friendly"
+     ],
+     "inviteOnly": true,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: invite only.",
+    "hours": 28,
+    "pWin": 0.051,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "western13",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31536",
+       "url": "https://hack-western-13.devpost.com/"
+      }
+     ],
+     "name": "Hack Western 13",
+     "organizer": "Hack Western",
+     "online": false,
+     "location": "London, Canada",
+     "closes": "2026-11-22",
+     "daysLeft": 27,
+     "prizeText": "$CAD 0",
+     "prizeUsd": 0,
+     "registrations": 42,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (London, Canada); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.044,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (London, Canada); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "agentverse",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "4c311506be0e4a6e9299199c09efe290",
+       "url": "https://agentverse.devfolio.co"
+      }
+     ],
+     "name": "AgentVerse",
+     "organizer": "",
+     "online": false,
+     "location": "United Kingdom",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 97,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (United Kingdom); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.033,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (United Kingdom); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "leaninhacks80",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "8b69c2039a8d4b4085c3869b9b25d9c9",
+       "url": "https://lean-in-hacks-8.devfolio.co"
+      }
+     ],
+     "name": "Lean In Hacks 8.0",
+     "organizer": "",
+     "online": false,
+     "location": "In person",
+     "closes": "2026-11-02",
+     "daysLeft": 7,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 153,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (In person); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.028,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (In person); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hacknauts20",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "c4045a4afcb94f6f89cfb8c48dfdf892",
+       "url": "https://hacknauts26.devfolio.co"
+      }
+     ],
+     "name": "Hacknauts 2.0",
+     "organizer": "",
+     "online": false,
+     "location": "Ludhiana, India",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 1019,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (Ludhiana, India); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.017,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Ludhiana, India); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "big20",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "0dab52b6085941a6b366b2425310d8b8",
+       "url": "https://the-big-hack-2.devfolio.co"
+      }
+     ],
+     "name": "THE BIG HACK 2.0",
+     "organizer": "",
+     "online": false,
+     "location": "Soladevanahalli, India",
+     "closes": "2026-11-20",
+     "daysLeft": 25,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 54,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (Soladevanahalli, India); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.04,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Soladevanahalli, India); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "haxfinity",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "50e23a48e3964f43878279a3bf81339d",
+       "url": "https://haxfinity.devfolio.co"
+      }
+     ],
+     "name": "haxfinity",
+     "organizer": "",
+     "online": false,
+     "location": "Myladi, India",
+     "closes": "2026-12-13",
+     "daysLeft": 48,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 308,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (Myladi, India); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.023,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Myladi, India); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "genarrativeclash",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "40f5203a0b9842038b51dd3f73236690",
+       "url": "https://genarrative-clash.devfolio.co"
+      }
+     ],
+     "name": "GeNarrative Clash",
+     "organizer": "",
+     "online": false,
+     "location": "Kolkata, India",
+     "closes": "2026-11-21",
+     "daysLeft": 26,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 714,
+     "themes": [
+      "Design"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (Kolkata, India); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.019,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Kolkata, India); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "devnexus20",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "d957bc2099f945e99edfae0c2972bed9",
+       "url": "https://devnexus2.devfolio.co"
+      }
+     ],
+     "name": "DevNexus 2.0",
+     "organizer": "",
+     "online": false,
+     "location": "Kolkata, India",
+     "closes": "2026-11-28",
+     "daysLeft": 33,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 858,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (Kolkata, India); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.018,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Kolkata, India); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "withgdgs4",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "c163f2c5e7bb4c7bb7acbdb3c572bfa3",
+       "url": "https://hack-with-gdg-s4.devfolio.co"
+      }
+     ],
+     "name": "HACK WITH GDG S4",
+     "organizer": "",
+     "online": false,
+     "location": "KSR Kalvi Nagar, India",
+     "closes": "2027-01-24",
+     "daysLeft": 90,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 888,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (KSR Kalvi Nagar, India); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.018,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (KSR Kalvi Nagar, India); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "60",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "1c56ad13b8b0467ca2c3772566a0fdd2",
+       "url": "https://hack-1736.devfolio.co"
+      }
+     ],
+     "name": "HACK 6.0",
+     "organizer": "",
+     "online": false,
+     "location": "Hamirpur, India",
+     "closes": "2027-01-24",
+     "daysLeft": 90,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 30,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (Hamirpur, India); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.051,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Hamirpur, India); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "falleseseniordesign",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31484",
+       "url": "https://ese4500f26.devpost.com/"
+      }
+     ],
+     "name": "2026-2027 Fall ESE Senior Design",
+     "organizer": "university of pennsylvania",
+     "online": false,
+     "location": "Amy Gutman Hall",
+     "closes": "2026-12-07",
+     "daysLeft": 42,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 104,
+     "themes": [
+      "AR/VR",
+      "Fintech",
+      "Quantum"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "payments",
+      "hardware"
+     ],
+     "needs": [
+      "a VR headset"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 34,
+    "verdict": "OUT",
+    "repo": "llm-council",
+    "why": "Out: in person (Amy Gutman Hall); you asked for online only.",
+    "hours": 18,
+    "pWin": 0.024,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Amy Gutman Hall); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "launchpadhacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31773",
+       "url": "https://launchpad-hacks.devpost.com/"
+      }
+     ],
+     "name": "LaunchPad Hacks",
+     "organizer": "Hack4TodayOrg",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-20",
+     "daysLeft": 25,
+     "prizeText": "$300",
+     "prizeUsd": 300,
+     "registrations": 177,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 33,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Open-ended beginner theme with a $300 prize and 177 registrants provides no meaningful signal for Karpathy's core ML/agentic strengths.",
+    "hours": 16,
+    "pWin": 0.019,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "fusesocietyblueprint",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31555",
+       "url": "https://fuse-society-blueprint-2026.devpost.com/"
+      }
+     ],
+     "name": "FUSE Society Blueprint 2026",
+     "organizer": "Fuse Society",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$250",
+     "prizeUsd": 250,
+     "registrations": 27,
+     "themes": [
+      "Beginner Friendly"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 30,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Tiny $250 prize, only 27 registrants, and purely beginner-friendly theme give zero strategic value for this builder.",
+    "hours": 16,
+    "pWin": 0.03,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "atomiqqiskitfallfestatiem",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31680",
+       "url": "https://atomiq-hackathon-qff-26-iem.devpost.com/"
+      }
+     ],
+     "name": "The Atomiq Hackathon | Qiskit Fall Fest 2026 at IEM",
+     "organizer": "Institute of Engineering & Management",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-11",
+     "daysLeft": 16,
+     "prizeText": "\u20b9 10,000",
+     "prizeUsd": 105,
+     "registrations": 38,
+     "themes": [
+      "Quantum"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 27,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Quantum computing theme requires domain expertise Karpathy lacks; hardware skill is only 40 and no repo provides a quantum head start.",
+    "hours": 16,
+    "pWin": 0.022,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "renderjuiceblenderanimationandprogrammaticrenderingcontest",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31411",
+       "url": "https://programmatic-rendering-contest.devpost.com/"
+      }
+     ],
+     "name": "RenderJuice Blender Animation & Programmatic Rendering Contest",
+     "organizer": "RenderJuice",
+     "online": false,
+     "location": "New York, NY",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$1,500",
+     "prizeUsd": 1500,
+     "registrations": 58,
+     "themes": [
+      "Design",
+      "Music/Art",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (New York, NY); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (New York, NY); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "stupidideasottawaf26",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30425",
+       "url": "https://stupideas-ottawa-f26.devpost.com/"
+      }
+     ],
+     "name": "Stupid Ideas Hackathon (Ottawa F26)",
+     "organizer": "stupid ideas hackathon",
+     "online": false,
+     "location": "Bayview Yards",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "$CAD 1,252",
+     "prizeUsd": 1252,
+     "registrations": 80,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (Bayview Yards); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Bayview Yards); you asked for online only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hoyahacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "28304",
+       "url": "https://hoya-hacks-2027.devpost.com/"
+      }
+     ],
+     "name": "Hoya Hacks 2027",
+     "organizer": "Hoya Hacks",
+     "online": false,
+     "location": "Healey Family Student Center",
+     "closes": "2027-01-24",
+     "daysLeft": 90,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 25,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person (Healey Family Student Center); you asked for online only.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person (Healey Family Student Center); you asked for online only."
+    ],
+    "memory": []
+   }
+  ],
+  "note": "AWS Communication Developer Services (CDS) Agentic AI Partner Hackathon is the best use of your time at about $99/h, starting from nanochat. Meta VR Start Developer Competition 2026 has the biggest prize ($1.0M) but needs a VR headset, and nothing on the profile shows it.",
+  "log": [
+   {
+    "kind": "fx",
+    "text": "CodeSprint by Elite Coders: \u20b9 30,000 \u2192 $315 at today's rate"
+   },
+   {
+    "kind": "fx",
+    "text": "MineArena 1.0: \u20b9 75,000 \u2192 $788 at today's rate"
+   },
+   {
+    "kind": "fx",
+    "text": "HackWithAditya: \u20b9 500,000 \u2192 $5,254 at today's rate"
+   },
+   {
+    "kind": "source",
+    "text": "Re-read karpathy's GitHub in Zetaris: 54 repos, 0 wins on the README"
+   },
+   {
+    "kind": "skip",
+    "text": "Skipped Meta VR Start Developer Competition 2026 ($1.0M): needs a VR headset, and nothing on the profile shows it."
+   },
+   {
+    "kind": "skip",
+    "text": "Skipped SUSTAIN-A-THON 2.0 ($150,000): in person (Block 45, Sharda University); you asked for online only."
+   }
+  ],
+  "recommendations": [
+   "Register yourself at https://aws-cds-partner.devpost.com/ before 2026-10-28 and start from nanochat."
+  ],
+  "artifacts": [
+   {
+    "type": "trace",
+    "path": "logs/trace-run-2026-10-26-73ac30.jsonl"
+   },
+   {
+    "type": "calendar",
+    "path": "data/runtime/docket/karpathy.ics"
+   }
+  ],
+  "builder": {
+   "login": "karpathy",
+   "repos": [
+    {
+     "name": "nanochat",
+     "language": "Python",
+     "description": "The best ChatGPT that $100 can buy.",
+     "topics": [],
+     "stars": 58938,
+     "pushedAt": "2026-09-07T20:06:43Z",
+     "homepage": "",
+     "tags": [
+      "agents"
+     ]
+    },
+    {
+     "name": "micrograd",
+     "language": "Jupyter Notebook",
+     "description": "A tiny scalar-valued autograd engine and a neural net library on top of it with PyTorch-like API",
+     "topics": [],
+     "stars": 18062,
+     "pushedAt": "2026-08-03T04:04:05Z",
+     "homepage": "",
+     "tags": [
+      "fullstack",
+      "ml"
+     ]
+    },
+    {
+     "name": "karpathy.github.io",
+     "language": "CSS",
+     "description": "my blog",
+     "topics": [],
+     "stars": 1956,
+     "pushedAt": "2026-04-10T23:50:09Z",
+     "homepage": "",
+     "tags": [
+      "writing"
+     ]
+    },
+    {
+     "name": "autoresearch",
+     "language": "Python",
+     "description": "AI agents running research on single-GPU nanochat training automatically",
+     "topics": [],
+     "stars": 98601,
+     "pushedAt": "2026-03-26T00:07:37Z",
+     "homepage": "",
+     "tags": [
+      "agents",
+      "ml"
+     ]
+    },
+    {
+     "name": "jobs",
+     "language": "HTML",
+     "description": "A research tool for visually exploring Bureau of Labor Statistics Occupational Outlook Handbook data. This is not a report, a paper, or a serious economic publication \u2014 it is a development tool for exploring BLS data visually.",
+     "topics": [],
+     "stars": 2033,
+     "pushedAt": "2026-03-16T04:05:24Z",
+     "homepage": "",
+     "tags": [
+      "dataviz"
+     ]
+    },
+    {
+     "name": "rustbpe",
+     "language": "Rust",
+     "description": "The missing tiktoken training code",
+     "topics": [],
+     "stars": 524,
+     "pushedAt": "2026-01-03T22:24:54Z",
+     "homepage": "",
+     "tags": [
+      "onchain"
+     ]
+    },
+    {
+     "name": "hn-time-capsule",
+     "language": "Python",
+     "description": "Analyzing Hacker News discussions from a decade ago in hindsight with LLMs",
+     "topics": [],
+     "stars": 687,
+     "pushedAt": "2025-12-10T16:59:29Z",
+     "homepage": "",
+     "tags": [
+      "agents"
+     ]
+    },
+    {
+     "name": "llm-council",
+     "language": "Python",
+     "description": "LLM Council works together to answer your hardest questions",
+     "topics": [],
+     "stars": 25939,
+     "pushedAt": "2025-11-22T23:35:21Z",
+     "homepage": "",
+     "tags": [
+      "agents",
+      "hardware"
+     ]
+    },
+    {
+     "name": "reader3",
+     "language": "Python",
+     "description": "Quick illustration of how one can easily read books together with LLMs. It's great and I highly recommend it.",
+     "topics": [],
+     "stars": 3884,
+     "pushedAt": "2025-11-18T02:37:51Z",
+     "homepage": "",
+     "tags": [
+      "agents"
+     ]
+    },
+    {
+     "name": "nanoGPT",
+     "language": "Python",
+     "description": "The simplest, fastest repository for training/finetuning medium-sized GPTs.",
+     "topics": [],
+     "stars": 64083,
+     "pushedAt": "2025-11-12T19:52:34Z",
+     "homepage": "",
+     "tags": [
+      "agents"
+     ]
+    },
+    {
+     "name": "rendergit",
+     "language": "Python",
+     "description": "Render any git repo into a single static HTML page for humans or LLMs",
+     "topics": [],
+     "stars": 2482,
+     "pushedAt": "2025-08-21T19:12:34Z",
+     "homepage": "",
+     "tags": [
+      "agents"
+     ]
+    },
+    {
+     "name": "llm.c",
+     "language": "Cuda",
+     "description": "LLM training in simple, raw C/CUDA",
+     "topics": [],
+     "stars": 31219,
+     "pushedAt": "2025-06-26T17:03:40Z",
+     "homepage": "",
+     "tags": [
+      "agents"
+     ]
+    },
+    {
+     "name": "nn-zero-to-hero",
+     "language": "Jupyter Notebook",
+     "description": "Neural Networks: Zero to Hero",
+     "topics": [],
+     "stars": 24954,
+     "pushedAt": "2024-08-18T12:16:26Z",
+     "homepage": "",
+     "tags": [
+      "ml"
+     ]
+    },
+    {
+     "name": "minGPT",
+     "language": "Python",
+     "description": "A minimal PyTorch re-implementation of the OpenAI GPT (Generative Pretrained Transformer) training",
+     "topics": [],
+     "stars": 24975,
+     "pushedAt": "2024-08-15T04:09:40Z",
+     "homepage": "",
+     "tags": [
+      "agents"
+     ]
+    },
+    {
+     "name": "build-nanogpt",
+     "language": "Python",
+     "description": "Video+code lecture on building nanoGPT from scratch",
+     "topics": [],
+     "stars": 5601,
+     "pushedAt": "2024-08-13T12:28:52Z",
+     "homepage": "",
+     "tags": [
+      "agents"
+     ]
+    },
+    {
+     "name": "llama2.c",
+     "language": "C",
+     "description": "Inference Llama 2 in one file of pure C",
+     "topics": [],
+     "stars": 20210,
+     "pushedAt": "2024-08-06T09:44:40Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "LLM101n",
+     "language": "",
+     "description": "LLM101n: Let's build a Storyteller",
+     "topics": [],
+     "stars": 37476,
+     "pushedAt": "2024-08-01T01:20:33Z",
+     "homepage": "",
+     "tags": [
+      "agents",
+      "writing"
+     ]
+    },
+    {
+     "name": "minbpe",
+     "language": "Python",
+     "description": "Minimal, clean code for the Byte Pair Encoding (BPE) algorithm commonly used in LLM tokenization.",
+     "topics": [],
+     "stars": 10850,
+     "pushedAt": "2024-07-01T14:20:22Z",
+     "homepage": "",
+     "tags": [
+      "agents",
+      "onchain"
+     ]
+    },
+    {
+     "name": "makemore",
+     "language": "Python",
+     "description": "An autoregressive character-level language model for making more things",
+     "topics": [],
+     "stars": 4509,
+     "pushedAt": "2024-06-04T19:32:27Z",
+     "homepage": "",
+     "tags": [
+      "ml"
+     ]
+    },
+    {
+     "name": "calorie",
+     "language": "HTML",
+     "description": "nice and effective super simple calorie counter web app",
+     "topics": [],
+     "stars": 173,
+     "pushedAt": "2024-05-30T18:08:16Z",
+     "homepage": "",
+     "tags": [
+      "fullstack"
+     ]
+    },
+    {
+     "name": "lecun1989-repro",
+     "language": "Jupyter Notebook",
+     "description": "Reproducing Yann LeCun 1989 paper \"Backpropagation Applied to Handwritten Zip Code Recognition\", to my knowledge the earliest real-world application of a neural net trained with backpropagation.",
+     "topics": [],
+     "stars": 791,
+     "pushedAt": "2024-02-03T23:42:16Z",
+     "homepage": "",
+     "tags": [
+      "ml"
+     ]
+    },
+    {
+     "name": "ng-video-lecture",
+     "language": "Python",
+     "description": "",
+     "topics": [],
+     "stars": 5059,
+     "pushedAt": "2024-01-31T13:43:36Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "char-rnn",
+     "language": "Lua",
+     "description": "Multi-layer Recurrent Neural Networks (LSTM, GRU, RNN) for character-level language models in Torch",
+     "topics": [],
+     "stars": 12128,
+     "pushedAt": "2023-10-24T17:15:27Z",
+     "homepage": "",
+     "tags": [
+      "ml"
+     ]
+    },
+    {
+     "name": "notpygamejs",
+     "language": "JavaScript",
+     "description": "Game making library for using Canvas element",
+     "topics": [],
+     "stars": 116,
+     "pushedAt": "2023-10-17T14:11:25Z",
+     "homepage": "",
+     "tags": [
+      "games"
+     ]
+    },
+    {
+     "name": "researchpooler",
+     "language": "Python",
+     "description": "Automating research publications discovery and analysis. For example, ever wish your computer could automatically open papers that are most similar to a paper at an arbitrary url? How about finding all papers that report results on some dataset? Let's re-imagine literature review.",
+     "topics": [],
+     "stars": 516,
+     "pushedAt": "2023-09-01T20:21:55Z",
+     "homepage": "https://sites.google.com/site/researchpooler/",
+     "tags": [
+      "dataviz"
+     ]
+    },
+    {
+     "name": "karpathy",
+     "language": "",
+     "description": "root repo",
+     "topics": [],
+     "stars": 191,
+     "pushedAt": "2023-07-25T02:26:54Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "arxiv-sanity-lite",
+     "language": "Python",
+     "description": "arxiv-sanity lite: tag arxiv papers of interest get recommendations of similar papers in a nice UI using SVMs over tfidf feature vectors based on paper abstracts.",
+     "topics": [
+      "arxiv",
+      "deep-learning",
+      "flask",
+      "machine-learning"
+     ],
+     "stars": 1710,
+     "pushedAt": "2023-06-19T16:23:02Z",
+     "homepage": "https://arxiv-sanity-lite.com",
+     "tags": [
+      "education"
+     ]
+    },
+    {
+     "name": "randomfun",
+     "language": "Jupyter Notebook",
+     "description": "Notebooks and various random fun",
+     "topics": [],
+     "stars": 1186,
+     "pushedAt": "2023-04-18T17:49:08Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "convnetjs",
+     "language": "JavaScript",
+     "description": "Deep Learning in Javascript. Train Convolutional Neural Networks (or ordinary ones) in your browser.",
+     "topics": [],
+     "stars": 11214,
+     "pushedAt": "2023-01-07T21:33:23Z",
+     "homepage": "",
+     "tags": [
+      "education",
+      "ml"
+     ]
+    },
+    {
+     "name": "arxiv-sanity-preserver",
+     "language": "Python",
+     "description": "Web interface for browsing, search and filtering recent arxiv submissions",
+     "topics": [],
+     "stars": 5802,
+     "pushedAt": "2021-11-27T22:20:55Z",
+     "homepage": "http://www.arxiv-sanity.com/",
+     "tags": [
+      "fullstack"
+     ]
+    },
+    {
+     "name": "deep-vector-quantization",
+     "language": "Jupyter Notebook",
+     "description": "VQVAEs, GumbelSoftmaxes and friends",
+     "topics": [],
+     "stars": 656,
+     "pushedAt": "2021-11-20T19:01:41Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "cryptos",
+     "language": "Jupyter Notebook",
+     "description": "Pure Python from-scratch zero-dependency implementation of Bitcoin for educational purposes",
+     "topics": [
+      "bitcoin",
+      "crypto",
+      "cryptocurrency",
+      "elliptic-curves"
+     ],
+     "stars": 1934,
+     "pushedAt": "2021-06-21T04:53:12Z",
+     "homepage": "",
+     "tags": [
+      "onchain",
+      "education"
+     ]
+    },
+    {
+     "name": "neuraltalk",
+     "language": "Python",
+     "description": "NeuralTalk is a Python+numpy project for learning Multimodal Recurrent Neural Networks that describe images with sentences.",
+     "topics": [],
+     "stars": 5512,
+     "pushedAt": "2020-12-22T22:26:36Z",
+     "homepage": "",
+     "tags": [
+      "education",
+      "ml"
+     ]
+    },
+    {
+     "name": "ulogme",
+     "language": "Python",
+     "description": "Automatically collect and visualize usage statistics in Ubuntu/OSX environments.",
+     "topics": [],
+     "stars": 1179,
+     "pushedAt": "2020-09-17T23:08:59Z",
+     "homepage": "",
+     "tags": [
+      "dataviz"
+     ]
+    },
+    {
+     "name": "covid-sanity",
+     "language": "Python",
+     "description": "Aspires to help the influx of bioRxiv / medRxiv papers on COVID-19",
+     "topics": [],
+     "stars": 396,
+     "pushedAt": "2020-05-03T17:51:52Z",
+     "homepage": "http://biomed-sanity.com/",
+     "tags": [
+      "bio"
+     ]
+    },
+    {
+     "name": "gitstats",
+     "language": "HTML",
+     "description": "A lightweight/pretty visualizer for recent work on a git code base in multiple branches. Helps stay up to date with teams working on one git repo in many branches.",
+     "topics": [],
+     "stars": 150,
+     "pushedAt": "2020-04-02T02:16:46Z",
+     "homepage": "",
+     "tags": [
+      "dataviz"
+     ]
+    },
+    {
+     "name": "pytorch-normalizing-flows",
+     "language": "Jupyter Notebook",
+     "description": "Normalizing flows in PyTorch. Current intended use is education not production.",
+     "topics": [],
+     "stars": 921,
+     "pushedAt": "2020-01-27T18:37:10Z",
+     "homepage": "",
+     "tags": [
+      "education"
+     ]
+    },
+    {
+     "name": "tsnejs",
+     "language": "JavaScript",
+     "description": "Implementation of t-SNE visualization algorithm in Javascript.",
+     "topics": [],
+     "stars": 912,
+     "pushedAt": "2019-03-15T22:30:16Z",
+     "homepage": "",
+     "tags": [
+      "dataviz"
+     ]
+    },
+    {
+     "name": "reinforcejs",
+     "language": "HTML",
+     "description": "Reinforcement Learning Agents in Javascript (Dynamic Programming, Temporal Difference, Deep Q-Learning, Stochastic/Deterministic Policy Gradients)",
+     "topics": [],
+     "stars": 1490,
+     "pushedAt": "2019-02-18T20:11:56Z",
+     "homepage": "",
+     "tags": [
+      "agents",
+      "education"
+     ]
+    },
+    {
+     "name": "pytorch-made",
+     "language": "Python",
+     "description": "MADE (Masked Autoencoder Density Estimation) implementation in PyTorch",
+     "topics": [],
+     "stars": 596,
+     "pushedAt": "2018-12-08T16:36:26Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "svmjs",
+     "language": "JavaScript",
+     "description": "Support Vector Machine in Javascript (SMO algorithm, supports arbitrary kernels) + GUI demo",
+     "topics": [],
+     "stars": 711,
+     "pushedAt": "2018-04-14T01:03:04Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "find-birds",
+     "language": "Python",
+     "description": "Find people you should follow on Twitter based on who the people you follow follow",
+     "topics": [],
+     "stars": 375,
+     "pushedAt": "2018-04-01T15:32:33Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "neuraltalk2",
+     "language": "Jupyter Notebook",
+     "description": "Efficient Image Captioning code in Torch, runs on GPU",
+     "topics": [],
+     "stars": 5605,
+     "pushedAt": "2017-11-07T05:59:20Z",
+     "homepage": "",
+     "tags": [
+      "ml"
+     ]
+    },
+    {
+     "name": "tf-agent",
+     "language": "Python",
+     "description": "tensorflow reinforcement learning agents for OpenAI gym environments",
+     "topics": [],
+     "stars": 148,
+     "pushedAt": "2017-07-21T23:23:54Z",
+     "homepage": "",
+     "tags": [
+      "agents",
+      "education"
+     ]
+    },
+    {
+     "name": "nipspreview",
+     "language": "Python",
+     "description": "Scripts that generate .html to more easily see NIPS papers",
+     "topics": [],
+     "stars": 188,
+     "pushedAt": "2017-06-21T18:25:08Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "paper-notes",
+     "language": "",
+     "description": "Random notes on papers, likely a short-term repo.",
+     "topics": [],
+     "stars": 713,
+     "pushedAt": "2017-04-17T19:19:04Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "recurrentjs",
+     "language": "HTML",
+     "description": "Deep Recurrent Neural Networks and LSTMs in Javascript. More generally also arbitrary expression graphs with automatic differentiation.",
+     "topics": [],
+     "stars": 989,
+     "pushedAt": "2016-11-04T15:42:55Z",
+     "homepage": "",
+     "tags": [
+      "ml"
+     ]
+    },
+    {
+     "name": "EigenLibSVM",
+     "language": "C++",
+     "description": "A wrapper for LibSVM that lets you train SVM's directly on Eigen library matrices in C++",
+     "topics": [],
+     "stars": 112,
+     "pushedAt": "2016-03-29T13:29:21Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "scholaroctopus",
+     "language": "",
+     "description": "A set of tools/pages that help explore academic literature",
+     "topics": [],
+     "stars": 93,
+     "pushedAt": "2014-08-11T22:20:24Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "Random-Forest-Matlab",
+     "language": "Matlab",
+     "description": "A Random Forest implementation for MATLAB. Supports arbitrary weak learners that you can define.",
+     "topics": [],
+     "stars": 231,
+     "pushedAt": "2014-02-27T22:56:10Z",
+     "homepage": "",
+     "tags": [
+      "onchain",
+      "education"
+     ]
+    },
+    {
+     "name": "researchlei",
+     "language": "Python",
+     "description": "An Academic Papers Management and Discovery System",
+     "topics": [],
+     "stars": 284,
+     "pushedAt": "2013-05-03T19:26:12Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "twoolpy",
+     "language": "Python",
+     "description": "useful scripts to work with Twitter + Python. Requires the tweepy library.",
+     "topics": [],
+     "stars": 93,
+     "pushedAt": "2012-11-29T01:23:07Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "forestjs",
+     "language": "JavaScript",
+     "description": "Random Forest implementation for JavaScript. Supports arbitrary weak learners. Includes interactive demo.",
+     "topics": [],
+     "stars": 343,
+     "pushedAt": "2012-10-04T11:01:00Z",
+     "homepage": "",
+     "tags": [
+      "education"
+     ]
+    },
+    {
+     "name": "MatlabWrapper",
+     "language": "C++",
+     "description": "C++ convenience class to communicate with a Matlab instance. Send matrices back and forth, execute arbitrary Matlab commands, or drop into interactive Matlab session right in the middle of your C++ code.",
+     "topics": [],
+     "stars": 90,
+     "pushedAt": "2012-08-27T08:36:58Z",
+     "homepage": "",
+     "tags": []
+    }
+   ],
+   "languages": [
+    [
+     "Python",
+     24
+    ],
+    [
+     "Jupyter Notebook",
+     8
+    ],
+    [
+     "JavaScript",
+     5
+    ],
+    [
+     "HTML",
+     5
+    ],
+    [
+     "C++",
+     2
+    ],
+    [
+     "Cuda",
+     1
+    ],
+    [
+     "Rust",
+     1
+    ],
+    [
+     "Matlab",
+     1
+    ],
+    [
+     "C",
+     1
+    ],
+    [
+     "CSS",
+     1
+    ],
+    [
+     "Lua",
+     1
+    ]
+   ],
+   "skills": [
+    [
+     "agents",
+     95
+    ],
+    [
+     "ml",
+     76
+    ],
+    [
+     "education",
+     69
+    ],
+    [
+     "dataviz",
+     55
+    ],
+    [
+     "onchain",
+     51
+    ],
+    [
+     "fullstack",
+     49
+    ],
+    [
+     "writing",
+     44
+    ],
+    [
+     "hardware",
+     40
+    ],
+    [
+     "games",
+     39
+    ],
+    [
+     "bio",
+     39
+    ],
+    [
+     "trading",
+     10
+    ],
+    [
+     "payments",
+     10
+    ],
+    [
+     "consumer",
+     10
+    ],
+    [
+     "devtools",
+     10
+    ],
+    [
+     "privacy",
+     10
+    ],
+    [
+     "impact",
+     10
+    ]
+   ],
+   "wins": [],
+   "summary": "Karpathy is a world-class ML systems builder with deep agent and foundation model expertise (agents 95, ml 76). He ships production-grade inference engines (nanochat, micrograd) and education tools (nn-zero-to-hero, LLM101n), but has no competition wins. His strengths lie in agentic research pipelines and low-level training code; he should target hackathons with agentic AI or ML education themes offering substantial prizes, and avoid generic beginner-friendly events with low-code requirements.",
+   "evidence": [
+    "q_f124415505ce6088",
+    "q_445223e4102340a7",
+    "q_78ea94fe8e92a2a5"
+   ],
+   "record": []
+  },
+  "plan": {
+   "hours": 20,
+   "used": 12,
+   "picks": [
+    "awscommunicationdeveloperservicescdsagenticaipartner"
+   ],
+   "expectedUsd": 1188
+  },
+  "sources": [
+   {
+    "source": "Devfolio",
+    "state": "open",
+    "n": 12,
+    "online": 1
+   },
+   {
+    "source": "Devpost",
+    "state": "open",
+    "n": 51,
+    "online": 40
+   },
+   {
+    "source": "Devpost",
+    "state": "upcoming",
+    "n": 40,
+    "online": 21
+   }
+  ],
+  "docket": {
+   "login": "karpathy",
+   "updated": "2026-10-26T11:00:00.827Z",
+   "entries": [
+    {
+     "key": "lifeaftercode",
+     "name": "Life After Code",
+     "url": "https://gitlab-transcend.devpost.com/",
+     "closes": "2026-10-27",
+     "prizeUsd": 45000,
+     "status": "watch",
+     "fit": 51,
+     "evPerHour": 20,
+     "hours": 16,
+     "repo": null,
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "awscommunicationdeveloperservicescdsagenticaipartner",
+     "name": "AWS Communication Developer Services (CDS) Agentic AI Partner Hackathon",
+     "url": "https://aws-cds-partner.devpost.com/",
+     "closes": "2026-10-28",
+     "prizeUsd": 40000,
+     "status": "shortlist",
+     "fit": 93,
+     "evPerHour": 99,
+     "hours": 12,
+     "repo": "nanochat",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "qlooagentic",
+     "name": "Qloo Agentic Hackathon",
+     "url": "https://qloo.devpost.com/",
+     "closes": "2026-10-30",
+     "prizeUsd": 25000,
+     "status": "watch",
+     "fit": 91,
+     "evPerHour": 43,
+     "hours": 14,
+     "repo": "autoresearch",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "codexxtwitchcon",
+     "name": "Codex x TwitchCon Hackathon",
+     "url": "https://twitchcon-codex.devpost.com/",
+     "closes": "2026-11-02",
+     "prizeUsd": 25000,
+     "status": "watch",
+     "fit": 71,
+     "evPerHour": 25,
+     "hours": 18,
+     "repo": "notpygamejs",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "kiroween",
+     "name": "Kiroween 2026",
+     "url": "https://kiroween.devpost.com/",
+     "closes": "2026-12-04",
+     "prizeUsd": 100000,
+     "status": "watch",
+     "fit": 78,
+     "evPerHour": 123,
+     "hours": 16,
+     "repo": "LLM101n",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "cosmohacks",
+     "name": "Cosmo Hacks 2026",
+     "url": "https://cosmohacks.devpost.com/",
+     "closes": "2027-01-18",
+     "prizeUsd": 196955,
+     "status": "watch",
+     "fit": 76,
+     "evPerHour": 257,
+     "hours": 18,
+     "repo": "nn-zero-to-hero",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    }
+   ]
+  }
+ },
+ "contract": {
+  "contractId": "9c6e6b8c-baba-4726-b9af-0e3dbabf6c41",
+  "intent": {
+   "primary": "scout_builder",
+   "parameters": {
+    "text": "Which hackathons should I enter? github.com/karpathy, 20 hours",
+    "intent": "scout_builder",
+    "login": "karpathy",
+    "hours": 20,
+    "onlineOnly": true,
+    "route": "act",
+    "notes": []
+   },
+   "confidence": 1,
+   "alternates": []
+  },
+  "risk": {
+   "level": "low",
+   "flags": [],
+   "redactions": []
+  },
+  "toolPlan": [
+   {
+    "capability": "data.sql",
+    "tool": "zetaris.sql"
+   },
+   {
+    "capability": "source.register",
+    "tool": "zetaris.ddl"
+   },
+   {
+    "capability": "memory.recall",
+    "tool": "hmem.query"
+   },
+   {
+    "capability": "world.case",
+    "tool": "worldmodel.case"
+   },
+   {
+    "capability": "docket.write",
+    "tool": "docket.shortlist"
+   },
+   {
+    "capability": "calendar.export",
+    "tool": "docket.ics"
+   },
+   {
+    "capability": "memory.store",
+    "tool": "hmem.add"
+   }
+  ],
+  "expiresAt": "2026-10-26T11:04:55.509Z",
+  "registryVersion": 1,
+  "authority": {
+   "maxPlanHours": 80,
+   "writesDocket": true,
+   "exportsCalendar": true,
+   "registers": false,
+   "submits": false,
+   "messages": false
+  },
+  "lineage": [
+   "c3682f1c-5f60-47d2-acf7-14eae45b4a63",
+   "c4f81f34-228c-4c09-9e34-2cbc3862b53a",
+   "f3ead839-1436-4392-8608-41da605cdf40",
+   "d4611917-f0fb-4bd1-b3ce-8a53f4dc18e7",
+   "9c6e6b8c-baba-4726-b9af-0e3dbabf6c41"
+  ]
+ }
+}

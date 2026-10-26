@@ -1,0 +1,12 @@
+{
+ "sql": "SELECT COUNT(*) AS n FROM scout.repos_sindresorhus WHERE is_fork = 0",
+ "columns": [
+  "n"
+ ],
+ "rows": [
+  [
+   "97"
+  ]
+ ],
+ "recordedAt": "2026-10-26T11:00:16.486Z"
+}

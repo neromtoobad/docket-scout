@@ -1,0 +1,888 @@
+{
+ "sql": "SELECT name, language, description, topics, stars, pushed_at, homepage FROM scout.repos_sindresorhus WHERE is_fork = 0 ORDER BY pushed_at DESC",
+ "columns": [
+  "name",
+  "language",
+  "description",
+  "topics",
+  "stars",
+  "pushed_at",
+  "homepage"
+ ],
+ "rows": [
+  [
+   "sindresorhus.github.com",
+   "JavaScript",
+   "Personal website of Sindre Sorhus",
+   "personal-website,sindresorhus,unicorns,website",
+   "385",
+   "2026-10-26T09:24:35Z",
+   "http://sindresorhus.com/"
+  ],
+  [
+   "eslint-plugin-unicorn",
+   "JavaScript",
+   "More than 300 powerful ESLint rules",
+   "eslint,eslint-config,eslint-plugin,eslint-rules,javascript,linting-rules,nodejs,unicorns,xo",
+   "5283",
+   "2026-10-25T19:22:25Z",
+   ""
+  ],
+  [
+   "file-type",
+   "JavaScript",
+   "Detect the file type of a file, stream, or data",
+   "buffer,detect,file,file-types,javascript,magic,magic-numbers,nodejs,uint8array",
+   "4339",
+   "2026-10-25T11:31:57Z",
+   ""
+  ],
+  [
+   "tsconfig",
+   null,
+   "Shared TypeScript config for my projects",
+   "config,npm-package,tsconfig,typescript",
+   "377",
+   "2026-10-25T08:10:47Z",
+   ""
+  ],
+  [
+   "type-fest",
+   "TypeScript",
+   "A collection of essential TypeScript types",
+   "npm-package,types,typescript,typescript-definitions,utilities",
+   "17469",
+   "2026-10-25T05:05:11Z",
+   ""
+  ],
+  [
+   "np",
+   "JavaScript",
+   "A better `npm publish`",
+   "cli,cli-app,javascript,nodejs,npm,npm-package,npm-publish,publish,yarn",
+   "7713",
+   "2026-10-24T13:44:01Z",
+   null
+  ],
+  [
+   "eslint-cssicorn",
+   "JavaScript",
+   "Powerful ESLint rules for CSS",
+   "",
+   "81",
+   "2026-10-23T15:12:07Z",
+   null
+  ],
+  [
+   "execa",
+   "JavaScript",
+   "Process execution for humans",
+   "binary,child-process,exec,execute,javascript,nodejs,shell,spawn,spawned-processes,streams",
+   "7626",
+   "2026-10-23T09:14:17Z",
+   ""
+  ],
+  [
+   "query-string",
+   "JavaScript",
+   "Parse and stringify URL query strings",
+   "npm-package,parse,query-string,stringify,url,urlsearchparams",
+   "6903",
+   "2026-10-21T12:23:52Z",
+   ""
+  ],
+  [
+   "emittery",
+   "JavaScript",
+   "Simple and modern async event emitter",
+   "async,emitter,event-emitter,event-listener,javascript,nodejs,npm-package,promise",
+   "2077",
+   "2026-10-20T13:57:00Z",
+   null
+  ],
+  [
+   "unlimited-timeout",
+   "JavaScript",
+   "setTimeout and setInterval that work with delays longer than 24.8 days",
+   "",
+   "47",
+   "2026-10-17T14:32:27Z",
+   ""
+  ],
+  [
+   "p-queue",
+   "TypeScript",
+   "Promise queue with concurrency control",
+   "async-functions,async-queue,node-module,npm-package,promise,promise-queue,queue,queue-data-stucture",
+   "4299",
+   "2026-10-16T21:25:44Z",
+   null
+  ],
+  [
+   "gifkit",
+   "JavaScript",
+   "Encode, decode, and render GIF files",
+   "",
+   "34",
+   "2026-10-15T18:27:08Z",
+   null
+  ],
+  [
+   "nz",
+   "JavaScript",
+   "Zero-config type tests for packages with hand-written declaration files",
+   "",
+   "8",
+   "2026-10-15T13:51:05Z",
+   null
+  ],
+  [
+   "p-wait-for",
+   "JavaScript",
+   "Wait for a condition to be true",
+   "",
+   "169",
+   "2026-10-15T13:40:09Z",
+   null
+  ],
+  [
+   "debounce-fn",
+   "JavaScript",
+   "Debounce a function",
+   "",
+   "133",
+   "2026-10-15T13:08:19Z",
+   null
+  ],
+  [
+   "p-memoize",
+   "TypeScript",
+   "Memoize promise-returning & async functions",
+   "",
+   "453",
+   "2026-10-15T12:40:31Z",
+   null
+  ],
+  [
+   "p-debounce",
+   "JavaScript",
+   "Debounce promise-returning & async functions",
+   "",
+   "239",
+   "2026-10-15T12:37:20Z",
+   null
+  ],
+  [
+   "p-timeout",
+   "JavaScript",
+   "Timeout a promise after a specified amount of time",
+   "",
+   "308",
+   "2026-10-15T12:09:25Z",
+   null
+  ],
+  [
+   "fast-cli",
+   "TypeScript",
+   "Test your download and upload speed using fast.com",
+   "cli-app,command-line-tool,download-speed,nodejs,npm-package,speed-test",
+   "2892",
+   "2026-10-14T21:45:57Z",
+   ""
+  ],
+  [
+   "normalize-url",
+   "JavaScript",
+   "Normalize a URL",
+   "compare-urls,npm-package,sanitize-url,url-normalization",
+   "883",
+   "2026-10-14T17:24:37Z",
+   null
+  ],
+  [
+   "aggregate-error",
+   "JavaScript",
+   "Create an error from multiple errors",
+   "",
+   "248",
+   "2026-10-14T16:55:40Z",
+   null
+  ],
+  [
+   "humanize-string",
+   "JavaScript",
+   "Convert a camelized/dasherized/underscored string into a humanized one: fooBar-Baz_Faz → Foo bar baz faz",
+   "",
+   "112",
+   "2026-10-14T13:44:22Z",
+   ""
+  ],
+  [
+   "pretty-ms",
+   "JavaScript",
+   "Convert milliseconds to a human readable string: `1337000000` → `15d 11h 23m 20s`",
+   "humanize,milliseconds,npm-package",
+   "1218",
+   "2026-10-14T05:32:22Z",
+   ""
+  ],
+  [
+   "decamelize",
+   "JavaScript",
+   "Convert a camelized string into a lowercased one with a custom separator: unicornRainbow → unicorn_rainbow",
+   "",
+   "245",
+   "2026-10-13T19:07:34Z",
+   ""
+  ],
+  [
+   "map-obj",
+   "JavaScript",
+   "Map object keys and values into a new object",
+   "",
+   "218",
+   "2026-10-13T12:21:46Z",
+   null
+  ],
+  [
+   "clone-regexp",
+   "JavaScript",
+   "Clone and modify a RegExp instance",
+   "",
+   "24",
+   "2026-10-13T06:38:18Z",
+   null
+  ],
+  [
+   "got",
+   "TypeScript",
+   "🌐 Human-friendly and powerful HTTP request library for Node.js",
+   "http,http-client,http-request,https,nodejs,npm-package",
+   "14953",
+   "2026-10-13T06:34:45Z",
+   ""
+  ],
+  [
+   "eslint-package-json",
+   "JavaScript",
+   "Powerful ESLint rules for package.json",
+   "",
+   "82",
+   "2026-10-12T20:00:27Z",
+   null
+  ],
+  [
+   "electron-store",
+   "JavaScript",
+   "Simple data persistence for your Electron app or module - Save and load user preferences, app state, cache, etc",
+   "config,data-persistence,electron,electron-module,npm-package,preferences,storage,user-preferences",
+   "5029",
+   "2026-10-12T19:53:29Z",
+   ""
+  ],
+  [
+   "conf",
+   "TypeScript",
+   "Simple config handling for your app or module",
+   "command-line,config,configuration-management,json,json-schema,node-module,npm-package,preferences,storage",
+   "1351",
+   "2026-10-12T17:27:44Z",
+   ""
+  ],
+  [
+   "quickgpt-meta",
+   null,
+   null,
+   "",
+   "17",
+   "2026-10-12T13:58:53Z",
+   "https://sindresorhus.com/quickgpt"
+  ],
+  [
+   "camelcase",
+   "JavaScript",
+   "Convert a dash/dot/underscore/space separated string to camelCase: foo-bar → fooBar",
+   "",
+   "699",
+   "2026-10-12T09:59:16Z",
+   ""
+  ],
+  [
+   "p-map",
+   "JavaScript",
+   "Map over promises concurrently",
+   "async,async-await,async-functions,await,concurrency,iteration,javascript,mapper,nodejs,parallel,promise,promises",
+   "1518",
+   "2026-10-11T15:25:09Z",
+   null
+  ],
+  [
+   "p-event",
+   "JavaScript",
+   "Promisify an event by waiting for it to be emitted",
+   "",
+   "450",
+   "2026-10-11T15:18:10Z",
+   null
+  ],
+  [
+   "DockProgress",
+   "Swift",
+   "Show progress in your app's Dock icon",
+   "dock,icon,macos,progress-bar,progress-circle,swift,swift-package",
+   "1357",
+   "2026-10-10T09:17:51Z",
+   "https://swiftpackageindex.com/sindresorhus/DockProgress/documentation/dockprogress/dockprogress"
+  ],
+  [
+   "ky",
+   "TypeScript",
+   "🌳 Tiny & elegant JavaScript HTTP client based on the Fetch API",
+   "fetch,http-client,http-request,javascript,js,json,npm-package,request,rest,tiny,whatwg-fetch",
+   "17138",
+   "2026-10-09T06:29:49Z",
+   ""
+  ],
+  [
+   "del-cli",
+   "JavaScript",
+   "Delete files and directories",
+   "",
+   "333",
+   "2026-10-09T03:58:55Z",
+   ""
+  ],
+  [
+   "del",
+   "JavaScript",
+   "Delete files and directories",
+   "",
+   "1345",
+   "2026-10-08T17:34:43Z",
+   ""
+  ],
+  [
+   "electron-better-ipc",
+   "JavaScript",
+   "Simplified IPC communication for Electron apps",
+   "electron,electron-module,ipc,ipc-message,nodejs,npm-package",
+   "747",
+   "2026-10-07T20:06:36Z",
+   null
+  ],
+  [
+   "filename-reserved-regex",
+   "JavaScript",
+   "Regular expression for matching reserved filename characters",
+   "",
+   "53",
+   "2026-10-07T18:02:48Z",
+   null
+  ],
+  [
+   "electron-reloader",
+   "JavaScript",
+   "Simple auto-reloading for Electron apps during development",
+   "electron,electron-module,livereload,nodejs,npm-package",
+   "586",
+   "2026-10-07T16:09:48Z",
+   null
+  ],
+  [
+   "electron-timber",
+   "JavaScript",
+   "Pretty logger for Electron apps",
+   "electron,electron-module,logger,logging,logging-library,nodejs,npm-package",
+   "423",
+   "2026-10-07T16:02:43Z",
+   null
+  ],
+  [
+   "pure",
+   "Shell",
+   "Pretty, minimal and fast ZSH prompt",
+   "git,minimal,prompt,pure,shell,shell-prompt,shell-theme,terminal,theme,zsh",
+   "14455",
+   "2026-10-07T13:58:39Z",
+   ""
+  ],
+  [
+   "pid-port",
+   "JavaScript",
+   "Get the ID of the process that uses a certain port",
+   "",
+   "150",
+   "2026-10-06T08:44:36Z",
+   ""
+  ],
+  [
+   "eslint-node-test",
+   "JavaScript",
+   "ESLint rules for the Node.js built-in test runner (`node:test`)",
+   "",
+   "66",
+   "2026-10-03T10:22:39Z",
+   null
+  ],
+  [
+   "globals",
+   "JavaScript",
+   "Global identifiers from different JavaScript environments",
+   "",
+   "614",
+   "2026-10-01T03:56:16Z",
+   null
+  ],
+  [
+   "wsl-utils",
+   "JavaScript",
+   "Utilities for working with Windows Subsystem for Linux (WSL)",
+   "",
+   "75",
+   "2026-09-30T05:08:04Z",
+   null
+  ],
+  [
+   "serialize-error",
+   "JavaScript",
+   "Serialize/deserialize an error into a plain object",
+   "",
+   "607",
+   "2026-09-28T06:19:45Z",
+   ""
+  ],
+  [
+   "supercharge-meta",
+   null,
+   null,
+   "",
+   "39",
+   "2026-09-28T04:32:49Z",
+   "https://sindresorhus.com/supercharge"
+  ],
+  [
+   "leven",
+   "JavaScript",
+   "Measure the difference between two strings with the fastest JS implementation of the Levenshtein distance algorithm",
+   "",
+   "735",
+   "2026-09-26T23:42:09Z",
+   ""
+  ],
+  [
+   "matcher",
+   "JavaScript",
+   "Simple wildcard matching",
+   "",
+   "542",
+   "2026-09-26T21:22:41Z",
+   null
+  ],
+  [
+   "uint8array-extras",
+   "JavaScript",
+   "Useful utilities for working with Uint8Array (and Buffer)",
+   "",
+   "284",
+   "2026-09-26T17:13:36Z",
+   null
+  ],
+  [
+   "finder-alias",
+   "JavaScript",
+   "Resolve and create macOS Finder aliases",
+   "",
+   "30",
+   "2026-09-26T13:01:12Z",
+   null
+  ],
+  [
+   "pretty-bytes",
+   "JavaScript",
+   "Convert bytes to a human readable string: 1337 → 1.34 kB",
+   "",
+   "1319",
+   "2026-09-26T11:13:43Z",
+   null
+  ],
+  [
+   "make-synchronous",
+   "JavaScript",
+   "Make an asynchronous function synchronous",
+   "",
+   "332",
+   "2026-09-26T10:19:37Z",
+   ""
+  ],
+  [
+   "sublime-autoprefixer",
+   "Python",
+   "Sublime plugin to prefix your CSS",
+   "",
+   "664",
+   "2026-09-26T06:35:32Z",
+   ""
+  ],
+  [
+   "make-asynchronous",
+   "JavaScript",
+   "Make a synchronous function asynchronous by running it in a worker",
+   "",
+   "260",
+   "2026-09-25T19:27:26Z",
+   null
+  ],
+  [
+   "import-fresh",
+   "JavaScript",
+   "Import a module while bypassing the cache",
+   "",
+   "283",
+   "2026-09-25T18:25:09Z",
+   ""
+  ],
+  [
+   "bundle-name",
+   "JavaScript",
+   "Get bundle name from a bundle identifier (macOS): com.apple.Safari → Safari",
+   "",
+   "11",
+   "2026-09-25T18:07:23Z",
+   ""
+  ],
+  [
+   "string-width",
+   "JavaScript",
+   "Get the visual width of a string - the number of columns required to display it",
+   "",
+   "530",
+   "2026-09-24T14:27:39Z",
+   null
+  ],
+  [
+   "unicorn-magic",
+   "JavaScript",
+   "Some useful utilities I often need",
+   "",
+   "56",
+   "2026-09-24T02:54:43Z",
+   null
+  ],
+  [
+   "is-installed-globally",
+   "JavaScript",
+   "Check if your package was installed globally",
+   "",
+   "72",
+   "2026-09-22T04:14:30Z",
+   null
+  ],
+  [
+   "lcid",
+   "JavaScript",
+   "Mapping between standard locale identifiers and Windows locale identifiers (LCID)",
+   "",
+   "39",
+   "2026-09-22T03:10:20Z",
+   null
+  ],
+  [
+   "boxen",
+   "JavaScript",
+   "Create boxes in the terminal",
+   "",
+   "1676",
+   "2026-09-21T21:56:04Z",
+   null
+  ],
+  [
+   "DSStore",
+   "Swift",
+   "Parse and write macOS .DS_Store files from Swift",
+   "macos,parser,swift,swift-package,swift-package-manager",
+   "79",
+   "2026-09-20T19:33:04Z",
+   "https://swiftpackageindex.com/sindresorhus/DSStore/documentation/dsstore/dsstore"
+  ],
+  [
+   "decamelize-keys",
+   "JavaScript",
+   "Convert object keys from camel case",
+   "",
+   "57",
+   "2026-09-20T15:45:04Z",
+   null
+  ],
+  [
+   "camelcase-keys",
+   "TypeScript",
+   "Convert object keys to camel case",
+   "",
+   "758",
+   "2026-09-20T15:42:15Z",
+   ""
+  ],
+  [
+   "electron-unhandled",
+   "JavaScript",
+   "Catch unhandled errors and promise rejections in your Electron app",
+   "electron,electron-module",
+   "465",
+   "2026-09-20T14:24:19Z",
+   null
+  ],
+  [
+   "electron-debug",
+   "JavaScript",
+   "Adds useful debug features to your Electron app",
+   "",
+   "779",
+   "2026-09-20T14:19:19Z",
+   null
+  ],
+  [
+   "electron-context-menu",
+   "JavaScript",
+   "Context menu for your Electron app",
+   "",
+   "1477",
+   "2026-09-20T13:59:39Z",
+   null
+  ],
+  [
+   "terminal-size",
+   "JavaScript",
+   "Reliably get the terminal window size",
+   "",
+   "149",
+   "2026-09-20T13:45:35Z",
+   null
+  ],
+  [
+   "parse-columns",
+   "JavaScript",
+   "Parse text columns, like the output of unix commands",
+   "",
+   "84",
+   "2026-09-20T13:00:41Z",
+   ""
+  ],
+  [
+   "wallpaper",
+   "JavaScript",
+   "Manage the desktop wallpaper",
+   "desktop-wallpaper,javascript,linux,macos,nodejs,wallpaper,windows",
+   "1090",
+   "2026-09-20T13:00:19Z",
+   ""
+  ],
+  [
+   "macos-wallpaper",
+   "Swift",
+   "Manage the desktop wallpaper on macOS",
+   "cli,cli-app,desktop-wallpaper,macos,macos-wallpaper,swift-package,wallpaper",
+   "716",
+   "2026-09-20T13:00:06Z",
+   ""
+  ],
+  [
+   "do-not-disturb-cli",
+   "JavaScript",
+   "Control the macOS `Do Not Disturb` feature from the command-line",
+   "cli-app,do-not-disturb,macos,nodejs,npm-package",
+   "243",
+   "2026-09-20T12:56:42Z",
+   null
+  ],
+  [
+   "do-not-disturb",
+   "Swift",
+   "Control the macOS `Do Not Disturb` feature",
+   "do-not-disturb,macos,nodejs,npm-package",
+   "223",
+   "2026-09-20T12:51:41Z",
+   null
+  ],
+  [
+   "electron-dl",
+   "JavaScript",
+   "Simplified file downloads for your Electron app",
+   "",
+   "1208",
+   "2026-09-20T08:50:34Z",
+   ""
+  ],
+  [
+   "os-name",
+   "JavaScript",
+   "Get the name of the current operating system. Example: macOS Sierra",
+   "",
+   "149",
+   "2026-09-18T21:40:49Z",
+   ""
+  ],
+  [
+   "memoize",
+   "TypeScript",
+   "Memoize functions - an optimization technique used to speed up consecutive function calls by caching the result of calls with identical input",
+   "",
+   "1166",
+   "2026-09-18T19:29:05Z",
+   ""
+  ],
+  [
+   "pify",
+   "JavaScript",
+   "Promisify a callback-style function",
+   "promise-utilities,promises,promisify",
+   "1501",
+   "2026-09-18T19:27:30Z",
+   null
+  ],
+  [
+   "mimic-function",
+   "JavaScript",
+   "Make a function mimic another one",
+   "",
+   "97",
+   "2026-09-18T19:27:08Z",
+   null
+  ],
+  [
+   "markdown-extensions",
+   "JavaScript",
+   "List of Markdown file extensions",
+   "",
+   "24",
+   "2026-09-18T19:26:46Z",
+   null
+  ],
+  [
+   "is-plain-obj",
+   "JavaScript",
+   "Check if a value is a plain object",
+   "",
+   "109",
+   "2026-09-18T19:26:15Z",
+   null
+  ],
+  [
+   "github-markdown-css",
+   "CSS",
+   "The minimal amount of CSS to replicate the GitHub Markdown style",
+   "",
+   "8944",
+   "2026-09-18T19:25:49Z",
+   "https://sindresorhus.com/github-markdown-css"
+  ],
+  [
+   "dargs",
+   "JavaScript",
+   "Reverse minimist. Convert an object of options into an array of command-line arguments",
+   "",
+   "187",
+   "2026-09-18T19:25:32Z",
+   ""
+  ],
+  [
+   "registry-url",
+   "JavaScript",
+   "Get the set npm registry URL",
+   "",
+   "57",
+   "2026-09-18T19:24:54Z",
+   null
+  ],
+  [
+   "rgb-hex",
+   "JavaScript",
+   "Convert RGB color to HEX",
+   "",
+   "122",
+   "2026-09-18T19:24:25Z",
+   null
+  ],
+  [
+   "resolve-cwd",
+   "JavaScript",
+   "Resolve the path of a module like `require.resolve()` but from the current working directory",
+   "",
+   "70",
+   "2026-09-18T19:24:04Z",
+   null
+  ],
+  [
+   "fullname",
+   "JavaScript",
+   "Get the fullname of the current user",
+   "",
+   "47",
+   "2026-09-18T19:23:41Z",
+   null
+  ],
+  [
+   "strip-final-newline",
+   "JavaScript",
+   "Strip the final newline character from a string/buffer",
+   "",
+   "38",
+   "2026-09-18T19:19:48Z",
+   ""
+  ],
+  [
+   "quick-lru",
+   "JavaScript",
+   "Simple “Least Recently Used” (LRU) cache",
+   "",
+   "770",
+   "2026-09-18T19:19:46Z",
+   ""
+  ],
+  [
+   "npm-run-path",
+   "JavaScript",
+   "Get your PATH prepended with locally installed binaries",
+   "",
+   "109",
+   "2026-09-18T19:19:42Z",
+   null
+  ],
+  [
+   "modern-normalize",
+   "TypeScript",
+   "🐒 Normalize browsers' default style",
+   "css,css-library,css-reset,normalize,normalize-css,npm-package",
+   "7428",
+   "2026-09-18T19:19:40Z",
+   ""
+  ],
+  [
+   "merge-streams",
+   "JavaScript",
+   "Merge multiple streams into a unified stream",
+   "",
+   "66",
+   "2026-09-18T19:19:36Z",
+   null
+  ],
+  [
+   "is64bit",
+   "JavaScript",
+   "Check if the operating system CPU architecture is 64-bit or 32-bit (Supports browsers)",
+   "",
+   "46",
+   "2026-09-18T19:19:34Z",
+   ""
+  ],
+  [
+   "is-stream",
+   "JavaScript",
+   "Check if something is a Node.js stream",
+   "",
+   "116",
+   "2026-09-18T19:19:32Z",
+   null
+  ]
+ ],
+ "recordedAt": "2026-10-26T11:00:17.469Z"
+}

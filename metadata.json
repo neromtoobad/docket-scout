@@ -1,0 +1,31 @@
+{
+  "project": "Docket Scout",
+  "tagline": "A scouting report for every builder: which hackathons to enter, with the hours you have",
+  "track": "Wildcard [Tinkerer]: Bring Your Own Project",
+  "extends": "Hack Docket, the author's hackathon tracker (built Oct 4-8, 2026): hand-curated list, manual strengths. New: live discovery across platforms through Zetaris, reading the builder's GitHub, the agent pipeline, H-MEM learning from results",
+  "team": "nerom",
+  "entry_points": {
+    "http": "POST /run  {\"input\":{\"query\":\"Scout neromtoobad, 38 hours this week\"}}",
+    "cli": "npx tsx --env-file=.env scripts/scout.ts \"scout github.com/<you>, 30 hours\"",
+    "ui": "http://localhost:8030"
+  },
+  "sponsor_technology": {
+    "zetaris": {
+      "role": "Only data layer. Live Lightning REST tables, CACHE TABLE'd: Devpost open + upcoming (GET), Devfolio search (POST with JSON body), FX rates; SchemaStore view scout.hackathons flattens every platform (LATERAL VIEW explode, prize HTML stripped, currency detected); federated join scout.hackathons x scout.fx converts prizes to USD in SQL. Each new builder's GitHub repos and README are registered as new REST tables + views at run time by the Surveyor. Every fixture cites Zetaris query ids.",
+      "code": ["src/sources.ts", "src/adapters/zetaris.ts", "src/data.ts", "src/agents/surveyor.ts", "src/agents/reconciler.ts", "scripts/zetaris-setup.ts"]
+    },
+    "meterless": {
+      "engines": {
+        "scout_intent": { "role": "Intake: registry, lexical scoring, Guard (injection, forbidden actions: register/submit/message/bypass bot checks, claimed organiser authority), HMAC-signed ExecutionContract carrying authority (registers=false, submits=false, messages=false); verified before every query, source registration and docket write; refreshed per Markovian step", "code": ["src/agents/intake.ts", "src/data.ts", "src/agents/executor.ts"] },
+        "hmem": { "role": "Wins from the README, reported results and plans with provenance; the record per skill tag changes the odds", "code": ["src/agents/archivist.ts", "src/agents/coach.ts", "engines/hmem"] },
+        "world_model": { "role": "Case file: builder, repos, skills, hackathons, fixtures, evidenced_by queries; single-writer queue", "code": ["src/agents/archivist.ts", "engines/world-model"] },
+        "markovian": { "role": "Scouting in bounded steps of six hackathons; carryover = the week's plan (hours left, picks)", "code": ["src/run.ts", "engines/markovian"] }
+      },
+      "runtime": { "role": "Nightshift is the primary AI provider (Meterless Runtime 0.90.0 contract)", "code": ["src/adapters/meterless.ts", "src/brain.ts"] },
+      "tests": "npm test (15 Docket Scout feature tests + 30 engine conformance tests)"
+    },
+    "nvidia": { "role": "Nemotron 3 Ultra 550B scouts every candidate hackathon (deep lane); Nemotron 3.5 Lightning 30B tags README wins, writes the profile summary, binds logins (fast lane); served by Nightshift", "code": ["src/agents/scout.ts", "src/agents/profiler.ts", "src/brain.ts"] },
+    "coding_tool": "Claude Code (Cursor became optional on Oct 22)"
+  },
+  "data": { "public": "Devpost and Devfolio public listings, open.er-api.com FX, GitHub public repos and READMEs, all live via Zetaris", "simulated": "none" }
+}

@@ -1,0 +1,20 @@
+{
+ "sql": "SELECT INR, EUR, GBP, NGN, updated FROM scout.fx",
+ "columns": [
+  "INR",
+  "EUR",
+  "GBP",
+  "NGN",
+  "updated"
+ ],
+ "rows": [
+  [
+   "95.160836",
+   "0.89213",
+   "0.747783",
+   "1334.299722",
+   "Mon, 26 Oct 2026 00:02:31 +0000"
+  ]
+ ],
+ "recordedAt": "2026-10-26T11:03:36.238Z"
+}

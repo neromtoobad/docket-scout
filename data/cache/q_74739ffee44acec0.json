@@ -1,0 +1,34 @@
+{
+ "sql": "SELECT language, COUNT(*) AS repos FROM scout.repos_sindresorhus WHERE is_fork = 0 AND language IS NOT NULL GROUP BY language ORDER BY repos DESC",
+ "columns": [
+  "language",
+  "repos"
+ ],
+ "rows": [
+  [
+   "JavaScript",
+   "77"
+  ],
+  [
+   "TypeScript",
+   "10"
+  ],
+  [
+   "Swift",
+   "4"
+  ],
+  [
+   "CSS",
+   "1"
+  ],
+  [
+   "Python",
+   "1"
+  ],
+  [
+   "Shell",
+   "1"
+  ]
+ ],
+ "recordedAt": "2026-10-26T11:00:18.118Z"
+}

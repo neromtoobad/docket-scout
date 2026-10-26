@@ -1,0 +1,42 @@
+{
+ "sql": "SELECT language, COUNT(*) AS repos FROM scout.repos_neromtoobad WHERE is_fork = 0 AND language IS NOT NULL GROUP BY language ORDER BY repos DESC",
+ "columns": [
+  "language",
+  "repos"
+ ],
+ "rows": [
+  [
+   "TypeScript",
+   "41"
+  ],
+  [
+   "JavaScript",
+   "8"
+  ],
+  [
+   "HTML",
+   "8"
+  ],
+  [
+   "Solidity",
+   "5"
+  ],
+  [
+   "Python",
+   "3"
+  ],
+  [
+   "CSS",
+   "1"
+  ],
+  [
+   "Go",
+   "1"
+  ],
+  [
+   "Shell",
+   "1"
+  ]
+ ],
+ "recordedAt": "2026-10-26T11:03:30.411Z"
+}

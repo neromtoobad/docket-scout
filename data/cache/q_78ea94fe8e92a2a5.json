@@ -1,0 +1,12 @@
+{
+ "sql": "SELECT content FROM scout.readme_karpathy",
+ "columns": [
+  "content"
+ ],
+ "rows": [
+  [
+   "SSBsaWtlIGRlZXAgbmV1cmFsIG5ldHMuCg==\n"
+  ]
+ ],
+ "recordedAt": "2026-10-26T10:59:06.232Z"
+}

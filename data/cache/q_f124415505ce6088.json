@@ -1,0 +1,501 @@
+{
+ "sql": "SELECT name, language, description, topics, stars, pushed_at, homepage FROM scout.repos_karpathy WHERE is_fork = 0 ORDER BY pushed_at DESC",
+ "columns": [
+  "name",
+  "language",
+  "description",
+  "topics",
+  "stars",
+  "pushed_at",
+  "homepage"
+ ],
+ "rows": [
+  [
+   "nanochat",
+   "Python",
+   "The best ChatGPT that $100 can buy.",
+   "",
+   "58938",
+   "2026-09-07T20:06:43Z",
+   ""
+  ],
+  [
+   "micrograd",
+   "Jupyter Notebook",
+   "A tiny scalar-valued autograd engine and a neural net library on top of it with PyTorch-like API",
+   "",
+   "18062",
+   "2026-08-03T04:04:05Z",
+   ""
+  ],
+  [
+   "karpathy.github.io",
+   "CSS",
+   "my blog",
+   "",
+   "1956",
+   "2026-04-10T23:50:09Z",
+   null
+  ],
+  [
+   "autoresearch",
+   "Python",
+   "AI agents running research on single-GPU nanochat training automatically",
+   "",
+   "98601",
+   "2026-03-26T00:07:37Z",
+   null
+  ],
+  [
+   "jobs",
+   "HTML",
+   "A research tool for visually exploring Bureau of Labor Statistics Occupational Outlook Handbook data. This is not a report, a paper, or a serious economic publication — it is a development tool for exploring BLS data visually.",
+   "",
+   "2033",
+   "2026-03-16T04:05:24Z",
+   ""
+  ],
+  [
+   "rustbpe",
+   "Rust",
+   "The missing tiktoken training code",
+   "",
+   "524",
+   "2026-01-03T22:24:54Z",
+   null
+  ],
+  [
+   "hn-time-capsule",
+   "Python",
+   "Analyzing Hacker News discussions from a decade ago in hindsight with LLMs",
+   "",
+   "687",
+   "2025-12-10T16:59:29Z",
+   null
+  ],
+  [
+   "llm-council",
+   "Python",
+   "LLM Council works together to answer your hardest questions",
+   "",
+   "25939",
+   "2025-11-22T23:35:21Z",
+   ""
+  ],
+  [
+   "reader3",
+   "Python",
+   "Quick illustration of how one can easily read books together with LLMs. It's great and I highly recommend it.",
+   "",
+   "3884",
+   "2025-11-18T02:37:51Z",
+   null
+  ],
+  [
+   "nanoGPT",
+   "Python",
+   "The simplest, fastest repository for training/finetuning medium-sized GPTs.",
+   "",
+   "64083",
+   "2025-11-12T19:52:34Z",
+   ""
+  ],
+  [
+   "rendergit",
+   "Python",
+   "Render any git repo into a single static HTML page for humans or LLMs",
+   "",
+   "2482",
+   "2025-08-21T19:12:34Z",
+   null
+  ],
+  [
+   "llm.c",
+   "Cuda",
+   "LLM training in simple, raw C/CUDA",
+   "",
+   "31219",
+   "2025-06-26T17:03:40Z",
+   ""
+  ],
+  [
+   "nn-zero-to-hero",
+   "Jupyter Notebook",
+   "Neural Networks: Zero to Hero",
+   "",
+   "24954",
+   "2024-08-18T12:16:26Z",
+   null
+  ],
+  [
+   "minGPT",
+   "Python",
+   "A minimal PyTorch re-implementation of the OpenAI GPT (Generative Pretrained Transformer) training",
+   "",
+   "24975",
+   "2024-08-15T04:09:40Z",
+   null
+  ],
+  [
+   "build-nanogpt",
+   "Python",
+   "Video+code lecture on building nanoGPT from scratch",
+   "",
+   "5601",
+   "2024-08-13T12:28:52Z",
+   ""
+  ],
+  [
+   "llama2.c",
+   "C",
+   "Inference Llama 2 in one file of pure C",
+   "",
+   "20210",
+   "2024-08-06T09:44:40Z",
+   ""
+  ],
+  [
+   "LLM101n",
+   null,
+   "LLM101n: Let's build a Storyteller",
+   "",
+   "37476",
+   "2024-08-01T01:20:33Z",
+   ""
+  ],
+  [
+   "minbpe",
+   "Python",
+   "Minimal, clean code for the Byte Pair Encoding (BPE) algorithm commonly used in LLM tokenization.",
+   "",
+   "10850",
+   "2024-07-01T14:20:22Z",
+   ""
+  ],
+  [
+   "makemore",
+   "Python",
+   "An autoregressive character-level language model for making more things",
+   "",
+   "4509",
+   "2024-06-04T19:32:27Z",
+   ""
+  ],
+  [
+   "calorie",
+   "HTML",
+   "nice and effective super simple calorie counter web app",
+   "",
+   "173",
+   "2024-05-30T18:08:16Z",
+   ""
+  ],
+  [
+   "lecun1989-repro",
+   "Jupyter Notebook",
+   "Reproducing Yann LeCun 1989 paper \"Backpropagation Applied to Handwritten Zip Code Recognition\", to my knowledge the earliest real-world application of a neural net trained with backpropagation.",
+   "",
+   "791",
+   "2024-02-03T23:42:16Z",
+   ""
+  ],
+  [
+   "ng-video-lecture",
+   "Python",
+   null,
+   "",
+   "5059",
+   "2024-01-31T13:43:36Z",
+   null
+  ],
+  [
+   "char-rnn",
+   "Lua",
+   "Multi-layer Recurrent Neural Networks (LSTM, GRU, RNN) for character-level language models in Torch",
+   "",
+   "12128",
+   "2023-10-24T17:15:27Z",
+   null
+  ],
+  [
+   "notpygamejs",
+   "JavaScript",
+   "Game making library for using Canvas element",
+   "",
+   "116",
+   "2023-10-17T14:11:25Z",
+   ""
+  ],
+  [
+   "researchpooler",
+   "Python",
+   "Automating research publications discovery and analysis. For example, ever wish your computer could automatically open papers that are most similar to a paper at an arbitrary url? How about finding all papers that report results on some dataset? Let's re-imagine literature review.",
+   "",
+   "516",
+   "2023-09-01T20:21:55Z",
+   "https://sites.google.com/site/researchpooler/"
+  ],
+  [
+   "karpathy",
+   null,
+   "root repo",
+   "",
+   "191",
+   "2023-07-25T02:26:54Z",
+   null
+  ],
+  [
+   "arxiv-sanity-lite",
+   "Python",
+   "arxiv-sanity lite: tag arxiv papers of interest get recommendations of similar papers in a nice UI using SVMs over tfidf feature vectors based on paper abstracts.",
+   "arxiv,deep-learning,flask,machine-learning",
+   "1710",
+   "2023-06-19T16:23:02Z",
+   "https://arxiv-sanity-lite.com"
+  ],
+  [
+   "randomfun",
+   "Jupyter Notebook",
+   "Notebooks and various random fun",
+   "",
+   "1186",
+   "2023-04-18T17:49:08Z",
+   null
+  ],
+  [
+   "convnetjs",
+   "JavaScript",
+   "Deep Learning in Javascript. Train Convolutional Neural Networks (or ordinary ones) in your browser.",
+   "",
+   "11214",
+   "2023-01-07T21:33:23Z",
+   null
+  ],
+  [
+   "arxiv-sanity-preserver",
+   "Python",
+   "Web interface for browsing, search and filtering recent arxiv submissions",
+   "",
+   "5802",
+   "2021-11-27T22:20:55Z",
+   "http://www.arxiv-sanity.com/"
+  ],
+  [
+   "deep-vector-quantization",
+   "Jupyter Notebook",
+   "VQVAEs, GumbelSoftmaxes and friends",
+   "",
+   "656",
+   "2021-11-20T19:01:41Z",
+   null
+  ],
+  [
+   "cryptos",
+   "Jupyter Notebook",
+   "Pure Python from-scratch zero-dependency implementation of Bitcoin for educational purposes",
+   "bitcoin,crypto,cryptocurrency,elliptic-curves",
+   "1934",
+   "2021-06-21T04:53:12Z",
+   ""
+  ],
+  [
+   "neuraltalk",
+   "Python",
+   "NeuralTalk is a Python+numpy project for learning Multimodal Recurrent Neural Networks that describe images with sentences.",
+   "",
+   "5512",
+   "2020-12-22T22:26:36Z",
+   null
+  ],
+  [
+   "ulogme",
+   "Python",
+   "Automatically collect and visualize usage statistics in Ubuntu/OSX environments.",
+   "",
+   "1179",
+   "2020-09-17T23:08:59Z",
+   ""
+  ],
+  [
+   "covid-sanity",
+   "Python",
+   "Aspires to help the influx of bioRxiv / medRxiv papers on COVID-19",
+   "",
+   "396",
+   "2020-05-03T17:51:52Z",
+   "http://biomed-sanity.com/"
+  ],
+  [
+   "gitstats",
+   "HTML",
+   "A lightweight/pretty visualizer for recent work on a git code base in multiple branches. Helps stay up to date with teams working on one git repo in many branches.",
+   "",
+   "150",
+   "2020-04-02T02:16:46Z",
+   null
+  ],
+  [
+   "pytorch-normalizing-flows",
+   "Jupyter Notebook",
+   "Normalizing flows in PyTorch. Current intended use is education not production.",
+   "",
+   "921",
+   "2020-01-27T18:37:10Z",
+   ""
+  ],
+  [
+   "tsnejs",
+   "JavaScript",
+   "Implementation of t-SNE visualization algorithm in Javascript.",
+   "",
+   "912",
+   "2019-03-15T22:30:16Z",
+   null
+  ],
+  [
+   "reinforcejs",
+   "HTML",
+   "Reinforcement Learning Agents in Javascript (Dynamic Programming, Temporal Difference, Deep Q-Learning, Stochastic/Deterministic Policy Gradients)",
+   "",
+   "1490",
+   "2019-02-18T20:11:56Z",
+   null
+  ],
+  [
+   "pytorch-made",
+   "Python",
+   "MADE (Masked Autoencoder Density Estimation) implementation in PyTorch",
+   "",
+   "596",
+   "2018-12-08T16:36:26Z",
+   null
+  ],
+  [
+   "svmjs",
+   "JavaScript",
+   "Support Vector Machine in Javascript (SMO algorithm, supports arbitrary kernels) + GUI demo",
+   "",
+   "711",
+   "2018-04-14T01:03:04Z",
+   null
+  ],
+  [
+   "find-birds",
+   "Python",
+   "Find people you should follow on Twitter based on who the people you follow follow",
+   "",
+   "375",
+   "2018-04-01T15:32:33Z",
+   null
+  ],
+  [
+   "neuraltalk2",
+   "Jupyter Notebook",
+   "Efficient Image Captioning code in Torch, runs on GPU",
+   "",
+   "5605",
+   "2017-11-07T05:59:20Z",
+   null
+  ],
+  [
+   "tf-agent",
+   "Python",
+   "tensorflow reinforcement learning agents for OpenAI gym environments",
+   "",
+   "148",
+   "2017-07-21T23:23:54Z",
+   null
+  ],
+  [
+   "nipspreview",
+   "Python",
+   "Scripts that generate .html to more easily see NIPS papers",
+   "",
+   "188",
+   "2017-06-21T18:25:08Z",
+   null
+  ],
+  [
+   "paper-notes",
+   null,
+   "Random notes on papers, likely a short-term repo.",
+   "",
+   "713",
+   "2017-04-17T19:19:04Z",
+   null
+  ],
+  [
+   "recurrentjs",
+   "HTML",
+   "Deep Recurrent Neural Networks and LSTMs in Javascript. More generally also arbitrary expression graphs with automatic differentiation.",
+   "",
+   "989",
+   "2016-11-04T15:42:55Z",
+   ""
+  ],
+  [
+   "EigenLibSVM",
+   "C++",
+   "A wrapper for LibSVM that lets you train SVM's directly on Eigen library matrices in C++",
+   "",
+   "112",
+   "2016-03-29T13:29:21Z",
+   null
+  ],
+  [
+   "scholaroctopus",
+   null,
+   "A set of tools/pages that help explore academic literature",
+   "",
+   "93",
+   "2014-08-11T22:20:24Z",
+   null
+  ],
+  [
+   "Random-Forest-Matlab",
+   "Matlab",
+   "A Random Forest implementation for MATLAB. Supports arbitrary weak learners that you can define.",
+   "",
+   "231",
+   "2014-02-27T22:56:10Z",
+   ""
+  ],
+  [
+   "researchlei",
+   "Python",
+   "An Academic Papers Management and Discovery System",
+   "",
+   "284",
+   "2013-05-03T19:26:12Z",
+   null
+  ],
+  [
+   "twoolpy",
+   "Python",
+   "useful scripts to work with Twitter + Python. Requires the tweepy library.",
+   "",
+   "93",
+   "2012-11-29T01:23:07Z",
+   ""
+  ],
+  [
+   "forestjs",
+   "JavaScript",
+   "Random Forest implementation for JavaScript. Supports arbitrary weak learners. Includes interactive demo.",
+   "",
+   "343",
+   "2012-10-04T11:01:00Z",
+   null
+  ],
+  [
+   "MatlabWrapper",
+   "C++",
+   "C++ convenience class to communicate with a Matlab instance. Send matrices back and forth, execute arbitrary Matlab commands, or drop into interactive Matlab session right in the middle of your C++ code.",
+   "",
+   "90",
+   "2012-08-27T08:36:58Z",
+   ""
+  ]
+ ],
+ "recordedAt": "2026-10-26T10:59:04.797Z"
+}

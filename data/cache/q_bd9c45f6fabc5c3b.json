@@ -1,0 +1,12 @@
+{
+ "sql": "SELECT content FROM scout.readme_sindresorhus",
+ "columns": [
+  "content"
+ ],
+ "rows": [
+  [
+   "PGRpdiBhbGlnbj0iY2VudGVyIj4KCTxpbWcgc3JjPSJ3ZWxjb21lLWhlYWRl\nci5naWYiIGFsdD0id2VsY29tZSB0byBteSBnaXRodWIgcHJvZmlsZSI+Cgk8\nYnI+Cgk8YnI+CjwvZGl2PgoKKippIGxvdmUgY29kZSoqJm5ic3A7Jm5ic3A7\nIVtdKGNhdC10eXBpbmcuZ2lmKSZuYnNwOyZuYnNwOyoqYW5kIHVuaWNvcm5z\nKiombmJzcDsmbmJzcDshW10odW5pY29ybi5naWYpCgo8aW1nIHNyYz0icGFy\ndHktZnVyYnkuZ2lmIiBhbGlnbj0icmlnaHQiIHdpZHRoPSI2MCI+Cgo8YnI+\nCgohW10odW5kZXItY29uc3RydWN0aW9uLmdpZikKCjxicj4KCmNoZWNrIG91\ndCBteSBsYXRlc3QgYXBwOiBbU3VwZXJjaGFyZ2VdKGh0dHBzOi8vc2luZHJl\nc29yaHVzLmNvbS9zdXBlcmNoYXJnZSkgIVtdKGhvdC5naWYpCgphbmQgbXkg\nW2xhdGVzdCBibG9nIHBvc3RdKGh0dHBzOi8vc2luZHJlc29yaHVzLmNvbS9i\nbG9nKSAhW10oaG90LmdpZikKCjxicj4KPGJyPgoKIVtdKGNvdW50ZXIuZ2lm\nKSAhW10oYmFkZ2UxLmdpZikgIVtdKGJhZGdlMi5naWYpICFbXShiYWRnZTMu\ncG5nKSAhW10oYmFkZ2U0LmdpZikgIVtdKGJhZGdlNS5naWYpICFbXShiYWRn\nZTYuZ2lmKQoKIVtdKGZsYW1lcy5naWYpCg==\n"
+  ]
+ ],
+ "recordedAt": "2026-10-26T11:00:18.565Z"
+}

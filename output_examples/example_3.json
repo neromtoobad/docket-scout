@@ -1,0 +1,6553 @@
+{
+ "run_id": "run-2026-10-26-228ab6",
+ "status": "success",
+ "agents": [
+  {
+   "name": "Intake",
+   "role": "Scout Intent: binds the builder and their hours, guards the request, signs the contract that fixes the scout's authority"
+  },
+  {
+   "name": "Surveyor",
+   "role": "Takes stock of the live sources in Zetaris and registers a new builder's GitHub as Zetaris tables at run time"
+  },
+  {
+   "name": "Profiler",
+   "role": "Builds the scouting card from the builder's repos and the wins table on their profile README"
+  },
+  {
+   "name": "Reconciler",
+   "role": "One federated query over every platform plus FX; merges duplicates, parses deadlines, spots changes"
+  },
+  {
+   "name": "Archivist",
+   "role": "H-MEM record of wins, results and plans per skill tag; World Model case file of builder, repos and fixtures"
+  },
+  {
+   "name": "Scout",
+   "role": "Proposes fit, verdict, head-start repo and hours for each hackathon on Nemotron Ultra"
+  },
+  {
+   "name": "Coach",
+   "role": "Holds every proposal to the eligibility rules, computes the odds and $/hour, keeps the plan within the hours"
+  },
+  {
+   "name": "Executor",
+   "role": "Writes the docket shortlist and a deadline calendar; never registers, submits or messages"
+  }
+ ],
+ "memory": {
+  "recalled": 0,
+  "stored": 1
+ },
+ "engines": {
+  "scout_intent": "contract 75226ce9 refreshed 4x",
+  "hmem": "0 recalled, 0 wins stored, plan stored",
+  "world_model": "993 case-file events",
+  "markovian": "4 bounded steps (completed)"
+ },
+ "cost": {
+  "quote": {
+   "maxRounds": 5,
+   "maxQueries": 22,
+   "maxModelCalls": 18,
+   "maxSeconds": 600,
+   "rationale": "sindresorhus: 24 candidate hackathons in 4 bounded steps"
+  },
+  "spent": {
+   "modelCalls": 5,
+   "queries": 7,
+   "rounds": 4,
+   "estTokens": 10591,
+   "seconds": 66
+  },
+  "escalations": []
+ },
+ "data_sources": {
+  "live": 7
+ },
+ "trace_id": "run-2026-10-26-228ab6",
+ "log_file": "logs/trace-run-2026-10-26-228ab6.jsonl",
+ "execution_time_seconds": 66.3,
+ "output": {
+  "summary": "sindresorhus: 103 live hackathons across 2 platforms. Enter 1 this week (10h of 12h): HackTitan ($38/h). 34 on the bench, 68 out.",
+  "fixtures": [
+   {
+    "hackathon": {
+     "key": "hacktitan",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30340",
+       "url": "https://hacktitan.devpost.com/"
+      }
+     ],
+     "name": "HackTitan",
+     "organizer": "IWU",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-02-04",
+     "daysLeft": 101,
+     "prizeText": "$10,000",
+     "prizeUsd": 10000,
+     "registrations": 193,
+     "themes": [
+      "Beginner Friendly",
+      "Databases",
+      "DevOps"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "devtools"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 85,
+    "verdict": "START",
+    "repo": "eslint-plugin-unicorn",
+    "why": "Sindre's 300+ ESLint rules repo is a direct head start for a devtools hackathon focused on developer experience and code quality.",
+    "hours": 10,
+    "pWin": 0.125,
+    "evPerHour": 38,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "buildbeyond",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31535",
+       "url": "https://build-beyond.devpost.com/"
+      }
+     ],
+     "name": "Build Beyond Hackathon",
+     "organizer": "OSC",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-03-15",
+     "daysLeft": 140,
+     "prizeText": "$5,000",
+     "prizeUsd": 5000,
+     "registrations": 45,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Productivity"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "devtools"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 87,
+    "verdict": "BENCH",
+    "repo": "np",
+    "why": "Open-ended productivity theme perfectly matches np's 'better npm publish' workflow automation; devtools tag aligns with core strength.",
+    "hours": 12,
+    "pWin": 0.214,
+    "evPerHour": 27,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet",
+     "Benched: not enough hours left this week (2h free, needs 12h)."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "awscommunicationdeveloperservicescdsagenticaipartner",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31052",
+       "url": "https://aws-cds-partner.devpost.com/"
+      }
+     ],
+     "name": "AWS Communication Developer Services (CDS) Agentic AI Partner Hackathon",
+     "organizer": "AWS",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-28",
+     "daysLeft": 2,
+     "prizeText": "$40,000",
+     "prizeUsd": 40000,
+     "registrations": 1038,
+     "themes": [
+      "Communication",
+      "Mobile",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "agents",
+      "devtools",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 60,
+    "verdict": "BENCH",
+    "repo": "quickgpt-meta",
+    "why": "Agents and ML are weak spots (40 skill) and the 2-day deadline leaves no time to ramp up on AWS CDS specifics.",
+    "hours": 20,
+    "pWin": 0.041,
+    "evPerHour": 25,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "lifeaftercode",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31503",
+       "url": "https://gitlab-transcend.devpost.com/"
+      }
+     ],
+     "name": "Life After Code",
+     "organizer": "GitLab",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-27",
+     "daysLeft": 1,
+     "prizeText": "$45,000",
+     "prizeUsd": 45000,
+     "registrations": 3239,
+     "themes": [
+      "DevOps",
+      "Machine Learning/AI",
+      "Productivity"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "devtools",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 54,
+    "verdict": "BENCH",
+    "repo": "execa",
+    "why": "DevOps/ML themes need infra/ML depth Sindre lacks; huge crowd (3239) and 1-day close make this a lottery ticket.",
+    "hours": 16,
+    "pWin": 0.027,
+    "evPerHour": 22,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "qlooagentic",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31054",
+       "url": "https://qloo.devpost.com/"
+      }
+     ],
+     "name": "Qloo Agentic Hackathon",
+     "organizer": "Qloo",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "$25,000",
+     "prizeUsd": 25000,
+     "registrations": 2473,
+     "themes": [
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "agents",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 38,
+    "verdict": "BENCH",
+    "repo": "quickgpt-meta",
+    "why": "Agents/ML are weak spots (40 skill) and 4-day deadline leaves no time to ramp up on Qloo specifics.",
+    "hours": 18,
+    "pWin": 0.014,
+    "evPerHour": 6,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "checkpoint1gamesforgood",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31222",
+       "url": "https://checkpoint-1.devpost.com/"
+      }
+     ],
+     "name": "checkpoint 1 \u2014 games for good",
+     "organizer": "Checkpoint",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-10",
+     "daysLeft": 76,
+     "prizeText": "$11,960",
+     "prizeUsd": 11960,
+     "registrations": 60,
+     "themes": [
+      "Gaming",
+      "Machine Learning/AI",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "games",
+      "education",
+      "impact",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 35,
+    "verdict": "BENCH",
+    "repo": "execa",
+    "why": "Games/ML/social-good themes need domain depth Sindre lacks; 76-day horizon allows watching but not a priority start.",
+    "hours": 20,
+    "pWin": 0.031,
+    "evPerHour": 6,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "aiagentsforfounderschallengehetic",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31480",
+       "url": "https://ai-agents-founders-hetic-26.devpost.com/"
+      }
+     ],
+     "name": "AI Agents for Founders Challenge \u2014 HETIC 2026",
+     "organizer": "HETIC",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-12-18",
+     "daysLeft": 53,
+     "prizeText": "\u20ac997",
+     "prizeUsd": 1118,
+     "registrations": 119,
+     "themes": [
+      "Low/No Code",
+      "Machine Learning/AI",
+      "Productivity"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "agents",
+      "devtools",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 54,
+    "verdict": "BENCH",
+    "repo": "quickgpt-meta",
+    "why": "Low-code + agents + 53 days favors builders with product/agent chops, not utility-library authors; prize too small to justify pivot.",
+    "hours": 18,
+    "pWin": 0.059,
+    "evPerHour": 1,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet",
+     "Model fit 45 vs rules 70: blended to 54."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "dakarbitcoinbybtrust",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "26475",
+       "url": "https://dakar-bitcoin-hack-2026.devpost.com/"
+      }
+     ],
+     "name": "Dakar Bitcoin Hack by BTrust",
+     "organizer": "Dakar Bitcoin Days",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-20",
+     "daysLeft": 25,
+     "prizeText": "$900",
+     "prizeUsd": 900,
+     "registrations": 19,
+     "themes": [
+      "Blockchain",
+      "Fintech",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "payments",
+      "onchain",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 45,
+    "verdict": "BENCH",
+    "repo": "type-fest",
+    "why": "Payments/onchain/ML themes need domain depth Sindre lacks (40 skill each); 25-day horizon allows watching but not a priority start.",
+    "hours": 20,
+    "pWin": 0.068,
+    "evPerHour": 1,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "cosmohacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30455",
+       "url": "https://cosmohacks.devpost.com/"
+      }
+     ],
+     "name": "Cosmo Hacks 2026",
+     "organizer": "Cosmo Hacks",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-18",
+     "daysLeft": 84,
+     "prizeText": "$196,955",
+     "prizeUsd": 196955,
+     "registrations": 493,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Education"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Open Ended.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 1,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hackodisha60",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "c84b90d65eff4ae083366fc1cc549e81",
+       "url": "https://hackodisha-6a.devfolio.co"
+      }
+     ],
+     "name": "hackodisha-6.0",
+     "organizer": "",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-01",
+     "daysLeft": 6,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 1289,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches this brief.",
+    "hours": 28,
+    "pWin": 0.017,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "dshhacksv2100kinprizes",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30500",
+       "url": "https://dsh-hacks-v2.devpost.com/"
+      }
+     ],
+     "name": "DSH Hacks V2 ($100k+ in prizes!)",
+     "organizer": "STEMise",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 727,
+     "themes": [
+      "Beginner Friendly",
+      "Low/No Code",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 33,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "No cash prize listed and beginner/low-code themes make this a hard mismatch despite the 20-day horizon.",
+    "hours": 16,
+    "pWin": 0.013,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: no cash prize listed"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "tofuture",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31792",
+       "url": "https://hack-to-the-missing-future-ai.devpost.com/"
+      }
+     ],
+     "name": "Hack to the Future",
+     "organizer": "HackathonForEveryone",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-27",
+     "daysLeft": 1,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 44,
+     "themes": [
+      "Beginner Friendly"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 30,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "No cash prize, beginner theme, and 1-day deadline make this a non-starter for a senior maintainer.",
+    "hours": 16,
+    "pWin": 0.026,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: no cash prize listed"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "codeforhumanity",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30740",
+       "url": "https://code-for-humanity.devpost.com/"
+      }
+     ],
+     "name": "Code for Humanity",
+     "organizer": "nill",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-15",
+     "daysLeft": 81,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 679,
+     "themes": [
+      "Education",
+      "Machine Learning/AI",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Plays to Full-stack.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "arbiterhacksv1",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30789",
+       "url": "https://arbiter-hacks-v1.devpost.com/"
+      }
+     ],
+     "name": "Arbiter Hacks V1",
+     "organizer": "Arbiter ",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-12-21",
+     "daysLeft": 56,
+     "prizeText": "$7,800",
+     "prizeUsd": 7800,
+     "registrations": 559,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Machine Learning/AI.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "innovartartandtechnologyday",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31108",
+       "url": "https://innovart2027.devpost.com/"
+      }
+     ],
+     "name": "InnovArt 2027: Art and Technology Hack Day",
+     "organizer": "Binnovative",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-02",
+     "daysLeft": 68,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 250,
+     "themes": [
+      "Music/Art",
+      "Beginner Friendly",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Music/Art, Beginner Friendly.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "internationalcodethecure",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31474",
+       "url": "https://codethecure-hackathon-26.devpost.com/"
+      }
+     ],
+     "name": "2026 International CodeTheCure Hackathon",
+     "organizer": "CodeTheCure",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-28",
+     "daysLeft": 2,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 245,
+     "themes": [
+      "Beginner Friendly",
+      "Education",
+      "Health"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "bio",
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Education.",
+    "hours": 16,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "safespacehacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31796",
+       "url": "https://safespace-hacks.devpost.com/"
+      }
+     ],
+     "name": "SafeSpace Hacks",
+     "organizer": "SafeSpace",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-22",
+     "daysLeft": 27,
+     "prizeText": "$280",
+     "prizeUsd": 280,
+     "registrations": 151,
+     "themes": [
+      "Beginner Friendly",
+      "Cybersecurity",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "privacy",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Cybersecurity.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "stem2connectai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31789",
+       "url": "https://stem2connect-online-hackathon.devpost.com/"
+      }
+     ],
+     "name": "STEM2Connect AI Hackathon",
+     "organizer": "STEM2Connect",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-21",
+     "daysLeft": 26,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 146,
+     "themes": [
+      "Beginner Friendly",
+      "Education",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Plays to Full-stack.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "mathematicsforsystemssecurity",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31666",
+       "url": "https://mathematics-systems-security.devpost.com/"
+      }
+     ],
+     "name": "Mathematics for systems security",
+     "organizer": "Software Engineering Club (DEV)",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-01",
+     "daysLeft": 6,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 88,
+     "themes": [
+      "Communication",
+      "Cybersecurity",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "privacy",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Communication, Cybersecurity.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hackwithaditya",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31737",
+       "url": "https://hackwithaditya.devpost.com/"
+      }
+     ],
+     "name": "HackWithAditya",
+     "organizer": "Aditya University",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-25",
+     "daysLeft": 30,
+     "prizeText": "\u20b9 500,000",
+     "prizeUsd": 5254,
+     "registrations": 83,
+     "themes": [
+      "Education",
+      "Health",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "bio",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Education, Health.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "greenshifthacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31797",
+       "url": "https://green-shift-hacks.devpost.com/"
+      }
+     ],
+     "name": "Green Shift Hacks",
+     "organizer": "HackathonForEveryone",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-17",
+     "daysLeft": 22,
+     "prizeText": "$125",
+     "prizeUsd": 125,
+     "registrations": 75,
+     "themes": [
+      "Beginner Friendly",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Social Good.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "accessedhacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31795",
+       "url": "https://accessed-hacks.devpost.com/"
+      }
+     ],
+     "name": "AccessED Hacks",
+     "organizer": "AccessEDnpo",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-20",
+     "daysLeft": 25,
+     "prizeText": "$225",
+     "prizeUsd": 225,
+     "registrations": 70,
+     "themes": [
+      "Beginner Friendly",
+      "Education",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "education",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Education.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "305empowheroctober305hackathonsvercelapp",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31731",
+       "url": "https://305empowheroct2026.devpost.com/"
+      }
+     ],
+     "name": "305 EmpowHER Edition October 2026 \u2014 305Hackathons.vercel.app",
+     "organizer": "CODE CRUNCH",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 37,
+     "themes": [
+      "Beginner Friendly",
+      "Cybersecurity",
+      "Education"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "fullstack",
+      "privacy",
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Plays to Full-stack.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "codefordfw",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31504",
+       "url": "https://code-for-dfw.devpost.com/"
+      }
+     ],
+     "name": "Code For DFW",
+     "organizer": "n/a",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-25",
+     "daysLeft": 30,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 9,
+     "themes": [
+      "Open Ended",
+      "Social Good",
+      "Beginner Friendly"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Open Ended, Social Good.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "kiroween",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31667",
+       "url": "https://kiroween.devpost.com/"
+      }
+     ],
+     "name": "Kiroween 2026",
+     "organizer": "Kiro",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-12-04",
+     "daysLeft": 39,
+     "prizeText": "$100,000",
+     "prizeUsd": 100000,
+     "registrations": 1387,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Machine Learning/AI.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "unitedhacksv8",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30819",
+       "url": "https://unitedhacksv8.devpost.com/"
+      }
+     ],
+     "name": "United Hacks V8",
+     "organizer": "Hack United",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-10",
+     "daysLeft": 76,
+     "prizeText": "$13,700",
+     "prizeUsd": 13700,
+     "registrations": 294,
+     "themes": [
+      "Beginner Friendly",
+      "Design",
+      "Education"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Design.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "ostadpresentsyunetaignitebuildathon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31580",
+       "url": "https://yunet-aignite26.devpost.com/"
+      }
+     ],
+     "name": "Ostad Presents YUNet AIgnite Buildathon 2026",
+     "organizer": "Youth Upskill Network - YUNet",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-05",
+     "daysLeft": 10,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 241,
+     "themes": [
+      "Education",
+      "Low/No Code",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Education, Low/No Code.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "stemergenthacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31187",
+       "url": "https://stemergent-hacks.devpost.com/"
+      }
+     ],
+     "name": "STEMergent Hacks 2026",
+     "organizer": "STEMergent",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 147,
+     "themes": [
+      "Low/No Code",
+      "Machine Learning/AI",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "education",
+      "impact",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Low/No Code, Machine Learning/AI.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "ethnohack",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31489",
+       "url": "https://ethnohack2026.devpost.com/"
+      }
+     ],
+     "name": "EthnoHack",
+     "organizer": "ETHCSTWIN",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "\u20ac0",
+     "prizeUsd": 0,
+     "registrations": 146,
+     "themes": [
+      "Databases",
+      "Health",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "bio",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Databases, Health.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "brewingcodes40",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "29135",
+       "url": "https://brewing-codes-4-0.devpost.com/"
+      }
+     ],
+     "name": "Brewing Codes 4.0",
+     "organizer": "HARD MODE",
+     "online": true,
+     "location": "Online",
+     "closes": "2028-03-27",
+     "daysLeft": 518,
+     "prizeText": "\u20b9 100,000",
+     "prizeUsd": 1051,
+     "registrations": 83,
+     "themes": [
+      "Low/No Code",
+      "Machine Learning/AI",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Plays to Full-stack.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "bridgegaphacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30456",
+       "url": "https://sq-hacks.devpost.com/"
+      }
+     ],
+     "name": "Bridge The Gap Hacks",
+     "organizer": "Bridge The Gap Hacks",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-21",
+     "daysLeft": 26,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 56,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "education",
+      "impact",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Machine Learning/AI.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "buildyourownwebsite",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31683",
+       "url": "https://buildyourownwebsite.devpost.com/"
+      }
+     ],
+     "name": "BuildyourOwnWebsite",
+     "organizer": "Roxten Studios",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-25",
+     "daysLeft": 30,
+     "prizeText": "\u20b9 0",
+     "prizeUsd": 0,
+     "registrations": 45,
+     "themes": [
+      "Beginner Friendly",
+      "Education",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "fullstack",
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Plays to Full-stack.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "cscwintersparkathon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31682",
+       "url": "https://csc-winter-sparkathon.devpost.com/"
+      }
+     ],
+     "name": "CSC Winter Sparkathon",
+     "organizer": "The Webb Schools CSC",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-30",
+     "daysLeft": 35,
+     "prizeText": "$100",
+     "prizeUsd": 100,
+     "registrations": 41,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Open Ended.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "neuralstorm",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31815",
+       "url": "https://neuralstorm.devpost.com/"
+      }
+     ],
+     "name": "Neural Storm",
+     "organizer": "JNTUH",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-04",
+     "daysLeft": 9,
+     "prizeText": "\u20b9 20,000",
+     "prizeUsd": 210,
+     "registrations": 38,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Beginner Friendly, Machine Learning/AI.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "globalaibuilderschallenge",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31826",
+       "url": "https://global-ai-builders-challenge.devpost.com/"
+      }
+     ],
+     "name": "Global AI Builder\u2019s Challenge",
+     "organizer": "Refactor The World",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-28",
+     "daysLeft": 33,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 37,
+     "themes": [
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "BENCH",
+    "repo": null,
+    "why": "Little on the profile matches Machine Learning/AI.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Below the cut for this week: scored by the playbook only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "metavrstartdevelopercompetition",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31024",
+       "url": "https://start-developer-competition-26.devpost.com/"
+      }
+     ],
+     "name": "Meta VR Start Developer Competition 2026",
+     "organizer": "Meta",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-18",
+     "daysLeft": 23,
+     "prizeText": "$1,000,000",
+     "prizeUsd": 1000000,
+     "registrations": 4034,
+     "themes": [
+      "AR/VR",
+      "Machine Learning/AI",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "fullstack",
+      "devtools",
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "a VR headset"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 72,
+    "verdict": "OUT",
+    "repo": "np",
+    "why": "Out: needs a VR headset, and nothing on the profile shows it.",
+    "hours": 10,
+    "pWin": 0.045,
+    "evPerHour": 1363,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs a VR headset, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "sustainathon20",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31534",
+       "url": "https://sustain-a-thon-2-0-31534.devpost.com/"
+      }
+     ],
+     "name": "SUSTAIN-A-THON 2.0",
+     "organizer": "Sharda University Greater Noida",
+     "online": false,
+     "location": "Block 45, Sharda University",
+     "closes": "2026-10-28",
+     "daysLeft": 2,
+     "prizeText": "$150,000",
+     "prizeUsd": 150000,
+     "registrations": 37,
+     "themes": [
+      "Blockchain",
+      "Cybersecurity",
+      "IoT"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "onchain",
+      "privacy",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 47,
+    "verdict": "OUT",
+    "repo": "type-fest",
+    "why": "Out: in person in Block 45, Sharda University, not in Nigeria.",
+    "hours": 16,
+    "pWin": 0.067,
+    "evPerHour": 190,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Block 45, Sharda University, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "ugreenonainas",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31552",
+       "url": "https://ugreenhackathon.devpost.com/"
+      }
+     ],
+     "name": "UGREEN Hackathon 2026 on AI NAS",
+     "organizer": "UGREEN",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-16",
+     "daysLeft": 21,
+     "prizeText": "$46,000",
+     "prizeUsd": 46000,
+     "registrations": 429,
+     "themes": [
+      "Lifehacks",
+      "Machine Learning/AI",
+      "Productivity"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "devtools",
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "NAS hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 72,
+    "verdict": "OUT",
+    "repo": "eslint-plugin-unicorn",
+    "why": "Out: needs NAS hardware, and nothing on the profile shows it.",
+    "hours": 10,
+    "pWin": 0.073,
+    "evPerHour": 100,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs NAS hardware, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hackstorm30sensethinkandact",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31141",
+       "url": "https://hackstorm3.devpost.com/"
+      }
+     ],
+     "name": "HackStorm 3.0: Sense, Think and Act",
+     "organizer": "HackStorm",
+     "online": false,
+     "location": "San Francisco, California, USA",
+     "closes": "2027-01-17",
+     "daysLeft": 83,
+     "prizeText": "$5,200",
+     "prizeUsd": 5200,
+     "registrations": 30,
+     "themes": [
+      "DevOps",
+      "IoT",
+      "Robotic Process Automation"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "devtools",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 72,
+    "verdict": "OUT",
+    "repo": "eslint-plugin-unicorn",
+    "why": "Out: in person in San Francisco, California, USA, not in Nigeria.",
+    "hours": 10,
+    "pWin": 0.173,
+    "evPerHour": 27,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in San Francisco, California, USA, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "developerweek",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30463",
+       "url": "https://developerweek-2027-hackathon.devpost.com/"
+      }
+     ],
+     "name": "DeveloperWeek 2027 Hackathon",
+     "organizer": "DevNetwork",
+     "online": false,
+     "location": "Santa Clara Convention Center + Online",
+     "closes": "2027-02-11",
+     "daysLeft": 108,
+     "prizeText": "$6,000",
+     "prizeUsd": 6000,
+     "registrations": 246,
+     "themes": [
+      "Enterprise",
+      "IoT",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "devtools",
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 72,
+    "verdict": "OUT",
+    "repo": "eslint-plugin-unicorn",
+    "why": "Out: in person in Santa Clara Convention Center + Online, not in Nigeria.",
+    "hours": 10,
+    "pWin": 0.084,
+    "evPerHour": 15,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Santa Clara Convention Center + Online, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "paypalai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31302",
+       "url": "https://paypalaihackathon.devpost.com/"
+      }
+     ],
+     "name": "PayPal AI Hackathon",
+     "organizer": "PayPal",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-12",
+     "daysLeft": 17,
+     "prizeText": "$67,500",
+     "prizeUsd": 67500,
+     "registrations": 21629,
+     "themes": [
+      "Low/No Code",
+      "Machine Learning/AI",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "payments",
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 35,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Massive crowd (21k) and ML/payments themes need domain depth Sindre lacks; lottery ticket with low ROI.",
+    "hours": 16,
+    "pWin": 0.008,
+    "evPerHour": 10,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "opencvaicompetitionpoweredbyaws",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30984",
+       "url": "https://opencv26.devpost.com/"
+      }
+     ],
+     "name": "OpenCV AI Competition 2026, powered by AWS",
+     "organizer": "OpenCV",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-27",
+     "daysLeft": 1,
+     "prizeText": "$20,250",
+     "prizeUsd": 20250,
+     "registrations": 6174,
+     "themes": [
+      "IoT",
+      "Machine Learning/AI",
+      "Serverless"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 37,
+    "verdict": "OUT",
+    "repo": "got",
+    "why": "Out: needs robot or IoT hardware, and nothing on the profile shows it.",
+    "hours": 8,
+    "pWin": 0.011,
+    "evPerHour": 8,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs robot or IoT hardware, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "nebiusxnvidiaglobalai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30790",
+       "url": "https://nebiusglobalaihackathon.devpost.com/"
+      }
+     ],
+     "name": "Nebius x NVIDIA Global AI Hackathon",
+     "organizer": "nebius",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "$50,000",
+     "prizeUsd": 50000,
+     "registrations": 27625,
+     "themes": [
+      "Machine Learning/AI",
+      "Beginner Friendly",
+      "Robotic Process Automation"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 37,
+    "verdict": "OUT",
+    "repo": "got",
+    "why": "Out: needs robot or IoT hardware, and nothing on the profile shows it.",
+    "hours": 18,
+    "pWin": 0.009,
+    "evPerHour": 7,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs robot or IoT hardware, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "codexxtwitchcon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31742",
+       "url": "https://twitchcon-codex.devpost.com/"
+      }
+     ],
+     "name": "Codex x TwitchCon Hackathon",
+     "organizer": "Twitch",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-02",
+     "daysLeft": 7,
+     "prizeText": "$25,000",
+     "prizeUsd": 25000,
+     "registrations": 813,
+     "themes": [
+      "Communication",
+      "Gaming",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "trading",
+      "games",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 35,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Gaming/trading/ML themes need domain expertise Sindre lacks; 7-day window too short to bridge the gap.",
+    "hours": 16,
+    "pWin": 0.015,
+    "evPerHour": 7,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "icehacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31495",
+       "url": "https://icehacks.devpost.com/"
+      }
+     ],
+     "name": "IceHacks",
+     "organizer": "CodeStarters",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "$17,150",
+     "prizeUsd": 17150,
+     "registrations": 140,
+     "themes": [
+      "Beginner Friendly",
+      "Low/No Code",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 33,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Beginner/low-code event with $17k prize is a hard mismatch for a senior ecosystem maintainer; no strategic value.",
+    "hours": 16,
+    "pWin": 0.021,
+    "evPerHour": 7,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hackrpi",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "28217",
+       "url": "https://hackrpi-2026.devpost.com/"
+      }
+     ],
+     "name": "HackRPI 2026",
+     "organizer": "HackRPI",
+     "online": false,
+     "location": "Darrin Communications Center",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$3,550",
+     "prizeUsd": 3550,
+     "registrations": 25,
+     "themes": [
+      "Beginner Friendly"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Darrin Communications Center, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.051,
+    "evPerHour": 2,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Darrin Communications Center, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "youcamapiskinaiandecommercevto",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31400",
+       "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/"
+      }
+     ],
+     "name": "YouCam API Skin AI & eCommerce VTO Hackathon",
+     "organizer": "Perfect Corp",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-02",
+     "daysLeft": 7,
+     "prizeText": "$6,000",
+     "prizeUsd": 6000,
+     "registrations": 1278,
+     "themes": [
+      "AR/VR",
+      "E-commerce/Retail",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "fullstack",
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "a VR headset"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 37,
+    "verdict": "OUT",
+    "repo": "ky",
+    "why": "Out: needs a VR headset, and nothing on the profile shows it.",
+    "hours": 18,
+    "pWin": 0.015,
+    "evPerHour": 2,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs a VR headset, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "learnarwithspecs",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31659",
+       "url": "https://learn-specs.devpost.com/"
+      }
+     ],
+     "name": "Learn AR with SPECS",
+     "organizer": "Devpost",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-09",
+     "daysLeft": 14,
+     "prizeText": "$2,500",
+     "prizeUsd": 2500,
+     "registrations": 754,
+     "themes": [
+      "AR/VR",
+      "Machine Learning/AI",
+      "Design"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "a VR headset"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 37,
+    "verdict": "OUT",
+    "repo": "got",
+    "why": "Out: needs a VR headset, and nothing on the profile shows it.",
+    "hours": 18,
+    "pWin": 0.017,
+    "evPerHour": 1,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs a VR headset, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hackfwmadechallenge",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30548",
+       "url": "https://hackfw.devpost.com/"
+      }
+     ],
+     "name": "HackFW: MADE Challenge",
+     "organizer": "Fort Worth DAO",
+     "online": false,
+     "location": "Fort Worth",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "$1,900",
+     "prizeUsd": 1900,
+     "registrations": 163,
+     "themes": [
+      "IoT",
+      "Machine Learning/AI",
+      "Robotic Process Automation"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 37,
+    "verdict": "OUT",
+    "repo": "got",
+    "why": "Out: in person in Fort Worth, not in Nigeria.",
+    "hours": 18,
+    "pWin": 0.025,
+    "evPerHour": 1,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Fort Worth, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "herhack",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31664",
+       "url": "https://herhack.devpost.com/"
+      }
+     ],
+     "name": "Herhack",
+     "organizer": "Echelon institute of technology",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-10",
+     "daysLeft": 15,
+     "prizeText": "\u20b9 200,000",
+     "prizeUsd": 2102,
+     "registrations": 73,
+     "themes": [
+      "Beginner Friendly",
+      "Blockchain",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "onchain"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 35,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Blockchain/beginner event with $2k prize is a hard mismatch for a senior JS ecosystem maintainer.",
+    "hours": 16,
+    "pWin": 0.029,
+    "evPerHour": 1,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "engage60codewithai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31821",
+       "url": "https://engage6.devpost.com/"
+      }
+     ],
+     "name": "Engage 6.0 \u2013 Code with AI Hackathon",
+     "organizer": "The Northcap University",
+     "online": false,
+     "location": "The NorthCap University",
+     "closes": "2026-10-27",
+     "daysLeft": 1,
+     "prizeText": "$45,000",
+     "prizeUsd": 45000,
+     "registrations": 18,
+     "themes": [
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in The NorthCap University, not in Nigeria.",
+    "hours": 8,
+    "pWin": 0.001,
+    "evPerHour": 1,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in The NorthCap University, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "syntaxsummit",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30764",
+       "url": "https://syntax-summit.devpost.com/"
+      }
+     ],
+     "name": "Syntax Summit",
+     "organizer": "Student Organization",
+     "online": true,
+     "location": "Online",
+     "closes": "2027-01-14",
+     "daysLeft": 80,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 375,
+     "themes": [
+      "DevOps",
+      "Machine Learning/AI",
+      "Robotic Process Automation"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "devtools",
+      "education",
+      "ml",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 72,
+    "verdict": "OUT",
+    "repo": "eslint-plugin-unicorn",
+    "why": "Out: needs robot or IoT hardware, and nothing on the profile shows it.",
+    "hours": 10,
+    "pWin": 0.075,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs robot or IoT hardware, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "teenshouston",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30657",
+       "url": "https://tripleh.devpost.com/"
+      }
+     ],
+     "name": "Teens Hack Houston Hackathon",
+     "organizer": "HackClub  \u2713\u20dd",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-21",
+     "daysLeft": 26,
+     "prizeText": "$300",
+     "prizeUsd": 300,
+     "registrations": 24,
+     "themes": [
+      "Beginner Friendly",
+      "Low/No Code",
+      "Productivity"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "devtools"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 49,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Beginner/low-code event with $300 prize is a hard mismatch for a senior ecosystem maintainer; no strategic value.",
+    "hours": 16,
+    "pWin": 0.08,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet",
+     "Model fit 30 vs rules 84: blended to 49."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "falleseseniordesign",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31484",
+       "url": "https://ese4500f26.devpost.com/"
+      }
+     ],
+     "name": "2026-2027 Fall ESE Senior Design",
+     "organizer": "university of pennsylvania",
+     "online": false,
+     "location": "Amy Gutman Hall",
+     "closes": "2026-12-07",
+     "daysLeft": 42,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 104,
+     "themes": [
+      "AR/VR",
+      "Fintech",
+      "Quantum"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "payments",
+      "hardware"
+     ],
+     "needs": [
+      "a VR headset"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 47,
+    "verdict": "OUT",
+    "repo": "got",
+    "why": "Out: in person in Amy Gutman Hall, not in Nigeria.",
+    "hours": 18,
+    "pWin": 0.046,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Amy Gutman Hall, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "tumblockchainandai",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "528f2495b98b4f38ae41139390594a3a",
+       "url": "https://tum.devfolio.co"
+      }
+     ],
+     "name": "TUM Blockchain & AI Hackathon",
+     "organizer": "",
+     "online": false,
+     "location": "M\u00fcnchen, Germany",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 674,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "onchain",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 44,
+    "verdict": "OUT",
+    "repo": "type-fest",
+    "why": "Out: in person in M\u00fcnchen, Germany, not in Nigeria.",
+    "hours": 18,
+    "pWin": 0.024,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in M\u00fcnchen, Germany, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "codesprintbyelitecoders",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31515",
+       "url": "https://codesprint-by-elitecoders.devpost.com/"
+      }
+     ],
+     "name": "CodeSprint by Elite Coders",
+     "organizer": "elite coders",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "\u20b9 30,000",
+     "prizeUsd": 315,
+     "registrations": 344,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "fullstack"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 40,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Beginner-friendly event with 344 registrants and $315 prize is a hard mismatch for a senior ecosystem maintainer; no strategic value.",
+    "hours": 16,
+    "pWin": 0.024,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "evensonarisnord",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "27097",
+       "url": "https://evensonarisnord.devpost.com/"
+      }
+     ],
+     "name": "evensonarisnord",
+     "organizer": "HoustonHacks2026",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-12-31",
+     "daysLeft": 66,
+     "prizeText": "$150",
+     "prizeUsd": 150,
+     "registrations": 121,
+     "themes": [
+      "Communication",
+      "Databases"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 40,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Vague themes (Communication, Databases) with $150 prize and 121 registrants offer no strategic fit for a devtools specialist.",
+    "hours": 16,
+    "pWin": 0.032,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "mcaprojects",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "28603",
+       "url": "https://mca-2026-projects.devpost.com/"
+      }
+     ],
+     "name": "MCA 2026 projects",
+     "organizer": "Mizzou Computing Association",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-12-25",
+     "daysLeft": 60,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 30,
+     "themes": [
+      "Beginner Friendly"
+     ],
+     "inviteOnly": true,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: invite only.",
+    "hours": 28,
+    "pWin": 0.051,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "iccproyectodestacado",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31713",
+       "url": "https://icc-proyecto-destacado-2026.devpost.com/"
+      }
+     ],
+     "name": "ICC - Proyecto Destacado 2026",
+     "organizer": "CETYS",
+     "online": false,
+     "location": "Centro de ense\u00f1anza t\u00e9cnica y superior",
+     "closes": "2026-11-03",
+     "daysLeft": 8,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 4,
+     "themes": [
+      "Beginner Friendly"
+     ],
+     "inviteOnly": true,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: invite only.",
+    "hours": 28,
+    "pWin": 0.051,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "western13",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31536",
+       "url": "https://hack-western-13.devpost.com/"
+      }
+     ],
+     "name": "Hack Western 13",
+     "organizer": "Hack Western",
+     "online": false,
+     "location": "London, Canada",
+     "closes": "2026-11-22",
+     "daysLeft": 27,
+     "prizeText": "$CAD 0",
+     "prizeUsd": 0,
+     "registrations": 42,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in London, Canada, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.044,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in London, Canada, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "agentverse",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "4c311506be0e4a6e9299199c09efe290",
+       "url": "https://agentverse.devfolio.co"
+      }
+     ],
+     "name": "AgentVerse",
+     "organizer": "",
+     "online": false,
+     "location": "United Kingdom",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 97,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in United Kingdom, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.033,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in United Kingdom, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "leaninhacks80",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "8b69c2039a8d4b4085c3869b9b25d9c9",
+       "url": "https://lean-in-hacks-8.devfolio.co"
+      }
+     ],
+     "name": "Lean In Hacks 8.0",
+     "organizer": "",
+     "online": false,
+     "location": "In person",
+     "closes": "2026-11-02",
+     "daysLeft": 7,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 153,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in In person, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.028,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in In person, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hacknauts20",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "c4045a4afcb94f6f89cfb8c48dfdf892",
+       "url": "https://hacknauts26.devfolio.co"
+      }
+     ],
+     "name": "Hacknauts 2.0",
+     "organizer": "",
+     "online": false,
+     "location": "Ludhiana, India",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 1019,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Ludhiana, India, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.017,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Ludhiana, India, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "big20",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "0dab52b6085941a6b366b2425310d8b8",
+       "url": "https://the-big-hack-2.devfolio.co"
+      }
+     ],
+     "name": "THE BIG HACK 2.0",
+     "organizer": "",
+     "online": false,
+     "location": "Soladevanahalli, India",
+     "closes": "2026-11-20",
+     "daysLeft": 25,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 54,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Soladevanahalli, India, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.04,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Soladevanahalli, India, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "haxfinity",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "50e23a48e3964f43878279a3bf81339d",
+       "url": "https://haxfinity.devfolio.co"
+      }
+     ],
+     "name": "haxfinity",
+     "organizer": "",
+     "online": false,
+     "location": "Myladi, India",
+     "closes": "2026-12-13",
+     "daysLeft": 48,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 308,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Myladi, India, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.023,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Myladi, India, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "genarrativeclash",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "40f5203a0b9842038b51dd3f73236690",
+       "url": "https://genarrative-clash.devfolio.co"
+      }
+     ],
+     "name": "GeNarrative Clash",
+     "organizer": "",
+     "online": false,
+     "location": "Kolkata, India",
+     "closes": "2026-11-21",
+     "daysLeft": 26,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 714,
+     "themes": [
+      "Design"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Kolkata, India, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.019,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Kolkata, India, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "devnexus20",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "d957bc2099f945e99edfae0c2972bed9",
+       "url": "https://devnexus2.devfolio.co"
+      }
+     ],
+     "name": "DevNexus 2.0",
+     "organizer": "",
+     "online": false,
+     "location": "Kolkata, India",
+     "closes": "2026-11-28",
+     "daysLeft": 33,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 858,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Kolkata, India, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.018,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Kolkata, India, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "withgdgs4",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "c163f2c5e7bb4c7bb7acbdb3c572bfa3",
+       "url": "https://hack-with-gdg-s4.devfolio.co"
+      }
+     ],
+     "name": "HACK WITH GDG S4",
+     "organizer": "",
+     "online": false,
+     "location": "KSR Kalvi Nagar, India",
+     "closes": "2027-01-24",
+     "daysLeft": 90,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 888,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in KSR Kalvi Nagar, India, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.018,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in KSR Kalvi Nagar, India, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "60",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "1c56ad13b8b0467ca2c3772566a0fdd2",
+       "url": "https://hack-1736.devfolio.co"
+      }
+     ],
+     "name": "HACK 6.0",
+     "organizer": "",
+     "online": false,
+     "location": "Hamirpur, India",
+     "closes": "2027-01-24",
+     "daysLeft": 90,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 30,
+     "themes": [],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 39,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Hamirpur, India, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.051,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Hamirpur, India, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "aqxsportsanalyticsdatabowl40",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31793",
+       "url": "https://aqxanalyticsfour.devpost.com/"
+      }
+     ],
+     "name": "AQX Sports Analytics Data Bowl 4.0",
+     "organizer": "Devpost",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-01",
+     "daysLeft": 6,
+     "prizeText": "$50",
+     "prizeUsd": 50,
+     "registrations": 111,
+     "themes": [
+      "Beginner Friendly",
+      "Databases",
+      "Gaming"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "games",
+      "dataviz"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 38,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Sports analytics and gaming themes need domain expertise Sindre lacks; $50 prize and 6-day window offer no ROI.",
+    "hours": 16,
+    "pWin": 0.03,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hybridmicromousechallenge",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31714",
+       "url": "https://hybrid-micro-mouse-challenge.devpost.com/"
+      }
+     ],
+     "name": "Hybrid Micro Mouse Challenge",
+     "organizer": "Alliance University",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-29",
+     "daysLeft": 3,
+     "prizeText": "\u20b9 55,000",
+     "prizeUsd": 578,
+     "registrations": 21,
+     "themes": [
+      "Education",
+      "IoT",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "hardware"
+     ],
+     "needs": [
+      "robot or IoT hardware"
+     ],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 37,
+    "verdict": "OUT",
+    "repo": "got",
+    "why": "Out: needs robot or IoT hardware, and nothing on the profile shows it.",
+    "hours": 18,
+    "pWin": 0.046,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: needs robot or IoT hardware, and nothing on the profile shows it."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "launchpadhacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31773",
+       "url": "https://launchpad-hacks.devpost.com/"
+      }
+     ],
+     "name": "LaunchPad Hacks",
+     "organizer": "Hack4TodayOrg",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-20",
+     "daysLeft": 25,
+     "prizeText": "$300",
+     "prizeUsd": 300,
+     "registrations": 177,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 36,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Beginner/low-code event with $300 prize is a hard mismatch for a senior JS ecosystem maintainer; no strategic value.",
+    "hours": 16,
+    "pWin": 0.023,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "pumpkinplayground",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31619",
+       "url": "https://pumpkin-playground.devpost.com/"
+      }
+     ],
+     "name": "Pumpkin Playground",
+     "organizer": "ACM Long Beach",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "$30",
+     "prizeUsd": 30,
+     "registrations": 145,
+     "themes": [
+      "Design",
+      "Gaming",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "games",
+      "fullstack"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 35,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Gaming/design hackathon with $30 prize is a hard mismatch for a devtools specialist; no strategic fit.",
+    "hours": 16,
+    "pWin": 0.023,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "minearena10",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31694",
+       "url": "https://minearena-1-0.devpost.com/"
+      }
+     ],
+     "name": "MineArena 1.0",
+     "organizer": "Code commit",
+     "online": false,
+     "location": "SSM cultural centre",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "\u20b9 75,000",
+     "prizeUsd": 788,
+     "registrations": 323,
+     "themes": [
+      "Machine Learning/AI",
+      "Fintech",
+      "Health"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "payments",
+      "bio",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 34,
+    "verdict": "OUT",
+    "repo": "DockProgress",
+    "why": "Out: in person in SSM cultural centre, not in Nigeria.",
+    "hours": 18,
+    "pWin": 0.017,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in SSM cultural centre, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "devfestmnsteragenticai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30880",
+       "url": "https://devfest-ai-hackathon.devpost.com/"
+      }
+     ],
+     "name": "DevFest M\u00fcnster 2026: Agentic AI Hackathon",
+     "organizer": "GDG M\u00fcnster",
+     "online": false,
+     "location": "Volkshochschule",
+     "closes": "2026-11-21",
+     "daysLeft": 26,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 18,
+     "themes": [
+      "Beginner Friendly",
+      "Low/No Code",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "agents",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 34,
+    "verdict": "OUT",
+    "repo": "quickgpt-meta",
+    "why": "Out: in person in Volkshochschule, not in Nigeria.",
+    "hours": 18,
+    "pWin": 0.039,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Volkshochschule, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "fusesocietyblueprint",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31555",
+       "url": "https://fuse-society-blueprint-2026.devpost.com/"
+      }
+     ],
+     "name": "FUSE Society Blueprint 2026",
+     "organizer": "Fuse Society",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$250",
+     "prizeUsd": 250,
+     "registrations": 27,
+     "themes": [
+      "Beginner Friendly"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 33,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Beginner event with $250 prize and 5-day deadline is a hard mismatch for a senior ecosystem maintainer; no strategic value.",
+    "hours": 16,
+    "pWin": 0.036,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "atomiqqiskitfallfestatiem",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31680",
+       "url": "https://atomiq-hackathon-qff-26-iem.devpost.com/"
+      }
+     ],
+     "name": "The Atomiq Hackathon | Qiskit Fall Fest 2026 at IEM",
+     "organizer": "Institute of Engineering & Management",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-11",
+     "daysLeft": 16,
+     "prizeText": "\u20b9 10,000",
+     "prizeUsd": 105,
+     "registrations": 38,
+     "themes": [
+      "Quantum"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 30,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Quantum computing hackathon requires physics/domain expertise Sindre has never touched; hard blocker.",
+    "hours": 16,
+    "pWin": 0.027,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [
+     "Note: not open for submissions yet"
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "nextbytehacksv5",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31627",
+       "url": "https://next-byte-hacks-v5.devpost.com/"
+      }
+     ],
+     "name": "Next Byte Hacks V5",
+     "organizer": "Next Byte Hacks",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$100",
+     "prizeUsd": 100,
+     "registrations": 401,
+     "themes": [
+      "Beginner Friendly",
+      "Low/No Code",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 30,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Beginner/low-code event with $100 prize is a hard mismatch for a senior ecosystem maintainer; no strategic value.",
+    "hours": 16,
+    "pWin": 0.013,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "girlswhocodehhs",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31748",
+       "url": "https://gwchhs-hackathon-2026.devpost.com/"
+      }
+     ],
+     "name": "Girls Who Code HHS Hackathon 2026",
+     "organizer": "Girls Who Code HHS",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-29",
+     "daysLeft": 3,
+     "prizeText": "$50",
+     "prizeUsd": 50,
+     "registrations": 49,
+     "themes": [
+      "Beginner Friendly",
+      "Gaming",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer",
+      "games",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 28,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Beginner-friendly student event with $50 prize is a hard mismatch for a senior JS ecosystem maintainer.",
+    "hours": 16,
+    "pWin": 0.021,
+    "evPerHour": 0,
+    "by": "model",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "coach": [],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "buildwithaibasics",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30447",
+       "url": "https://learn-ai-basics.devpost.com/"
+      }
+     ],
+     "name": "Build With AI: Basics",
+     "organizer": "Devpost",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-26",
+     "daysLeft": 0,
+     "prizeText": "$2,500",
+     "prizeUsd": 2500,
+     "registrations": 5018,
+     "themes": [
+      "Machine Learning/AI",
+      "Beginner Friendly",
+      "Education"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: closes in under a day.",
+    "hours": 4,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: closes in under a day."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "nextsparkhacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31805",
+       "url": "https://nextspark-hacks.devpost.com/"
+      }
+     ],
+     "name": "NextSpark Hacks",
+     "organizer": "Independent Student Organizer",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-10-26",
+     "daysLeft": 0,
+     "prizeText": "$100",
+     "prizeUsd": 100,
+     "registrations": 250,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: closes in under a day.",
+    "hours": 4,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: closes in under a day."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "htcjproofaviationfutureschallenge",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30539",
+       "url": "https://htcj-aviation-futures.devpost.com/"
+      }
+     ],
+     "name": "HTCJ \u00d7 PROOF Aviation Futures Challenge",
+     "organizer": "hacktheconcretejungle ",
+     "online": false,
+     "location": "Boston Venture Week",
+     "closes": "2026-10-27",
+     "daysLeft": 1,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 127,
+     "themes": [
+      "Enterprise",
+      "Machine Learning/AI",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "trading",
+      "consumer",
+      "education",
+      "impact",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Boston Venture Week, not in Nigeria.",
+    "hours": 8,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Boston Venture Week, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "renderjuiceblenderanimationandprogrammaticrenderingcontest",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31411",
+       "url": "https://programmatic-rendering-contest.devpost.com/"
+      }
+     ],
+     "name": "RenderJuice Blender Animation & Programmatic Rendering Contest",
+     "organizer": "RenderJuice",
+     "online": false,
+     "location": "New York, NY",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$1,500",
+     "prizeUsd": 1500,
+     "registrations": 58,
+     "themes": [
+      "Design",
+      "Music/Art",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "consumer"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in New York, NY, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in New York, NY, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "createathon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31736",
+       "url": "https://graph-hacks.devpost.com/"
+      }
+     ],
+     "name": "CreateAThon",
+     "organizer": "Hacker's Unity",
+     "online": false,
+     "location": "Online, from anywhere",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 56,
+     "themes": [
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Online, from anywhere, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Online, from anywhere, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "agnticosoftwarechido2026b",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31626",
+       "url": "https://hackathon-agentico-2026b.devpost.com/"
+      }
+     ],
+     "name": "Hackathon Ag\u00e9ntico SoftwareChido 2026B",
+     "organizer": "ITESO",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-25",
+     "daysLeft": 30,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 29,
+     "themes": [
+      "Education",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": true,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: invite only.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "aibuildindia",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31735",
+       "url": "https://sphinx-26.devpost.com/"
+      }
+     ],
+     "name": "AI Build India",
+     "organizer": "Hacker's Unity",
+     "online": false,
+     "location": "jaipur",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 16,
+     "themes": [
+      "Machine Learning/AI",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in jaipur, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in jaipur, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "health30",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31866",
+       "url": "https://health-hackathon-3-0.devpost.com/"
+      }
+     ],
+     "name": "Health Hackathon 3.0",
+     "organizer": "VIT Bhopal University",
+     "online": false,
+     "location": "VIT Bhopal University",
+     "closes": "2026-10-31",
+     "daysLeft": 5,
+     "prizeText": "\u20b9 200,000",
+     "prizeUsd": 2102,
+     "registrations": 10,
+     "themes": [
+      "Health"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "bio"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in VIT Bhopal University, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in VIT Bhopal University, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "buksisitesteminnovationandtalentexpoonlyforbukitsionstudents",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31257",
+       "url": "https://buksi-site-2026.devpost.com/"
+      }
+     ],
+     "name": "Buksi SITE (STEM Innovation & Talent Expo) 2026 - ONLY FOR BUKIT SION STUDENTS",
+     "organizer": "Bukit Sion School",
+     "online": false,
+     "location": "Bukit Sion Highschool",
+     "closes": "2026-10-30",
+     "daysLeft": 4,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 7,
+     "themes": [
+      "Beginner Friendly",
+      "Enterprise",
+      "Education"
+     ],
+     "inviteOnly": true,
+     "state": "open",
+     "tags": [
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: invite only.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "bdbixspacexsigrokathon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31811",
+       "url": "https://bdbi-x-spacexsi.devpost.com/"
+      }
+     ],
+     "name": "BDBI x SpaceXSI Grokathon",
+     "organizer": "SpaceXSI",
+     "online": true,
+     "location": "Online",
+     "closes": "2026-11-02",
+     "daysLeft": 7,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 220,
+     "themes": [
+      "Machine Learning/AI",
+      "Open Ended",
+      "Social Good"
+     ],
+     "inviteOnly": true,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "dataviz",
+      "education",
+      "impact",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: invite only.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "larphacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30731",
+       "url": "https://larphacks.devpost.com/"
+      }
+     ],
+     "name": "LarpHacks",
+     "organizer": "larphacks",
+     "online": false,
+     "location": "Toronto",
+     "closes": "2026-11-01",
+     "daysLeft": 6,
+     "prizeText": "$21,394",
+     "prizeUsd": 21394,
+     "registrations": 157,
+     "themes": [
+      "Beginner Friendly",
+      "Machine Learning/AI",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Toronto, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Toronto, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "sinceai",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30516",
+       "url": "https://sinceai2026.devpost.com/"
+      }
+     ],
+     "name": "Since AI 2026",
+     "organizer": "Since AI ry",
+     "online": false,
+     "location": "Kupittaa Campus, Turku",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "\u20ac50,000",
+     "prizeUsd": 56046,
+     "registrations": 94,
+     "themes": [
+      "Machine Learning/AI",
+      "Open Ended",
+      "Enterprise"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Kupittaa Campus, Turku, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Kupittaa Campus, Turku, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "stupidideasottawaf26",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30425",
+       "url": "https://stupideas-ottawa-f26.devpost.com/"
+      }
+     ],
+     "name": "Stupid Ideas Hackathon (Ottawa F26)",
+     "organizer": "stupid ideas hackathon",
+     "online": false,
+     "location": "Bayview Yards",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "$CAD 1,252",
+     "prizeUsd": 1252,
+     "registrations": 80,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Bayview Yards, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Bayview Yards, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "techtotreasure",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "28629",
+       "url": "https://techtotreasure.devpost.com/"
+      }
+     ],
+     "name": "Tech to Treasure Hackathon",
+     "organizer": "bin to better",
+     "online": false,
+     "location": "Tully Community Branch Library",
+     "closes": "2027-03-10",
+     "daysLeft": 135,
+     "prizeText": "$450",
+     "prizeUsd": 450,
+     "registrations": 80,
+     "themes": [
+      "Beginner Friendly",
+      "Education",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "education",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Tully Community Branch Library, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Tully Community Branch Library, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "biohacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30296",
+       "url": "https://biohacksmcmaster.devpost.com/"
+      }
+     ],
+     "name": "BioHacks",
+     "organizer": "BioEng4Youth",
+     "online": false,
+     "location": "McMaster University - PGCLL",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$CAD 0",
+     "prizeUsd": 0,
+     "registrations": 55,
+     "themes": [
+      "Health",
+      "Machine Learning/AI",
+      "Open Ended"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "bio",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in McMaster University - PGCLL, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in McMaster University - PGCLL, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "awsxa10",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31660",
+       "url": "https://a10-x-aws-hack-26.devpost.com/"
+      }
+     ],
+     "name": "AWS x A10 Hack 2026",
+     "organizer": "Santa Clara University ACM",
+     "online": false,
+     "location": "Heafey Hall",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$7,500",
+     "prizeUsd": 7500,
+     "registrations": 54,
+     "themes": [
+      "Beginner Friendly",
+      "Cybersecurity",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "privacy",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Heafey Hall, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Heafey Hall, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "harvest",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31200",
+       "url": "https://hack-the-harvest.devpost.com/"
+      }
+     ],
+     "name": "Hack the Harvest",
+     "organizer": "HMCI",
+     "online": false,
+     "location": "Aggie Square",
+     "closes": "2026-11-15",
+     "daysLeft": 20,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 52,
+     "themes": [
+      "Education",
+      "Enterprise"
+     ],
+     "inviteOnly": true,
+     "state": "upcoming",
+     "tags": [
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: invite only.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "change",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30836",
+       "url": "https://hack-the-change-2026.devpost.com/"
+      }
+     ],
+     "name": "Hack the Change 2026",
+     "organizer": "Code the Change YYC",
+     "online": false,
+     "location": "University of Calgary",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$CAD 5,000",
+     "prizeUsd": 5000,
+     "registrations": 37,
+     "themes": [
+      "Education",
+      "Social Good",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "fullstack",
+      "education",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in University of Calgary, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in University of Calgary, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "communihacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30699",
+       "url": "https://communihacks.devpost.com/"
+      }
+     ],
+     "name": "CommuniHacks",
+     "organizer": "CommuniHacks",
+     "online": false,
+     "location": "Builders Club",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$CAD 6,000",
+     "prizeUsd": 6000,
+     "registrations": 35,
+     "themes": [
+      "Design",
+      "Education",
+      "Social Good"
+     ],
+     "inviteOnly": true,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "education",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: invite only.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "sheridandatathon",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "31146",
+       "url": "https://sheridandatathon2026.devpost.com/"
+      }
+     ],
+     "name": "Sheridan Datathon 2026",
+     "organizer": "GDG on Campus Sheridan College",
+     "online": false,
+     "location": "Sheridan College Hazel McCallion Campus",
+     "closes": "2026-11-08",
+     "daysLeft": 13,
+     "prizeText": "$CAD 12,000",
+     "prizeUsd": 12000,
+     "registrations": 34,
+     "themes": [
+      "Beginner Friendly",
+      "Databases",
+      "Machine Learning/AI"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Sheridan College Hazel McCallion Campus, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Sheridan College Hazel McCallion Campus, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "bearhacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "30689",
+       "url": "https://bearhacks2027.devpost.com/"
+      }
+     ],
+     "name": "BearHacks 2027",
+     "organizer": "BearHacks",
+     "online": false,
+     "location": "Sheridan College Hazel McCallion Campus",
+     "closes": "2027-04-25",
+     "daysLeft": 181,
+     "prizeText": "$CAD 10,000",
+     "prizeUsd": 10000,
+     "registrations": 34,
+     "themes": [
+      "Machine Learning/AI",
+      "Mobile",
+      "Web"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "fullstack",
+      "education",
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Sheridan College Hazel McCallion Campus, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Sheridan College Hazel McCallion Campus, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "vibecodeanimatedmaps",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "29980",
+       "url": "https://vibecode-animated-maps.devpost.com/"
+      }
+     ],
+     "name": "Vibe Code Animated Maps",
+     "organizer": "Mappi Studio",
+     "online": false,
+     "location": "South Plainfield Library",
+     "closes": "2026-12-20",
+     "daysLeft": 55,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 27,
+     "themes": [
+      "Design",
+      "Education",
+      "Web"
+     ],
+     "inviteOnly": true,
+     "state": "upcoming",
+     "tags": [
+      "fullstack",
+      "education"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: invite only.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: invite only."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "hoyahacks",
+     "sources": [
+      {
+       "source": "Devpost",
+       "id": "28304",
+       "url": "https://hoya-hacks-2027.devpost.com/"
+      }
+     ],
+     "name": "Hoya Hacks 2027",
+     "organizer": "Hoya Hacks",
+     "online": false,
+     "location": "Healey Family Student Center",
+     "closes": "2027-01-24",
+     "daysLeft": 90,
+     "prizeText": "$0",
+     "prizeUsd": 0,
+     "registrations": 25,
+     "themes": [
+      "Beginner Friendly",
+      "Open Ended",
+      "Social Good"
+     ],
+     "inviteOnly": false,
+     "state": "upcoming",
+     "tags": [
+      "consumer",
+      "impact"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Healey Family Student Center, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Healey Family Student Center, not in Nigeria."
+    ],
+    "memory": []
+   },
+   {
+    "hackathon": {
+     "key": "surat",
+     "sources": [
+      {
+       "source": "Devfolio",
+       "id": "0ad8f867250d46bd987623adb920028f",
+       "url": "https://surat-hack-2026.devfolio.co"
+      }
+     ],
+     "name": "Surat Hack 2026",
+     "organizer": "",
+     "online": false,
+     "location": "Surat, India",
+     "closes": "2026-11-01",
+     "daysLeft": 6,
+     "prizeText": "",
+     "prizeUsd": 0,
+     "registrations": 45,
+     "themes": [
+      "AI"
+     ],
+     "inviteOnly": false,
+     "state": "open",
+     "tags": [
+      "ml"
+     ],
+     "needs": [],
+     "evidence": [
+      "q_68ca0eef7d7bdaa0"
+     ]
+    },
+    "fit": 5,
+    "verdict": "OUT",
+    "repo": null,
+    "why": "Out: in person in Surat, India, not in Nigeria.",
+    "hours": 28,
+    "pWin": 0.001,
+    "evPerHour": 0,
+    "by": "playbook",
+    "coach": [
+     "Out by rule: in person in Surat, India, not in Nigeria."
+    ],
+    "memory": []
+   }
+  ],
+  "note": "HackTitan is the best use of your time at about $38/h, starting from eslint-plugin-unicorn. Meta VR Start Developer Competition 2026 has the biggest prize ($1.0M) but needs a VR headset, and nothing on the profile shows it.",
+  "log": [
+   {
+    "kind": "fx",
+    "text": "CodeSprint by Elite Coders: \u20b9 30,000 \u2192 $315 at today's rate"
+   },
+   {
+    "kind": "fx",
+    "text": "MineArena 1.0: \u20b9 75,000 \u2192 $788 at today's rate"
+   },
+   {
+    "kind": "fx",
+    "text": "HackWithAditya: \u20b9 500,000 \u2192 $5,254 at today's rate"
+   },
+   {
+    "kind": "source",
+    "text": "Registered sindresorhus's GitHub in Zetaris: 97 repos, 0 wins on the README"
+   },
+   {
+    "kind": "skip",
+    "text": "Skipped Meta VR Start Developer Competition 2026 ($1.0M): needs a VR headset, and nothing on the profile shows it."
+   },
+   {
+    "kind": "skip",
+    "text": "Skipped SUSTAIN-A-THON 2.0 ($150,000): in person in Block 45, Sharda University, not in Nigeria."
+   }
+  ],
+  "recommendations": [
+   "Register yourself at https://hacktitan.devpost.com/ before 2027-02-04 and start from eslint-plugin-unicorn."
+  ],
+  "artifacts": [
+   {
+    "type": "trace",
+    "path": "logs/trace-run-2026-10-26-228ab6.jsonl"
+   },
+   {
+    "type": "calendar",
+    "path": "data/runtime/docket/sindresorhus.ics"
+   }
+  ],
+  "builder": {
+   "login": "sindresorhus",
+   "repos": [
+    {
+     "name": "sindresorhus.github.com",
+     "language": "JavaScript",
+     "description": "Personal website of Sindre Sorhus",
+     "topics": [
+      "personal-website",
+      "sindresorhus",
+      "unicorns",
+      "website"
+     ],
+     "stars": 385,
+     "pushedAt": "2026-10-26T09:24:35Z",
+     "homepage": "http://sindresorhus.com/",
+     "tags": []
+    },
+    {
+     "name": "eslint-plugin-unicorn",
+     "language": "JavaScript",
+     "description": "More than 300 powerful ESLint rules",
+     "topics": [
+      "eslint",
+      "eslint-config",
+      "eslint-plugin",
+      "eslint-rules",
+      "javascript",
+      "linting-rules",
+      "nodejs",
+      "unicorns",
+      "xo"
+     ],
+     "stars": 5283,
+     "pushedAt": "2026-10-25T19:22:25Z",
+     "homepage": "",
+     "tags": [
+      "devtools"
+     ]
+    },
+    {
+     "name": "file-type",
+     "language": "JavaScript",
+     "description": "Detect the file type of a file, stream, or data",
+     "topics": [
+      "buffer",
+      "detect",
+      "file",
+      "file-types",
+      "javascript",
+      "magic",
+      "magic-numbers",
+      "nodejs",
+      "uint8array"
+     ],
+     "stars": 4339,
+     "pushedAt": "2026-10-25T11:31:57Z",
+     "homepage": "",
+     "tags": [
+      "dataviz"
+     ]
+    },
+    {
+     "name": "tsconfig",
+     "language": "",
+     "description": "Shared TypeScript config for my projects",
+     "topics": [
+      "config",
+      "npm-package",
+      "tsconfig",
+      "typescript"
+     ],
+     "stars": 377,
+     "pushedAt": "2026-10-25T08:10:47Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "type-fest",
+     "language": "TypeScript",
+     "description": "A collection of essential TypeScript types",
+     "topics": [
+      "npm-package",
+      "types",
+      "typescript",
+      "typescript-definitions",
+      "utilities"
+     ],
+     "stars": 17469,
+     "pushedAt": "2026-10-25T05:05:11Z",
+     "homepage": "",
+     "tags": [
+      "onchain"
+     ]
+    },
+    {
+     "name": "np",
+     "language": "JavaScript",
+     "description": "A better `npm publish`",
+     "topics": [
+      "cli",
+      "cli-app",
+      "javascript",
+      "nodejs",
+      "npm",
+      "npm-package",
+      "npm-publish",
+      "publish",
+      "yarn"
+     ],
+     "stars": 7713,
+     "pushedAt": "2026-10-24T13:44:01Z",
+     "homepage": "",
+     "tags": [
+      "fullstack",
+      "devtools"
+     ]
+    },
+    {
+     "name": "eslint-cssicorn",
+     "language": "JavaScript",
+     "description": "Powerful ESLint rules for CSS",
+     "topics": [],
+     "stars": 81,
+     "pushedAt": "2026-10-23T15:12:07Z",
+     "homepage": "",
+     "tags": [
+      "devtools"
+     ]
+    },
+    {
+     "name": "execa",
+     "language": "JavaScript",
+     "description": "Process execution for humans",
+     "topics": [
+      "binary",
+      "child-process",
+      "exec",
+      "execute",
+      "javascript",
+      "nodejs",
+      "shell",
+      "spawn",
+      "spawned-processes",
+      "streams"
+     ],
+     "stars": 7626,
+     "pushedAt": "2026-10-23T09:14:17Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "query-string",
+     "language": "JavaScript",
+     "description": "Parse and stringify URL query strings",
+     "topics": [
+      "npm-package",
+      "parse",
+      "query-string",
+      "stringify",
+      "url",
+      "urlsearchparams"
+     ],
+     "stars": 6903,
+     "pushedAt": "2026-10-21T12:23:52Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "emittery",
+     "language": "JavaScript",
+     "description": "Simple and modern async event emitter",
+     "topics": [
+      "async",
+      "emitter",
+      "event-emitter",
+      "event-listener",
+      "javascript",
+      "nodejs",
+      "npm-package",
+      "promise"
+     ],
+     "stars": 2077,
+     "pushedAt": "2026-10-20T13:57:00Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "unlimited-timeout",
+     "language": "JavaScript",
+     "description": "setTimeout and setInterval that work with delays longer than 24.8 days",
+     "topics": [],
+     "stars": 47,
+     "pushedAt": "2026-10-17T14:32:27Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "p-queue",
+     "language": "TypeScript",
+     "description": "Promise queue with concurrency control",
+     "topics": [
+      "async-functions",
+      "async-queue",
+      "node-module",
+      "npm-package",
+      "promise",
+      "promise-queue",
+      "queue",
+      "queue-data-stucture"
+     ],
+     "stars": 4299,
+     "pushedAt": "2026-10-16T21:25:44Z",
+     "homepage": "",
+     "tags": [
+      "dataviz"
+     ]
+    },
+    {
+     "name": "gifkit",
+     "language": "JavaScript",
+     "description": "Encode, decode, and render GIF files",
+     "topics": [],
+     "stars": 34,
+     "pushedAt": "2026-10-15T18:27:08Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "nz",
+     "language": "JavaScript",
+     "description": "Zero-config type tests for packages with hand-written declaration files",
+     "topics": [],
+     "stars": 8,
+     "pushedAt": "2026-10-15T13:51:05Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "p-wait-for",
+     "language": "JavaScript",
+     "description": "Wait for a condition to be true",
+     "topics": [],
+     "stars": 169,
+     "pushedAt": "2026-10-15T13:40:09Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "debounce-fn",
+     "language": "JavaScript",
+     "description": "Debounce a function",
+     "topics": [],
+     "stars": 133,
+     "pushedAt": "2026-10-15T13:08:19Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "p-memoize",
+     "language": "TypeScript",
+     "description": "Memoize promise-returning & async functions",
+     "topics": [],
+     "stars": 453,
+     "pushedAt": "2026-10-15T12:40:31Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "p-debounce",
+     "language": "JavaScript",
+     "description": "Debounce promise-returning & async functions",
+     "topics": [],
+     "stars": 239,
+     "pushedAt": "2026-10-15T12:37:20Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "p-timeout",
+     "language": "JavaScript",
+     "description": "Timeout a promise after a specified amount of time",
+     "topics": [],
+     "stars": 308,
+     "pushedAt": "2026-10-15T12:09:25Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "fast-cli",
+     "language": "TypeScript",
+     "description": "Test your download and upload speed using fast.com",
+     "topics": [
+      "cli-app",
+      "command-line-tool",
+      "download-speed",
+      "nodejs",
+      "npm-package",
+      "speed-test"
+     ],
+     "stars": 2892,
+     "pushedAt": "2026-10-14T21:45:57Z",
+     "homepage": "",
+     "tags": [
+      "fullstack",
+      "devtools"
+     ]
+    },
+    {
+     "name": "normalize-url",
+     "language": "JavaScript",
+     "description": "Normalize a URL",
+     "topics": [
+      "compare-urls",
+      "npm-package",
+      "sanitize-url",
+      "url-normalization"
+     ],
+     "stars": 883,
+     "pushedAt": "2026-10-14T17:24:37Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "aggregate-error",
+     "language": "JavaScript",
+     "description": "Create an error from multiple errors",
+     "topics": [],
+     "stars": 248,
+     "pushedAt": "2026-10-14T16:55:40Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "humanize-string",
+     "language": "JavaScript",
+     "description": "Convert a camelized/dasherized/underscored string into a humanized one: fooBar-Baz_Faz \u2192 Foo bar baz faz",
+     "topics": [],
+     "stars": 112,
+     "pushedAt": "2026-10-14T13:44:22Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "pretty-ms",
+     "language": "JavaScript",
+     "description": "Convert milliseconds to a human readable string: `1337000000` \u2192 `15d 11h 23m 20s`",
+     "topics": [
+      "humanize",
+      "milliseconds",
+      "npm-package"
+     ],
+     "stars": 1218,
+     "pushedAt": "2026-10-14T05:32:22Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "decamelize",
+     "language": "JavaScript",
+     "description": "Convert a camelized string into a lowercased one with a custom separator: unicornRainbow \u2192 unicorn_rainbow",
+     "topics": [],
+     "stars": 245,
+     "pushedAt": "2026-10-13T19:07:34Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "map-obj",
+     "language": "JavaScript",
+     "description": "Map object keys and values into a new object",
+     "topics": [],
+     "stars": 218,
+     "pushedAt": "2026-10-13T12:21:46Z",
+     "homepage": "",
+     "tags": [
+      "dataviz"
+     ]
+    },
+    {
+     "name": "clone-regexp",
+     "language": "JavaScript",
+     "description": "Clone and modify a RegExp instance",
+     "topics": [],
+     "stars": 24,
+     "pushedAt": "2026-10-13T06:38:18Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "got",
+     "language": "TypeScript",
+     "description": "\ud83c\udf10 Human-friendly and powerful HTTP request library for Node.js",
+     "topics": [
+      "http",
+      "http-client",
+      "http-request",
+      "https",
+      "nodejs",
+      "npm-package"
+     ],
+     "stars": 14953,
+     "pushedAt": "2026-10-13T06:34:45Z",
+     "homepage": "",
+     "tags": [
+      "hardware"
+     ]
+    },
+    {
+     "name": "eslint-package-json",
+     "language": "JavaScript",
+     "description": "Powerful ESLint rules for package.json",
+     "topics": [],
+     "stars": 82,
+     "pushedAt": "2026-10-12T20:00:27Z",
+     "homepage": "",
+     "tags": [
+      "devtools"
+     ]
+    },
+    {
+     "name": "electron-store",
+     "language": "JavaScript",
+     "description": "Simple data persistence for your Electron app or module - Save and load user preferences, app state, cache, etc",
+     "topics": [
+      "config",
+      "data-persistence",
+      "electron",
+      "electron-module",
+      "npm-package",
+      "preferences",
+      "storage",
+      "user-preferences"
+     ],
+     "stars": 5029,
+     "pushedAt": "2026-10-12T19:53:29Z",
+     "homepage": "",
+     "tags": [
+      "fullstack",
+      "dataviz"
+     ]
+    },
+    {
+     "name": "conf",
+     "language": "TypeScript",
+     "description": "Simple config handling for your app or module",
+     "topics": [
+      "command-line",
+      "config",
+      "configuration-management",
+      "json",
+      "json-schema",
+      "node-module",
+      "npm-package",
+      "preferences",
+      "storage"
+     ],
+     "stars": 1351,
+     "pushedAt": "2026-10-12T17:27:44Z",
+     "homepage": "",
+     "tags": [
+      "fullstack"
+     ]
+    },
+    {
+     "name": "quickgpt-meta",
+     "language": "",
+     "description": "",
+     "topics": [],
+     "stars": 17,
+     "pushedAt": "2026-10-12T13:58:53Z",
+     "homepage": "https://sindresorhus.com/quickgpt",
+     "tags": [
+      "agents"
+     ]
+    },
+    {
+     "name": "camelcase",
+     "language": "JavaScript",
+     "description": "Convert a dash/dot/underscore/space separated string to camelCase: foo-bar \u2192 fooBar",
+     "topics": [],
+     "stars": 699,
+     "pushedAt": "2026-10-12T09:59:16Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "p-map",
+     "language": "JavaScript",
+     "description": "Map over promises concurrently",
+     "topics": [
+      "async",
+      "async-await",
+      "async-functions",
+      "await",
+      "concurrency",
+      "iteration",
+      "javascript",
+      "mapper",
+      "nodejs",
+      "parallel",
+      "promise",
+      "promises"
+     ],
+     "stars": 1518,
+     "pushedAt": "2026-10-11T15:25:09Z",
+     "homepage": "",
+     "tags": [
+      "dataviz"
+     ]
+    },
+    {
+     "name": "p-event",
+     "language": "JavaScript",
+     "description": "Promisify an event by waiting for it to be emitted",
+     "topics": [],
+     "stars": 450,
+     "pushedAt": "2026-10-11T15:18:10Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "DockProgress",
+     "language": "Swift",
+     "description": "Show progress in your app's Dock icon",
+     "topics": [
+      "dock",
+      "icon",
+      "macos",
+      "progress-bar",
+      "progress-circle",
+      "swift",
+      "swift-package"
+     ],
+     "stars": 1357,
+     "pushedAt": "2026-10-10T09:17:51Z",
+     "homepage": "https://swiftpackageindex.com/sindresorhus/DockProgress/documentation/dockprogress/dockprogress",
+     "tags": [
+      "payments",
+      "fullstack"
+     ]
+    },
+    {
+     "name": "ky",
+     "language": "TypeScript",
+     "description": "\ud83c\udf33 Tiny & elegant JavaScript HTTP client based on the Fetch API",
+     "topics": [
+      "fetch",
+      "http-client",
+      "http-request",
+      "javascript",
+      "js",
+      "json",
+      "npm-package",
+      "request",
+      "rest",
+      "tiny",
+      "whatwg-fetch"
+     ],
+     "stars": 17138,
+     "pushedAt": "2026-10-09T06:29:49Z",
+     "homepage": "",
+     "tags": [
+      "fullstack",
+      "hardware"
+     ]
+    },
+    {
+     "name": "del-cli",
+     "language": "JavaScript",
+     "description": "Delete files and directories",
+     "topics": [],
+     "stars": 333,
+     "pushedAt": "2026-10-09T03:58:55Z",
+     "homepage": "",
+     "tags": [
+      "devtools"
+     ]
+    },
+    {
+     "name": "del",
+     "language": "JavaScript",
+     "description": "Delete files and directories",
+     "topics": [],
+     "stars": 1345,
+     "pushedAt": "2026-10-08T17:34:43Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "electron-better-ipc",
+     "language": "JavaScript",
+     "description": "Simplified IPC communication for Electron apps",
+     "topics": [
+      "electron",
+      "electron-module",
+      "ipc",
+      "ipc-message",
+      "nodejs",
+      "npm-package"
+     ],
+     "stars": 747,
+     "pushedAt": "2026-10-07T20:06:36Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "filename-reserved-regex",
+     "language": "JavaScript",
+     "description": "Regular expression for matching reserved filename characters",
+     "topics": [],
+     "stars": 53,
+     "pushedAt": "2026-10-07T18:02:48Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "electron-reloader",
+     "language": "JavaScript",
+     "description": "Simple auto-reloading for Electron apps during development",
+     "topics": [
+      "electron",
+      "electron-module",
+      "livereload",
+      "nodejs",
+      "npm-package"
+     ],
+     "stars": 586,
+     "pushedAt": "2026-10-07T16:09:48Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "electron-timber",
+     "language": "JavaScript",
+     "description": "Pretty logger for Electron apps",
+     "topics": [
+      "electron",
+      "electron-module",
+      "logger",
+      "logging",
+      "logging-library",
+      "nodejs",
+      "npm-package"
+     ],
+     "stars": 423,
+     "pushedAt": "2026-10-07T16:02:43Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "pure",
+     "language": "Shell",
+     "description": "Pretty, minimal and fast ZSH prompt",
+     "topics": [
+      "git",
+      "minimal",
+      "prompt",
+      "pure",
+      "shell",
+      "shell-prompt",
+      "shell-theme",
+      "terminal",
+      "theme",
+      "zsh"
+     ],
+     "stars": 14455,
+     "pushedAt": "2026-10-07T13:58:39Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "pid-port",
+     "language": "JavaScript",
+     "description": "Get the ID of the process that uses a certain port",
+     "topics": [],
+     "stars": 150,
+     "pushedAt": "2026-10-06T08:44:36Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "eslint-node-test",
+     "language": "JavaScript",
+     "description": "ESLint rules for the Node.js built-in test runner (`node:test`)",
+     "topics": [],
+     "stars": 66,
+     "pushedAt": "2026-10-03T10:22:39Z",
+     "homepage": "",
+     "tags": [
+      "devtools"
+     ]
+    },
+    {
+     "name": "globals",
+     "language": "JavaScript",
+     "description": "Global identifiers from different JavaScript environments",
+     "topics": [],
+     "stars": 614,
+     "pushedAt": "2026-10-01T03:56:16Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "wsl-utils",
+     "language": "JavaScript",
+     "description": "Utilities for working with Windows Subsystem for Linux (WSL)",
+     "topics": [],
+     "stars": 75,
+     "pushedAt": "2026-09-30T05:08:04Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "serialize-error",
+     "language": "JavaScript",
+     "description": "Serialize/deserialize an error into a plain object",
+     "topics": [],
+     "stars": 607,
+     "pushedAt": "2026-09-28T06:19:45Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "supercharge-meta",
+     "language": "",
+     "description": "",
+     "topics": [],
+     "stars": 39,
+     "pushedAt": "2026-09-28T04:32:49Z",
+     "homepage": "https://sindresorhus.com/supercharge",
+     "tags": []
+    },
+    {
+     "name": "leven",
+     "language": "JavaScript",
+     "description": "Measure the difference between two strings with the fastest JS implementation of the Levenshtein distance algorithm",
+     "topics": [],
+     "stars": 735,
+     "pushedAt": "2026-09-26T23:42:09Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "matcher",
+     "language": "JavaScript",
+     "description": "Simple wildcard matching",
+     "topics": [],
+     "stars": 542,
+     "pushedAt": "2026-09-26T21:22:41Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "uint8array-extras",
+     "language": "JavaScript",
+     "description": "Useful utilities for working with Uint8Array (and Buffer)",
+     "topics": [],
+     "stars": 284,
+     "pushedAt": "2026-09-26T17:13:36Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "finder-alias",
+     "language": "JavaScript",
+     "description": "Resolve and create macOS Finder aliases",
+     "topics": [],
+     "stars": 30,
+     "pushedAt": "2026-09-26T13:01:12Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "pretty-bytes",
+     "language": "JavaScript",
+     "description": "Convert bytes to a human readable string: 1337 \u2192 1.34 kB",
+     "topics": [],
+     "stars": 1319,
+     "pushedAt": "2026-09-26T11:13:43Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "make-synchronous",
+     "language": "JavaScript",
+     "description": "Make an asynchronous function synchronous",
+     "topics": [],
+     "stars": 332,
+     "pushedAt": "2026-09-26T10:19:37Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "sublime-autoprefixer",
+     "language": "Python",
+     "description": "Sublime plugin to prefix your CSS",
+     "topics": [],
+     "stars": 664,
+     "pushedAt": "2026-09-26T06:35:32Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "make-asynchronous",
+     "language": "JavaScript",
+     "description": "Make a synchronous function asynchronous by running it in a worker",
+     "topics": [],
+     "stars": 260,
+     "pushedAt": "2026-09-25T19:27:26Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "import-fresh",
+     "language": "JavaScript",
+     "description": "Import a module while bypassing the cache",
+     "topics": [],
+     "stars": 283,
+     "pushedAt": "2026-09-25T18:25:09Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "bundle-name",
+     "language": "JavaScript",
+     "description": "Get bundle name from a bundle identifier (macOS): com.apple.Safari \u2192 Safari",
+     "topics": [],
+     "stars": 11,
+     "pushedAt": "2026-09-25T18:07:23Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "string-width",
+     "language": "JavaScript",
+     "description": "Get the visual width of a string - the number of columns required to display it",
+     "topics": [],
+     "stars": 530,
+     "pushedAt": "2026-09-24T14:27:39Z",
+     "homepage": "",
+     "tags": [
+      "games"
+     ]
+    },
+    {
+     "name": "unicorn-magic",
+     "language": "JavaScript",
+     "description": "Some useful utilities I often need",
+     "topics": [],
+     "stars": 56,
+     "pushedAt": "2026-09-24T02:54:43Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "is-installed-globally",
+     "language": "JavaScript",
+     "description": "Check if your package was installed globally",
+     "topics": [],
+     "stars": 72,
+     "pushedAt": "2026-09-22T04:14:30Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "lcid",
+     "language": "JavaScript",
+     "description": "Mapping between standard locale identifiers and Windows locale identifiers (LCID)",
+     "topics": [],
+     "stars": 39,
+     "pushedAt": "2026-09-22T03:10:20Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "boxen",
+     "language": "JavaScript",
+     "description": "Create boxes in the terminal",
+     "topics": [],
+     "stars": 1676,
+     "pushedAt": "2026-09-21T21:56:04Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "DSStore",
+     "language": "Swift",
+     "description": "Parse and write macOS .DS_Store files from Swift",
+     "topics": [
+      "macos",
+      "parser",
+      "swift",
+      "swift-package",
+      "swift-package-manager"
+     ],
+     "stars": 79,
+     "pushedAt": "2026-09-20T19:33:04Z",
+     "homepage": "https://swiftpackageindex.com/sindresorhus/DSStore/documentation/dsstore/dsstore",
+     "tags": [
+      "writing"
+     ]
+    },
+    {
+     "name": "decamelize-keys",
+     "language": "JavaScript",
+     "description": "Convert object keys from camel case",
+     "topics": [],
+     "stars": 57,
+     "pushedAt": "2026-09-20T15:45:04Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "camelcase-keys",
+     "language": "TypeScript",
+     "description": "Convert object keys to camel case",
+     "topics": [],
+     "stars": 758,
+     "pushedAt": "2026-09-20T15:42:15Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "electron-unhandled",
+     "language": "JavaScript",
+     "description": "Catch unhandled errors and promise rejections in your Electron app",
+     "topics": [
+      "electron",
+      "electron-module"
+     ],
+     "stars": 465,
+     "pushedAt": "2026-09-20T14:24:19Z",
+     "homepage": "",
+     "tags": [
+      "fullstack"
+     ]
+    },
+    {
+     "name": "electron-debug",
+     "language": "JavaScript",
+     "description": "Adds useful debug features to your Electron app",
+     "topics": [],
+     "stars": 779,
+     "pushedAt": "2026-09-20T14:19:19Z",
+     "homepage": "",
+     "tags": [
+      "fullstack"
+     ]
+    },
+    {
+     "name": "electron-context-menu",
+     "language": "JavaScript",
+     "description": "Context menu for your Electron app",
+     "topics": [],
+     "stars": 1477,
+     "pushedAt": "2026-09-20T13:59:39Z",
+     "homepage": "",
+     "tags": [
+      "fullstack"
+     ]
+    },
+    {
+     "name": "terminal-size",
+     "language": "JavaScript",
+     "description": "Reliably get the terminal window size",
+     "topics": [],
+     "stars": 149,
+     "pushedAt": "2026-09-20T13:45:35Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "parse-columns",
+     "language": "JavaScript",
+     "description": "Parse text columns, like the output of unix commands",
+     "topics": [],
+     "stars": 84,
+     "pushedAt": "2026-09-20T13:00:41Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "wallpaper",
+     "language": "JavaScript",
+     "description": "Manage the desktop wallpaper",
+     "topics": [
+      "desktop-wallpaper",
+      "javascript",
+      "linux",
+      "macos",
+      "nodejs",
+      "wallpaper",
+      "windows"
+     ],
+     "stars": 1090,
+     "pushedAt": "2026-09-20T13:00:19Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "macos-wallpaper",
+     "language": "Swift",
+     "description": "Manage the desktop wallpaper on macOS",
+     "topics": [
+      "cli",
+      "cli-app",
+      "desktop-wallpaper",
+      "macos",
+      "macos-wallpaper",
+      "swift-package",
+      "wallpaper"
+     ],
+     "stars": 716,
+     "pushedAt": "2026-09-20T13:00:06Z",
+     "homepage": "",
+     "tags": [
+      "fullstack",
+      "devtools"
+     ]
+    },
+    {
+     "name": "do-not-disturb-cli",
+     "language": "JavaScript",
+     "description": "Control the macOS `Do Not Disturb` feature from the command-line",
+     "topics": [
+      "cli-app",
+      "do-not-disturb",
+      "macos",
+      "nodejs",
+      "npm-package"
+     ],
+     "stars": 243,
+     "pushedAt": "2026-09-20T12:56:42Z",
+     "homepage": "",
+     "tags": [
+      "fullstack",
+      "devtools"
+     ]
+    },
+    {
+     "name": "do-not-disturb",
+     "language": "Swift",
+     "description": "Control the macOS `Do Not Disturb` feature",
+     "topics": [
+      "do-not-disturb",
+      "macos",
+      "nodejs",
+      "npm-package"
+     ],
+     "stars": 223,
+     "pushedAt": "2026-09-20T12:51:41Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "electron-dl",
+     "language": "JavaScript",
+     "description": "Simplified file downloads for your Electron app",
+     "topics": [],
+     "stars": 1208,
+     "pushedAt": "2026-09-20T08:50:34Z",
+     "homepage": "",
+     "tags": [
+      "fullstack"
+     ]
+    },
+    {
+     "name": "os-name",
+     "language": "JavaScript",
+     "description": "Get the name of the current operating system. Example: macOS Sierra",
+     "topics": [],
+     "stars": 149,
+     "pushedAt": "2026-09-18T21:40:49Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "memoize",
+     "language": "TypeScript",
+     "description": "Memoize functions - an optimization technique used to speed up consecutive function calls by caching the result of calls with identical input",
+     "topics": [],
+     "stars": 1166,
+     "pushedAt": "2026-09-18T19:29:05Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "pify",
+     "language": "JavaScript",
+     "description": "Promisify a callback-style function",
+     "topics": [
+      "promise-utilities",
+      "promises",
+      "promisify"
+     ],
+     "stars": 1501,
+     "pushedAt": "2026-09-18T19:27:30Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "mimic-function",
+     "language": "JavaScript",
+     "description": "Make a function mimic another one",
+     "topics": [],
+     "stars": 97,
+     "pushedAt": "2026-09-18T19:27:08Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "markdown-extensions",
+     "language": "JavaScript",
+     "description": "List of Markdown file extensions",
+     "topics": [],
+     "stars": 24,
+     "pushedAt": "2026-09-18T19:26:46Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "is-plain-obj",
+     "language": "JavaScript",
+     "description": "Check if a value is a plain object",
+     "topics": [],
+     "stars": 109,
+     "pushedAt": "2026-09-18T19:26:15Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "github-markdown-css",
+     "language": "CSS",
+     "description": "The minimal amount of CSS to replicate the GitHub Markdown style",
+     "topics": [],
+     "stars": 8944,
+     "pushedAt": "2026-09-18T19:25:49Z",
+     "homepage": "https://sindresorhus.com/github-markdown-css",
+     "tags": []
+    },
+    {
+     "name": "dargs",
+     "language": "JavaScript",
+     "description": "Reverse minimist. Convert an object of options into an array of command-line arguments",
+     "topics": [],
+     "stars": 187,
+     "pushedAt": "2026-09-18T19:25:32Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "registry-url",
+     "language": "JavaScript",
+     "description": "Get the set npm registry URL",
+     "topics": [],
+     "stars": 57,
+     "pushedAt": "2026-09-18T19:24:54Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "rgb-hex",
+     "language": "JavaScript",
+     "description": "Convert RGB color to HEX",
+     "topics": [],
+     "stars": 122,
+     "pushedAt": "2026-09-18T19:24:25Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "resolve-cwd",
+     "language": "JavaScript",
+     "description": "Resolve the path of a module like `require.resolve()` but from the current working directory",
+     "topics": [],
+     "stars": 70,
+     "pushedAt": "2026-09-18T19:24:04Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "fullname",
+     "language": "JavaScript",
+     "description": "Get the fullname of the current user",
+     "topics": [],
+     "stars": 47,
+     "pushedAt": "2026-09-18T19:23:41Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "strip-final-newline",
+     "language": "JavaScript",
+     "description": "Strip the final newline character from a string/buffer",
+     "topics": [],
+     "stars": 38,
+     "pushedAt": "2026-09-18T19:19:48Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "quick-lru",
+     "language": "JavaScript",
+     "description": "Simple \u201cLeast Recently Used\u201d (LRU) cache",
+     "topics": [],
+     "stars": 770,
+     "pushedAt": "2026-09-18T19:19:46Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "npm-run-path",
+     "language": "JavaScript",
+     "description": "Get your PATH prepended with locally installed binaries",
+     "topics": [],
+     "stars": 109,
+     "pushedAt": "2026-09-18T19:19:42Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "modern-normalize",
+     "language": "TypeScript",
+     "description": "\ud83d\udc12 Normalize browsers' default style",
+     "topics": [
+      "css",
+      "css-library",
+      "css-reset",
+      "normalize",
+      "normalize-css",
+      "npm-package"
+     ],
+     "stars": 7428,
+     "pushedAt": "2026-09-18T19:19:40Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "merge-streams",
+     "language": "JavaScript",
+     "description": "Merge multiple streams into a unified stream",
+     "topics": [],
+     "stars": 66,
+     "pushedAt": "2026-09-18T19:19:36Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "is64bit",
+     "language": "JavaScript",
+     "description": "Check if the operating system CPU architecture is 64-bit or 32-bit (Supports browsers)",
+     "topics": [],
+     "stars": 46,
+     "pushedAt": "2026-09-18T19:19:34Z",
+     "homepage": "",
+     "tags": []
+    },
+    {
+     "name": "is-stream",
+     "language": "JavaScript",
+     "description": "Check if something is a Node.js stream",
+     "topics": [],
+     "stars": 116,
+     "pushedAt": "2026-09-18T19:19:32Z",
+     "homepage": "",
+     "tags": []
+    }
+   ],
+   "languages": [
+    [
+     "JavaScript",
+     77
+    ],
+    [
+     "TypeScript",
+     10
+    ],
+    [
+     "Swift",
+     4
+    ],
+    [
+     "CSS",
+     1
+    ],
+    [
+     "Python",
+     1
+    ],
+    [
+     "Shell",
+     1
+    ]
+   ],
+   "skills": [
+    [
+     "fullstack",
+     95
+    ],
+    [
+     "devtools",
+     80
+    ],
+    [
+     "dataviz",
+     60
+    ],
+    [
+     "hardware",
+     45
+    ],
+    [
+     "agents",
+     40
+    ],
+    [
+     "payments",
+     40
+    ],
+    [
+     "onchain",
+     40
+    ],
+    [
+     "games",
+     40
+    ],
+    [
+     "writing",
+     40
+    ],
+    [
+     "trading",
+     10
+    ],
+    [
+     "consumer",
+     10
+    ],
+    [
+     "privacy",
+     10
+    ],
+    [
+     "bio",
+     10
+    ],
+    [
+     "education",
+     10
+    ],
+    [
+     "impact",
+     10
+    ],
+    [
+     "ml",
+     10
+    ]
+   ],
+   "wins": [],
+   "summary": "Dominant force in the JavaScript/TypeScript ecosystem, renowned for producing battle-tested developer tools and utilities. Strongest in devtools and fullstack infrastructure; their code is widely adopted as industry standards. Avoid underestimating the quality bar\u2014their projects set the benchmark for reliability and ergonomics.",
+   "evidence": [
+    "q_22b67d58fee1a63b",
+    "q_74739ffee44acec0",
+    "q_bd9c45f6fabc5c3b"
+   ],
+   "record": []
+  },
+  "plan": {
+   "hours": 12,
+   "used": 10,
+   "picks": [
+    "hacktitan"
+   ],
+   "expectedUsd": 375
+  },
+  "sources": [
+   {
+    "source": "Devfolio",
+    "state": "open",
+    "n": 12,
+    "online": 1
+   },
+   {
+    "source": "Devpost",
+    "state": "open",
+    "n": 51,
+    "online": 40
+   },
+   {
+    "source": "Devpost",
+    "state": "upcoming",
+    "n": 40,
+    "online": 21
+   }
+  ],
+  "docket": {
+   "login": "sindresorhus",
+   "updated": "2026-10-26T11:01:07.259Z",
+   "entries": [
+    {
+     "key": "lifeaftercode",
+     "name": "Life After Code",
+     "url": "https://gitlab-transcend.devpost.com/",
+     "closes": "2026-10-27",
+     "prizeUsd": 45000,
+     "status": "watch",
+     "fit": 54,
+     "evPerHour": 22,
+     "hours": 16,
+     "repo": "execa",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "awscommunicationdeveloperservicescdsagenticaipartner",
+     "name": "AWS Communication Developer Services (CDS) Agentic AI Partner Hackathon",
+     "url": "https://aws-cds-partner.devpost.com/",
+     "closes": "2026-10-28",
+     "prizeUsd": 40000,
+     "status": "watch",
+     "fit": 60,
+     "evPerHour": 25,
+     "hours": 20,
+     "repo": "quickgpt-meta",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "qlooagentic",
+     "name": "Qloo Agentic Hackathon",
+     "url": "https://qloo.devpost.com/",
+     "closes": "2026-10-30",
+     "prizeUsd": 25000,
+     "status": "watch",
+     "fit": 38,
+     "evPerHour": 6,
+     "hours": 18,
+     "repo": "quickgpt-meta",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "checkpoint1gamesforgood",
+     "name": "checkpoint 1 \u2014 games for good",
+     "url": "https://checkpoint-1.devpost.com/",
+     "closes": "2027-01-10",
+     "prizeUsd": 11960,
+     "status": "watch",
+     "fit": 35,
+     "evPerHour": 6,
+     "hours": 20,
+     "repo": "execa",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "hacktitan",
+     "name": "HackTitan",
+     "url": "https://hacktitan.devpost.com/",
+     "closes": "2027-02-04",
+     "prizeUsd": 10000,
+     "status": "shortlist",
+     "fit": 85,
+     "evPerHour": 38,
+     "hours": 10,
+     "repo": "eslint-plugin-unicorn",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "buildbeyond",
+     "name": "Build Beyond Hackathon",
+     "url": "https://build-beyond.devpost.com/",
+     "closes": "2027-03-15",
+     "prizeUsd": 5000,
+     "status": "watch",
+     "fit": 87,
+     "evPerHour": 27,
+     "hours": 12,
+     "repo": "np",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    }
+   ]
+  }
+ },
+ "contract": {
+  "contractId": "ea4401ac-34e2-4ff4-b576-e43ae4cc514f",
+  "intent": {
+   "primary": "scout_builder",
+   "parameters": {
+    "text": "scout @sindresorhus, 12 hours, I'm based in Nigeria and in person is fine",
+    "intent": "scout_builder",
+    "login": "sindresorhus",
+    "hours": 12,
+    "country": "Nigeria",
+    "onlineOnly": false,
+    "route": "act",
+    "notes": []
+   },
+   "confidence": 1,
+   "alternates": []
+  },
+  "risk": {
+   "level": "low",
+   "flags": [],
+   "redactions": []
+  },
+  "toolPlan": [
+   {
+    "capability": "data.sql",
+    "tool": "zetaris.sql"
+   },
+   {
+    "capability": "source.register",
+    "tool": "zetaris.ddl"
+   },
+   {
+    "capability": "memory.recall",
+    "tool": "hmem.query"
+   },
+   {
+    "capability": "world.case",
+    "tool": "worldmodel.case"
+   },
+   {
+    "capability": "docket.write",
+    "tool": "docket.shortlist"
+   },
+   {
+    "capability": "calendar.export",
+    "tool": "docket.ics"
+   },
+   {
+    "capability": "memory.store",
+    "tool": "hmem.add"
+   }
+  ],
+  "expiresAt": "2026-10-26T11:05:55.703Z",
+  "registryVersion": 1,
+  "authority": {
+   "maxPlanHours": 80,
+   "writesDocket": true,
+   "exportsCalendar": true,
+   "registers": false,
+   "submits": false,
+   "messages": false
+  },
+  "lineage": [
+   "75226ce9-9aa9-4b45-b713-8260fd482320",
+   "f719c8f8-4e59-4583-a10e-4d0a82a88b2f",
+   "8b8e972a-9834-4f90-8c52-fcde5b8c557b",
+   "919dbcde-bd80-416a-8955-85cad6ac7629",
+   "ea4401ac-34e2-4ff4-b576-e43ae4cc514f"
+  ]
+ }
+}

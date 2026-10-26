@@ -1,0 +1,263 @@
+{
+ "run_id": "run-2026-10-26-86eb34",
+ "status": "success",
+ "agents": [
+  {
+   "name": "Intake",
+   "role": "Scout Intent: binds the builder and their hours, guards the request, signs the contract that fixes the scout's authority"
+  },
+  {
+   "name": "Surveyor",
+   "role": "Takes stock of the live sources in Zetaris and registers a new builder's GitHub as Zetaris tables at run time"
+  },
+  {
+   "name": "Profiler",
+   "role": "Builds the scouting card from the builder's repos and the wins table on their profile README"
+  },
+  {
+   "name": "Reconciler",
+   "role": "One federated query over every platform plus FX; merges duplicates, parses deadlines, spots changes"
+  },
+  {
+   "name": "Archivist",
+   "role": "H-MEM record of wins, results and plans per skill tag; World Model case file of builder, repos and fixtures"
+  },
+  {
+   "name": "Scout",
+   "role": "Proposes fit, verdict, head-start repo and hours for each hackathon on Nemotron Ultra"
+  },
+  {
+   "name": "Coach",
+   "role": "Holds every proposal to the eligibility rules, computes the odds and $/hour, keeps the plan within the hours"
+  },
+  {
+   "name": "Executor",
+   "role": "Writes the docket shortlist and a deadline calendar; never registers, submits or messages"
+  }
+ ],
+ "memory": {
+  "recalled": 8,
+  "stored": 1
+ },
+ "engines": {
+  "scout_intent": "contract 97daf893",
+  "hmem": "1 result stored",
+  "world_model": "-",
+  "markovian": "-"
+ },
+ "cost": {
+  "quote": {
+   "maxRounds": 0,
+   "maxQueries": 14,
+   "maxModelCalls": 6,
+   "maxSeconds": 600,
+   "rationale": "intake and discovery allowance"
+  },
+  "spent": {
+   "modelCalls": 0,
+   "queries": 0,
+   "rounds": 0,
+   "estTokens": 0,
+   "seconds": 0
+  },
+  "escalations": []
+ },
+ "data_sources": {},
+ "trace_id": "run-2026-10-26-86eb34",
+ "log_file": "logs/trace-run-2026-10-26-86eb34.jsonl",
+ "execution_time_seconds": 0,
+ "output": {
+  "summary": "Recorded: won at Qloo Agentic Hackathon. The scout now weighs Agents briefs by it.",
+  "fixtures": [],
+  "note": "",
+  "log": [
+   {
+    "kind": "memory",
+    "text": "H-MEM record: agents 6W/0P/0L, ml 2W/0P/0L, payments 3W/0P/0L, onchain 4W/0P/0L, trading 2W/0P/0L, games 2W/0P/0L, writing 1W/0P/0L"
+   }
+  ],
+  "recommendations": [],
+  "artifacts": [
+   {
+    "type": "trace",
+    "path": "logs/trace-run-2026-10-26-86eb34.jsonl"
+   }
+  ],
+  "docket": {
+   "login": "neromtoobad",
+   "updated": "2026-10-26T11:01:21.898Z",
+   "entries": [
+    {
+     "key": "lifeaftercode",
+     "name": "Life After Code",
+     "url": "https://gitlab-transcend.devpost.com/",
+     "closes": "2026-10-27",
+     "prizeUsd": 45000,
+     "status": "watch",
+     "fit": 46,
+     "evPerHour": 46,
+     "hours": 8,
+     "repo": "receipts",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "awscommunicationdeveloperservicescdsagenticaipartner",
+     "name": "AWS Communication Developer Services (CDS) Agentic AI Partner Hackathon",
+     "url": "https://aws-cds-partner.devpost.com/",
+     "closes": "2026-10-28",
+     "prizeUsd": 40000,
+     "status": "shortlist",
+     "fit": 81,
+     "evPerHour": 180,
+     "hours": 10,
+     "repo": "receipts",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "qlooagentic",
+     "name": "Qloo Agentic Hackathon",
+     "url": "https://qloo.devpost.com/",
+     "closes": "2026-10-30",
+     "prizeUsd": 25000,
+     "status": "shortlist",
+     "fit": 81,
+     "evPerHour": 94,
+     "hours": 10,
+     "repo": "receipts",
+     "addedBy": "scout",
+     "updated": "2026-10-26",
+     "result": "won"
+    },
+    {
+     "key": "codexxtwitchcon",
+     "name": "Codex x TwitchCon Hackathon",
+     "url": "https://twitchcon-codex.devpost.com/",
+     "closes": "2026-11-02",
+     "prizeUsd": 25000,
+     "status": "watch",
+     "fit": 66,
+     "evPerHour": 55,
+     "hours": 10,
+     "repo": "terms",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "paypalai",
+     "name": "PayPal AI Hackathon",
+     "url": "https://paypalaihackathon.devpost.com/",
+     "closes": "2026-11-12",
+     "prizeUsd": 67500,
+     "status": "shortlist",
+     "fit": 65,
+     "evPerHour": 91,
+     "hours": 10,
+     "repo": "receipts",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "kiroween",
+     "name": "Kiroween 2026",
+     "url": "https://kiroween.devpost.com/",
+     "closes": "2026-12-04",
+     "prizeUsd": 100000,
+     "status": "watch",
+     "fit": 47,
+     "evPerHour": 56,
+     "hours": 18,
+     "repo": "receipts",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "checkpoint1gamesforgood",
+     "name": "checkpoint 1 — games for good",
+     "url": "https://checkpoint-1.devpost.com/",
+     "closes": "2027-01-10",
+     "prizeUsd": 11960,
+     "status": "watch",
+     "fit": 54,
+     "evPerHour": 37,
+     "hours": 10,
+     "repo": "glasstown",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    },
+    {
+     "key": "cosmohacks",
+     "name": "Cosmo Hacks 2026",
+     "url": "https://cosmohacks.devpost.com/",
+     "closes": "2027-01-18",
+     "prizeUsd": 196955,
+     "status": "watch",
+     "fit": 47,
+     "evPerHour": 98,
+     "hours": 18,
+     "repo": "receipts",
+     "addedBy": "scout",
+     "updated": "2026-10-26"
+    }
+   ]
+  }
+ },
+ "contract": {
+  "contractId": "97daf893-4e19-4bb9-88f9-195e5a4b4a6a",
+  "intent": {
+   "primary": "record_result",
+   "parameters": {
+    "text": "I won the Qloo Agentic Hackathon",
+    "intent": "record_result",
+    "login": "neromtoobad",
+    "hours": 20,
+    "onlineOnly": true,
+    "result": {
+     "hackathon": "Qloo Agentic Hackathon",
+     "outcome": "won"
+    },
+    "route": "act",
+    "notes": []
+   },
+   "confidence": 1,
+   "alternates": []
+  },
+  "risk": {
+   "level": "low",
+   "flags": [],
+   "redactions": []
+  },
+  "toolPlan": [
+   {
+    "capability": "memory.store",
+    "tool": "hmem.add"
+   },
+   {
+    "capability": "memory.recall",
+    "tool": "hmem.query"
+   },
+   {
+    "capability": "world.case",
+    "tool": "worldmodel.case"
+   },
+   {
+    "capability": "docket.write",
+    "tool": "docket.shortlist"
+   }
+  ],
+  "expiresAt": "2026-10-26T11:06:21.897Z",
+  "registryVersion": 1,
+  "authority": {
+   "maxPlanHours": 80,
+   "writesDocket": true,
+   "exportsCalendar": true,
+   "registers": false,
+   "submits": false,
+   "messages": false
+  },
+  "lineage": [
+   "97daf893-4e19-4bb9-88f9-195e5a4b4a6a"
+  ]
+ }
+}
