@@ -114,19 +114,23 @@ export default function App() {
   const out = result?.output;
   const b = out?.builder;
   const fixtures = out?.fixtures ?? [];
-  const counts = useMemo(() => ({ START: fixtures.filter((f) => f.verdict === "START").length, BENCH: fixtures.filter((f) => f.verdict === "BENCH").length, OUT: fixtures.filter((f) => f.verdict === "OUT").length }), [fixtures]);
-  const shown = fixtures.filter((f) => filter === "ALL" || f.verdict === filter);
+  const picks = fixtures.filter((f) => f.verdict === "START");
+  const rest = fixtures.filter((f) => f.verdict !== "START");
+  const counts = useMemo(() => ({ BENCH: fixtures.filter((f) => f.verdict === "BENCH").length, OUT: fixtures.filter((f) => f.verdict === "OUT").length }), [fixtures]);
+  const shown = rest.filter((f) => filter === "ALL" || f.verdict === filter);
   const visible = showAll ? shown : shown.slice(0, filter === "OUT" ? 12 : 8);
   const live = health && !health.sample_mode && health.zetaris.mode === "live";
   const total = out?.sources?.reduce((a, s) => a + s.n, 0) ?? 0;
+  const platforms = new Set(out?.sources?.map((s) => s.source)).size;
   const lastStep = [...events].reverse().find((e) => e.agent_name !== "System");
+  const seenAgents = AGENT_ORDER.filter((a) => events.some((e) => e.agent_name === a)).length;
   const today = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 
   return (
     <div className="app">
       <header className="top">
         <div className="logo"><i /><span>Docket Scout</span></div>
-        <span className="mono sub">Scouting report · {today} · {total ? `${total} live hackathons` : "live hackathons"} via Zetaris</span>
+        <span className="mono sub">Scouting report · {today}{total ? ` · ${total} live hackathons` : ""} via Zetaris</span>
         <form className="who" onSubmit={scout}>
           <span className="mono">github /</span>
           <input value={login} onChange={(e) => setLogin(e.target.value.replace(/[^A-Za-z0-9-]/g, ""))} placeholder="username" spellCheck={false} aria-label="GitHub username" />
@@ -140,154 +144,140 @@ export default function App() {
       <div className="status">
         <span className={`dot ${live ? "on" : ""}`} />{health ? (health.sample_mode ? "Sample mode: recorded Zetaris results" : `Zetaris ${health.zetaris.ok ? "live" : "offline"}`) : "…"}
         <span className={`dot ${health?.provider.status === "online" ? "on" : ""}`} />{health ? (health.provider.status === "online" ? "Nemotron via Meterless Nightshift" : "Scout playbook (no model)") : ""}
-        {result?.contract && <span className="contract" title="Scout Intent execution contract">Signed contract {result.contract.contractId.slice(0, 8)} · may shortlist and add deadlines · never registers, submits or messages</span>}
+        {result?.contract && <span className="contract" title="Scout Intent execution contract"><b>Signed contract {result.contract.contractId.slice(0, 8)}</b> may shortlist and add deadlines · never registers, submits or messages</span>}
       </div>
 
       {error && <div className="error">{error}</div>}
 
       {running && (
         <section className="matchday">
-          <div className="md-head"><span className="mono">Live · scouting {login}</span><b>{lastStep ? `${lastStep.agent_name}: ${lastStep.output_summary.slice(0, 120)}` : "Signing the contract…"}</b></div>
+          <div className="md-top">
+            <div className="md-head"><span className="mono">Live · scouting {login} · {hours}h</span><b>{lastStep ? `${lastStep.agent_name}: ${lastStep.output_summary.slice(0, 130)}` : "Signing the contract…"}</b></div>
+            <div className="md-clock"><span>{seenAgents}</span>/{AGENT_ORDER.length}</div>
+          </div>
+          <div className="md-bar"><i style={{ width: `${(seenAgents / AGENT_ORDER.length) * 100}%` }} /></div>
           <div className="md-agents">
-            {AGENT_ORDER.map((a) => {
-              const seen = events.some((e) => e.agent_name === a);
-              const now = lastStep?.agent_name === a;
-              return <span key={a} className={`${seen ? "seen" : ""} ${now ? "now" : ""}`}>{a}</span>;
-            })}
+            {AGENT_ORDER.map((a) => <span key={a} className={`${events.some((e) => e.agent_name === a) ? "seen" : ""} ${lastStep?.agent_name === a ? "now" : ""}`}>{a}</span>)}
           </div>
           <ol className="md-feed">
-            {events.filter((e) => e.agent_name !== "System" || e.action === "step_start").slice(-7).map((e, i) => (
-              <li key={i}><span className="mono">{e.agent_name}</span>{e.output_summary.slice(0, 200)}</li>
-            ))}
+            {events.filter((e) => e.agent_name !== "System" || e.action === "step_start").slice(-6).map((e, i) => <li key={i}><span className="mono">{e.agent_name}</span>{e.output_summary.slice(0, 210)}</li>)}
           </ol>
         </section>
       )}
 
       {!b && !running && (
         <section className="empty">
-          <h1>Who are we scouting?</h1>
+          <div className="pitch-lines" aria-hidden="true" />
+          <span className="mono">Docket Scout</span>
+          <h1>Who are we<br />scouting?</h1>
           <p>Type any GitHub username. The scout reads their public repos and profile README through Zetaris, checks every live hackathon on Devpost and Devfolio, and tells them which to enter with the hours they have.</p>
-          {health?.sample_mode && health.sample_builders?.length ? <p className="mono">Sample mode builders: {health.sample_builders.join(", ")}</p> : null}
+          <div className="try">{(health?.sample_mode ? health.sample_builders ?? [] : ["neromtoobad", "karpathy", "sindresorhus"]).map((l) => <button key={l} onClick={() => setLogin(l)}>{l}</button>)}</div>
         </section>
       )}
 
       {b && out && (
         <div className="grid">
           <aside className="player">
+            <div className="pitch-lines" aria-hidden="true" />
             <span className="mono">Builder profile · from {b.repos.length} public repos</span>
             <div className="ph">
               <img src={`https://github.com/${b.login}.png?size=120`} alt="" />
-              <h2>{b.login}</h2>
+              <div><h2>{b.login}</h2><span className="mono">{b.languages.slice(0, 2).map(([l]) => l).join(" · ")}</span></div>
             </div>
             <div className="pos">
               {b.skills.slice(0, 3).map(([t], i) => <span key={t} className={i === 0 ? "lead" : ""}>{LABEL[t] ?? t}</span>)}
-              {b.languages[0] && <span>{b.languages[0][0]}</span>}
+              <span>{b.wins.length} wins</span>
             </div>
-            <div className="attrs">
-              {b.skills.slice(0, 6).map(([t, v]) => <div key={t} className="attr"><span>{LABEL[t] ?? t}</span><b>{v}</b></div>)}
-            </div>
+            <Radar skills={b.skills.slice(0, 6)} />
             <p className="summary">{b.summary}</p>
 
             <div className="cab">
               <p className="mono">Trophy cabinet · from the profile README</p>
               {b.wins.length ? (
-                <ul className="wins">{b.wins.map((w) => <li key={w.hackathon}><i>W</i><span><b>{w.hackathon}</b>{w.project ? ` · ${w.project}` : ""}</span></li>)}</ul>
-              ) : <p className="soft">No wins table on the profile README yet. Report results below and the scout will learn.</p>}
+                <ul className="wins">{b.wins.map((w) => <li key={w.hackathon}><i>W</i><span><b>{w.hackathon}</b>{w.project ? <em> · {w.project}</em> : null}</span></li>)}</ul>
+              ) : <p className="soft">No wins table on the profile README yet. Report results on a fixture and the scout will learn.</p>}
             </div>
 
             <div className="cab">
               <p className="mono">Record by skill · H-MEM</p>
               {b.record.length ? (
-                <div className="bars">
-                  {[...b.record].sort((x, y) => y.won * 3 + y.placed - (x.won * 3 + x.placed)).slice(0, 5).map((r) => {
-                    const n = r.won + r.placed + r.lost;
-                    return <div key={r.tag}><span>{LABEL[r.tag] ?? r.tag}</span><i style={{ ["--w" as any]: `${Math.round(((r.won + r.placed * 0.5) / Math.max(1, n)) * 100)}%` }} /><b>{r.won}W {r.placed}P {r.lost}L</b></div>;
-                  })}
+                <div className="record">
+                  {[...b.record].sort((x, y) => y.won * 3 + y.placed - (x.won * 3 + x.placed)).slice(0, 6).map((r) => (
+                    <div key={r.tag}><span>{LABEL[r.tag] ?? r.tag}</span><i>{[...Array(r.won)].map((_, k) => <b key={`w${k}`} className="pw">W</b>)}{[...Array(r.placed)].map((_, k) => <b key={`p${k}`} className="pp">P</b>)}{[...Array(r.lost)].map((_, k) => <b key={`l${k}`} className="pl">L</b>)}</i></div>
+                  ))}
                 </div>
               ) : <p className="soft">Nothing remembered yet.</p>}
             </div>
-            <p className="mono langs">{b.languages.slice(0, 5).map(([l, n]) => `${l} ${n}`).join(" · ")}</p>
           </aside>
 
           <main className="right">
-            <h1>This week's fixtures:<br /><span>play {out.plan?.picks.length ?? 0}</span>, rest the rest.</h1>
-            <div className="planbar">
-              <div className="pb-track"><i style={{ width: `${Math.min(100, ((out.plan?.used ?? 0) / Math.max(1, out.plan?.hours ?? 1)) * 100)}%` }} /></div>
-              <span className="mono">{out.plan?.used ?? 0}h of {out.plan?.hours ?? hours}h planned · expected about {usd(out.plan?.expectedUsd ?? 0)} · {total} live across {new Set(out.sources?.map((s) => s.source)).size} platforms</span>
-            </div>
+            <section className="hero">
+              <h1>This week's fixtures:<br /><span>play {picks.length}</span>, rest the rest.</h1>
+              <MatchClock picks={picks} hours={out.plan?.hours ?? hours} />
+              <div className="tickets">
+                {picks.map((f, i) => <Ticket key={f.hackathon.key} f={f} n={i + 1} onEvidence={(q) => showEvidence(q, f.hackathon.name)} onOpen={() => { setFilter("ALL"); setOpen(f.hackathon.key); }} />)}
+                {!picks.length && <div className="ticket empty-t"><b>No starters this week.</b><span>Nothing clears the rules and the $25/h floor within your hours. The bench below is worth watching.</span></div>}
+              </div>
+              <div className="note"><span className="mono">Scout's note</span>{out.note}</div>
+            </section>
 
-            <div className="filters">
-              {(["ALL", "START", "BENCH", "OUT"] as const).map((v) => (
-                <button key={v} className={filter === v ? "on" : ""} onClick={() => { setFilter(v); setShowAll(false); }}>{v === "ALL" ? "All" : v === "START" ? "Start" : v === "BENCH" ? "Bench" : "Out"} <i>{v === "ALL" ? fixtures.length : counts[v]}</i></button>
-              ))}
+            <section className="stats">
+              <div><b>{total}</b><span>live hackathons</span></div>
+              <div><b>{platforms + 2}</b><span>live sources: {[...new Set(out.sources?.map((x) => x.source))].join(", ")}, FX, GitHub</span></div>
+              <div><b>{Object.values(result!.data_sources).reduce((a, v) => a + v, 0)}</b><span>Zetaris queries ({Object.keys(result!.data_sources).join(", ")})</span></div>
+              <div><b>{result!.cost.spent?.modelCalls ?? 0}</b><span>Nemotron calls</span></div>
+              <div><b>{result!.engines.markovian?.match(/^\d+/)?.[0] ?? "–"}</b><span>Markovian steps</span></div>
+              <div><b>{Math.round(result!.execution_time_seconds)}s</b><span>scouting time</span></div>
+            </section>
+
+            <div className="rest-head">
+              <h3>The rest</h3>
+              <div className="filters">
+                {(["ALL", "BENCH", "OUT"] as const).map((v) => (
+                  <button key={v} className={filter === v ? "on" : ""} onClick={() => { setFilter(v); setShowAll(false); }}>{v === "ALL" ? "All" : v === "BENCH" ? "Bench" : "Out"} <i>{v === "ALL" ? rest.length : counts[v]}</i></button>
+                ))}
+              </div>
             </div>
 
             <div className="fx">
-              {visible.map((f) => {
+              {[...(open && picks.some((p) => p.hackathon.key === open) ? picks.filter((p) => p.hackathon.key === open) : []), ...visible].map((f) => {
                 const h = f.hackathon;
                 const isOpen = open === h.key;
                 return (
                   <article key={h.key} className={`match v-${f.verdict} ${isOpen ? "open" : ""}`}>
                     <button className="m-row" onClick={() => setOpen(isOpen ? null : h.key)} aria-expanded={isOpen}>
-                      <div className="ko"><span className="mono">Closes</span><b>{days(h.daysLeft)}</b></div>
-                      <div className="vs">You vs {h.name}<small>{h.sources.map((s) => s.source).join(" + ")} · {usd(h.prizeUsd)}{h.prizeText && !h.prizeText.startsWith("$") ? ` (${h.prizeText})` : ""} · {h.registrations.toLocaleString("en-US")} registered{h.online ? "" : ` · in person`}</small></div>
+                      <div className={`ko ${h.daysLeft !== null && h.daysLeft <= 3 ? "soon" : ""}`}><span className="mono">Closes</span><b>{days(h.daysLeft)}</b></div>
+                      <div className="vs"><span className="plat">{h.sources.map((s) => s.source).join(" + ")}</span>You vs {h.name}<small>{h.registrations.toLocaleString("en-US")} registered{h.online ? "" : ` · in person: ${h.location}`}</small></div>
+                      <div className="prize">{usd(h.prizeUsd)}<small>{h.prizeText && !h.prizeText.startsWith("$") ? h.prizeText : "prize"}</small></div>
                       <div className="rv"><div className={`rating ${rating(f.fit)}`}>{f.fit}</div><span className={`verdict ${f.verdict}`}>{f.verdict === "START" ? "Start" : f.verdict === "BENCH" ? "Bench" : "Out"}</span></div>
                       <div className="xp">{f.verdict === "OUT" ? "—" : `$${f.evPerHour}/h`}<small>{f.verdict === "OUT" ? "not for you" : `${f.hours}h build`}</small></div>
                       <div className="lineup">{f.repo ? <span className="repo">{f.repo}</span> : <span className="none">no head start</span>}<span className="why">{f.why}</span></div>
                     </button>
-                    {isOpen && (
-                      <div className="m-more">
-                        <div className="mm-col">
-                          <p className="mono">Scout's read{f.by === "model" ? ` · ${f.model?.replace("nvidia/", "") ?? "Nemotron"}` : " · playbook"}</p>
-                          <p>{f.why}</p>
-                          {f.coach.length > 0 && <><p className="mono">Coach</p><ul>{f.coach.map((c, i) => <li key={i}>{c}</li>)}</ul></>}
-                          {f.memory.length > 0 && <><p className="mono">From memory (H-MEM)</p><ul>{f.memory.map((c, i) => <li key={i}>{c}</li>)}</ul></>}
-                        </div>
-                        <div className="mm-col">
-                          <p className="mono">The numbers</p>
-                          <dl>
-                            <dt>Prize</dt><dd>{usd(h.prizeUsd)}{h.prizeText && !h.prizeText.startsWith("$") ? ` from ${h.prizeText}` : ""}</dd>
-                            <dt>Closes</dt><dd>{h.closes ?? "not given"}</dd>
-                            <dt>Odds</dt><dd>{(f.pWin * 100).toFixed(1)}% to win, about ${f.evPerHour} per build hour</dd>
-                            <dt>Themes</dt><dd>{h.themes.join(", ") || "—"}</dd>
-                            <dt>Where</dt><dd>{h.location}</dd>
-                          </dl>
-                          <p className="ev">{h.evidence.map((q) => <button key={q} onClick={() => showEvidence(q, h.name)}>{q}</button>)}{b.evidence.slice(0, 1).map((q) => <button key={q} onClick={() => showEvidence(q)}>{q}</button>)}</p>
-                          <div className="acts">
-                            {h.sources.map((s) => <a key={s.url} href={s.url} target="_blank" rel="noreferrer">Open on {s.source} ↗</a>)}
-                            <span className="mono">After it closes:</span>
-                            <button onClick={() => report(f, "won")}>Won</button><button onClick={() => report(f, "placed")}>Placed</button><button onClick={() => report(f, "lost")}>Didn't place</button>
-                          </div>
-                        </div>
-                      </div>
-                    )}
+                    {isOpen && <Detail f={f} b={b} onEvidence={showEvidence} onReport={report} />}
                   </article>
                 );
               })}
               {shown.length > visible.length && <button className="more" onClick={() => setShowAll(true)}>Show all {shown.length}</button>}
             </div>
 
-            <div className="note"><b>Scout's note.</b> {out.note}</div>
-
             <div className="lower">
               <section className="card log">
                 <p className="mono">Scout log</p>
                 <ul>{out.log.map((l, i) => <li key={i}><span className={`k k-${l.kind}`}>{({ fx: "FX", merged: "Merged", deadline_moved: "Moved", prize_changed: "Prize", new: "New", source: "Source", skip: "Skipped" } as Record<string, string>)[l.kind] ?? l.kind}</span>{l.text}</li>)}</ul>
               </section>
-              <section className="card docket">
-                <p className="mono">Your docket</p>
-                <ul>{(out.docket?.entries ?? []).filter((e) => e.status === "shortlist").map((e) => <li key={e.key}><b>{e.name}</b><span>{e.closes ?? "?"} · {e.hours}h{e.result ? ` · ${e.result}` : ""}</span></li>)}</ul>
-                <a className="cal" href={`/api/docket/${b.login}/calendar`}>Add deadlines to calendar (.ics)</a>
+              <section className="card sheet">
+                <p className="mono">Team sheet · your docket</p>
+                <ol>{(out.docket?.entries ?? []).filter((e) => e.status === "shortlist").map((e, i) => <li key={e.key}><i>{i + 1}</i><div><b>{e.name}</b><span>Submit by {e.closes ?? "?"} · {e.hours}h{e.repo ? ` · from ${e.repo}` : ""}{e.result ? ` · ${e.result}` : ""}</span></div></li>)}</ol>
+                <p className="watch">{(out.docket?.entries ?? []).filter((e) => e.status === "watch").length} more on the watch list</p>
+                <a className="cal" href={`/api/docket/${b.login}/calendar`}>Add deadlines to calendar ↓</a>
               </section>
             </div>
 
             <footer className="engines">
-              <span><b>Zetaris</b> {Object.entries(result!.data_sources).map(([k, v]) => `${v} ${k}`).join(", ")} queries</span>
               <span><b>Scout Intent</b> {result!.engines.scout_intent}</span>
               <span><b>H-MEM</b> {result!.engines.hmem}</span>
               <span><b>World Model</b> {result!.engines.world_model}</span>
               <span><b>Markovian</b> {result!.engines.markovian?.split(",")[0]}</span>
-              <span><b>Nemotron</b> {result!.cost.spent?.modelCalls ?? 0} calls · {result!.execution_time_seconds}s</span>
               <button onClick={() => setLogOpen(true)}>Match log ({events.length})</button>
             </footer>
           </main>
@@ -320,6 +310,102 @@ export default function App() {
       )}
 
       {toast && <div className="toast">{toast}</div>}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------- pieces
+
+const shortName = (n: string) => n.replace(/\(.*?\)/g, "").replace(/\b(Hackathon|Challenge|Competition|Partner)\b/gi, "").replace(/\s+/g, " ").trim().split(" ").slice(0, 3).join(" ");
+
+function Radar({ skills }: { skills: [string, number][] }) {
+  const n = skills.length;
+  const R = 82, cx = 170, cy = 134;
+  const pt = (i: number, v: number) => {
+    const a = -Math.PI / 2 + (i * 2 * Math.PI) / n;
+    return [cx + Math.cos(a) * R * (v / 100), cy + Math.sin(a) * R * (v / 100)];
+  };
+  const ring = (v: number) => skills.map((_, i) => pt(i, v).join(",")).join(" ");
+  return (
+    <svg className="radar" viewBox="0 0 340 262" role="img" aria-label={`Skills: ${skills.map(([t, v]) => `${LABEL[t] ?? t} ${v}`).join(", ")}`}>
+      {[25, 50, 75, 100].map((v) => <polygon key={v} points={ring(v)} className="r-ring" />)}
+      {skills.map((_, i) => { const [x, y] = pt(i, 100); return <line key={i} x1={cx} y1={cy} x2={x} y2={y} className="r-axis" />; })}
+      <polygon points={skills.map(([, v], i) => pt(i, v).join(",")).join(" ")} className="r-shape" />
+      {skills.map(([t, v], i) => {
+        const [x, y] = pt(i, 128);
+        const anchor = Math.abs(x - cx) < 8 ? "middle" : x > cx ? "start" : "end";
+        return (
+          <g key={t}>
+            <text x={x} y={y - 3} textAnchor={anchor} className="r-label">{LABEL[t] ?? t}</text>
+            <text x={x} y={y + 15} textAnchor={anchor} className="r-val">{v}</text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+function MatchClock({ picks, hours }: { picks: Fixture[]; hours: number }) {
+  const used = picks.reduce((a, f) => a + f.hours, 0);
+  return (
+    <div className="clock">
+      <div className="clock-bar">
+        {picks.map((f, i) => <span key={f.hackathon.key} className={`seg s${i % 3}`} style={{ flex: f.hours }} title={`${f.hackathon.name}: ${f.hours}h`}><b>{shortName(f.hackathon.name)}</b><i>{f.hours}h</i></span>)}
+        {hours - used > 0 && <span className="seg spare" style={{ flex: hours - used }}><i>{hours - used}h spare</i></span>}
+      </div>
+      <div className="clock-scale mono"><span>0h</span><span>{used}h of {hours}h planned · about {usd(picks.reduce((a, f) => a + f.hackathon.prizeUsd * 0.3 * f.pWin, 0))} expected</span><span>{hours}h</span></div>
+    </div>
+  );
+}
+
+function Ticket({ f, n, onEvidence, onOpen }: { f: Fixture; n: number; onEvidence: (q: string) => void; onOpen: () => void }) {
+  const h = f.hackathon;
+  const date = h.closes ? new Date(h.closes + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "?";
+  return (
+    <article className="ticket">
+      <div className="t-top"><span className="t-n">{n}</span><span className="plat">{h.sources.map((s) => s.source).join(" + ")}</span><span className={`t-ko ${h.daysLeft !== null && h.daysLeft <= 3 ? "soon" : ""}`}>Closes {date} · {days(h.daysLeft)}</span></div>
+      <h3>You vs {h.name}</h3>
+      <div className="t-mid">
+        <div className={`rating ${rating(f.fit)}`}>{f.fit}</div>
+        <div className="t-ev"><b>${f.evPerHour}<i>/h</i></b><span>expected per build hour</span></div>
+        <dl><dt>Prize</dt><dd>{usd(h.prizeUsd)}{h.prizeText && !h.prizeText.startsWith("$") ? ` (${h.prizeText})` : ""}</dd><dt>Odds</dt><dd>{(f.pWin * 100).toFixed(1)}% · {h.registrations.toLocaleString("en-US")} in</dd><dt>Build</dt><dd>{f.hours}h</dd></dl>
+      </div>
+      <p className="t-why">{f.repo && <span className="repo">start from {f.repo}</span>}{f.why}</p>
+      <div className="t-foot">
+        {h.sources.map((s) => <a key={s.url} href={s.url} target="_blank" rel="noreferrer">Open on {s.source} ↗</a>)}
+        <button onClick={onOpen}>Scout's read</button>
+        {h.evidence[0] && <button className="q" onClick={() => onEvidence(h.evidence[0])}>{h.evidence[0]}</button>}
+      </div>
+    </article>
+  );
+}
+
+function Detail({ f, b, onEvidence, onReport }: { f: Fixture; b: Builder; onEvidence: (q: string, focus?: string) => void; onReport: (f: Fixture, o: "won" | "placed" | "lost") => void }) {
+  const h = f.hackathon;
+  return (
+    <div className="m-more">
+      <div className="mm-col">
+        <p className="mono">Scout's read{f.by === "model" ? ` · ${f.model?.replace("nvidia/", "") ?? "Nemotron"}` : " · playbook"}</p>
+        <p>{f.why}</p>
+        {f.coach.length > 0 && <><p className="mono">Coach</p><ul>{f.coach.map((c, i) => <li key={i}>{c}</li>)}</ul></>}
+        {f.memory.length > 0 && <><p className="mono">From memory (H-MEM)</p><ul>{f.memory.map((c, i) => <li key={i}>{c}</li>)}</ul></>}
+      </div>
+      <div className="mm-col">
+        <p className="mono">The numbers</p>
+        <dl>
+          <dt>Prize</dt><dd>{usd(h.prizeUsd)}{h.prizeText && !h.prizeText.startsWith("$") ? ` from ${h.prizeText}` : ""}</dd>
+          <dt>Closes</dt><dd>{h.closes ?? "not given"}</dd>
+          <dt>Odds</dt><dd>{(f.pWin * 100).toFixed(1)}% to win, about ${f.evPerHour} per build hour</dd>
+          <dt>Themes</dt><dd>{h.themes.join(", ") || "—"}</dd>
+          <dt>Where</dt><dd>{h.location}</dd>
+        </dl>
+        <p className="ev">{h.evidence.map((q) => <button key={q} onClick={() => onEvidence(q, h.name)}>{q}</button>)}{b.evidence.slice(0, 1).map((q) => <button key={q} onClick={() => onEvidence(q)}>{q}</button>)}</p>
+        <div className="acts">
+          {h.sources.map((s) => <a key={s.url} href={s.url} target="_blank" rel="noreferrer">Open on {s.source} ↗</a>)}
+          <span className="mono">After it closes:</span>
+          <button onClick={() => onReport(f, "won")}>Won</button><button onClick={() => onReport(f, "placed")}>Placed</button><button onClick={() => onReport(f, "lost")}>Didn't place</button>
+        </div>
+      </div>
     </div>
   );
 }
