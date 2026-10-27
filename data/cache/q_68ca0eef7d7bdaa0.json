@@ -1670,7 +1670,7 @@
    null,
    "USD",
    null,
-   "45",
+   "62",
    "AI",
    "0",
    "open"
@@ -1688,7 +1688,7 @@
    null,
    "USD",
    null,
-   "97",
+   "114",
    "",
    "0",
    "open"
@@ -1706,25 +1706,7 @@
    null,
    "USD",
    null,
-   "674",
-   "",
-   "0",
-   "open"
-  ],
-  [
-   "Devfolio",
-   "8b69c2039a8d4b4085c3869b9b25d9c9",
-   "Lean In Hacks 8.0",
-   "https://lean-in-hacks-8.devfolio.co",
-   null,
-   "0",
-   "",
-   null,
-   "2026-11-02T17:00:00+00:00",
-   null,
-   "USD",
-   null,
-   "153",
+   "703",
    "",
    "0",
    "open"
@@ -1742,7 +1724,7 @@
    null,
    "USD",
    null,
-   "1019",
+   "1082",
    "",
    "0",
    "open"
@@ -1760,7 +1742,7 @@
    null,
    "USD",
    null,
-   "1289",
+   "1364",
    "",
    "0",
    "open"
@@ -1778,7 +1760,7 @@
    null,
    "USD",
    null,
-   "54",
+   "75",
    "",
    "0",
    "open"
@@ -1796,7 +1778,7 @@
    null,
    "USD",
    null,
-   "308",
+   "328",
    "",
    "0",
    "open"
@@ -1814,7 +1796,7 @@
    null,
    "USD",
    null,
-   "714",
+   "734",
    "Design",
    "0",
    "open"
@@ -1832,7 +1814,25 @@
    null,
    "USD",
    null,
-   "858",
+   "896",
+   "",
+   "0",
+   "open"
+  ],
+  [
+   "Devfolio",
+   "8b69c2039a8d4b4085c3869b9b25d9c9",
+   "Lean In Hacks 8.0",
+   "https://lean-in-hacks-8.devfolio.co",
+   null,
+   "0",
+   "",
+   null,
+   "2026-11-25T17:00:00+00:00",
+   null,
+   "USD",
+   null,
+   "197",
    "",
    "0",
    "open"
@@ -1850,7 +1850,7 @@
    null,
    "USD",
    null,
-   "888",
+   "898",
    "",
    "0",
    "open"
@@ -1868,11 +1868,11 @@
    null,
    "USD",
    null,
-   "30",
+   "39",
    "",
    "0",
    "open"
   ]
  ],
- "recordedAt": "2026-10-26T11:03:39.746Z"
+ "recordedAt": "2026-10-27T09:52:26.518Z"
 }

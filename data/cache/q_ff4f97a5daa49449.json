@@ -1,0 +1,54 @@
+{
+ "sql": "SELECT language, COUNT(*) AS repos FROM scout.repos_rauchg WHERE is_fork = 0 AND language IS NOT NULL GROUP BY language ORDER BY repos DESC",
+ "columns": [
+  "language",
+  "repos"
+ ],
+ "rows": [
+  [
+   "JavaScript",
+   "26"
+  ],
+  [
+   "TypeScript",
+   "10"
+  ],
+  [
+   "HTML",
+   "4"
+  ],
+  [
+   "Shell",
+   "3"
+  ],
+  [
+   "Dockerfile",
+   "2"
+  ],
+  [
+   "CSS",
+   "2"
+  ],
+  [
+   "MDX",
+   "1"
+  ],
+  [
+   "Zig",
+   "1"
+  ],
+  [
+   "C++",
+   "1"
+  ],
+  [
+   "Swift",
+   "1"
+  ],
+  [
+   "Python",
+   "1"
+  ]
+ ],
+ "recordedAt": "2026-10-27T09:48:41.252Z"
+}

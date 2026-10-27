@@ -1,0 +1,12 @@
+{
+ "sql": "SELECT COUNT(*) AS n FROM scout.repos_rauchg WHERE is_fork = 0",
+ "columns": [
+  "n"
+ ],
+ "rows": [
+  [
+   "52"
+  ]
+ ],
+ "recordedAt": "2026-10-27T09:48:38.349Z"
+}

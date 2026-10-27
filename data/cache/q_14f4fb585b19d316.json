@@ -1,0 +1,456 @@
+{
+ "sql": "SELECT name, language, description, topics, stars, pushed_at, homepage FROM scout.repos_steipete WHERE is_fork = 0 ORDER BY pushed_at DESC",
+ "columns": [
+  "name",
+  "language",
+  "description",
+  "topics",
+  "stars",
+  "pushed_at",
+  "homepage"
+ ],
+ "rows": [
+  [
+   "CodexBar",
+   "Swift",
+   "Show usage stats for OpenAI Codex and Claude Code, without having to login.",
+   "ai,claude-code,codex,swift",
+   "22817",
+   "2026-10-26T11:05:38Z",
+   "https://codex.bar"
+  ],
+  [
+   "poltergeist",
+   "TypeScript",
+   "The ghost that keeps your builds fresh - Universal hot reload, file watcher and build automation for any language.",
+   "automation,build,filewatcher",
+   "446",
+   "2026-10-26T09:50:11Z",
+   "http://polter.build"
+  ],
+  [
+   "summarize",
+   "TypeScript",
+   "Point at any URL/YouTube/Podcast or file. Get the gist. CLI and Chrome Extension.",
+   "ai,cli,summarize,typescript",
+   "6749",
+   "2026-10-26T09:45:58Z",
+   "https://summarize.sh"
+  ],
+  [
+   "stats-store",
+   "TypeScript",
+   "stats.store - Fast, open, privacy-first analytics for Sparkle.",
+   "analytics,privacy-first,sparkle",
+   "61",
+   "2026-10-26T04:08:08Z",
+   "https://stats.store"
+  ],
+  [
+   "RepoBar",
+   "Swift",
+   "Show status of GitHub Repos right in your menu bar and terminal: CI, Issues, Pull Requests, Latest Release.",
+   "github,macos,statistics",
+   "2218",
+   "2026-10-25T06:35:09Z",
+   "https://repo.bar"
+  ],
+  [
+   "homebrew-tap",
+   "Ruby",
+   "Homebrew tap for steipete's tools",
+   "homebrew",
+   "128",
+   "2026-10-24T23:16:44Z",
+   "https://steipete.me"
+  ],
+  [
+   "birdclaw",
+   "TypeScript",
+   "Stores all your tweets nicely claw-able for agents.",
+   "",
+   "1669",
+   "2026-10-24T23:12:06Z",
+   "https://birdclaw.sh"
+  ],
+  [
+   "steipete.me",
+   "JavaScript",
+   "My personal website.",
+   "personal,website",
+   "444",
+   "2026-10-24T09:44:23Z",
+   "https://steipete.me"
+  ],
+  [
+   "tmuxwatch",
+   "Go",
+   "A simple TUI to watch tmux sessions",
+   "go,tmux,tui",
+   "227",
+   "2026-10-24T03:53:58Z",
+   "https://tmuxwatch.com"
+  ],
+  [
+   "ReleaseBar",
+   "TypeScript",
+   "Release freshness dashboard for open source maintainers",
+   "",
+   "89",
+   "2026-10-24T03:11:48Z",
+   "https://release.bar"
+  ],
+  [
+   "BlackBar",
+   "Swift",
+   "Your Blacksmith CI status, in your menu bar.",
+   "blacksmith,ci,macos,menubar,status",
+   "50",
+   "2026-10-24T02:56:51Z",
+   "https://black.bar/"
+  ],
+  [
+   "vox",
+   "TypeScript",
+   "Let's your agent run phone calls",
+   "call,cli,typescript",
+   "97",
+   "2026-10-24T02:47:23Z",
+   "https://voxcli.sh"
+  ],
+  [
+   "sweetlink",
+   "TypeScript",
+   "Connect your agent to your web app. Like playwright, but works in your current tab. Close the loop.",
+   "frontend-debugging,typescript",
+   "167",
+   "2026-10-24T02:32:05Z",
+   "https://sweetlink.dev"
+  ],
+  [
+   "sag",
+   "Go",
+   "Like the macOS say command, but with a modern voice.",
+   "elevenlabs,go,say",
+   "583",
+   "2026-10-24T02:19:22Z",
+   "https://sag.sh"
+  ],
+  [
+   "bslog",
+   "TypeScript",
+   "cli for Better Stack to fetch logs, ClickHouse SQL style. Made for humans and agents.",
+   "",
+   "72",
+   "2026-10-24T02:15:13Z",
+   null
+  ],
+  [
+   "sweetcookie",
+   "Go",
+   "Cookies for any browser, any OS, in go",
+   "",
+   "43",
+   "2026-10-24T02:00:33Z",
+   null
+  ],
+  [
+   "camsnap",
+   "Go",
+   "CLI to capture snapshots, short clips, and run motion detection against RTSP/ONVIF came ras",
+   "ai,camera,snapshot,video",
+   "146",
+   "2026-10-24T01:56:08Z",
+   "https://camsnap.ai"
+  ],
+  [
+   "blucli",
+   "Go",
+   "Go-based cli for blueOS",
+   "bluos,cli,go",
+   "43",
+   "2026-10-24T01:51:16Z",
+   "https://blucli.sh"
+  ],
+  [
+   "ordercli",
+   "Go",
+   "CLI for Foodora and Deliveroo",
+   "cli,deliveroo,foodora",
+   "83",
+   "2026-10-24T01:30:38Z",
+   "https://ordercli.sh"
+  ],
+  [
+   "brabble",
+   "Go",
+   "\"Hey, Computer\" from Star Trek. Talk to your agent. Run hooks after trigger comands. Runs locally, cause shit's scary.",
+   "ai,talk",
+   "172",
+   "2026-10-24T01:11:52Z",
+   "https://brabble.dev"
+  ],
+  [
+   "Nameplate",
+   "Swift",
+   "Brand every Mac in your fleet — colored frame, name tag, watermark, and connect splash as click-through overlays. Never wonder which Mac you remoted into again.",
+   "",
+   "70",
+   "2026-10-24T01:10:21Z",
+   "https://nameplate.sh"
+  ],
+  [
+   "Trimmy",
+   "Swift",
+   "\"Paste once, run once.\" — Trimmy flattens those multi-line shell snippets you copy so they actually paste and run.",
+   "clipboard,swift",
+   "747",
+   "2026-10-23T23:05:52Z",
+   "http://trimmy.app"
+  ],
+  [
+   "SweetCookieKit",
+   "Swift",
+   "Extract browser cookies from macOS in Swift",
+   "browser,cookie,swift",
+   "98",
+   "2026-10-23T23:05:38Z",
+   ""
+  ],
+  [
+   "oracle",
+   "TypeScript",
+   "Ask the oracle when you're stuck. Invoke GPT-5 Pro with a custom context and files.",
+   "agents,ai,anthropic,gemini-pro,gpt-5-pro,openai,opus,sonnet",
+   "4060",
+   "2026-10-23T20:47:30Z",
+   "https://askoracle.sh"
+  ],
+  [
+   "Markdansi",
+   "TypeScript",
+   "Markdown to ANSII in TypeScript based on Micro-Mark, with support for URLs, tables, lists and more.",
+   "ansii,markdown,typescript",
+   "66",
+   "2026-10-23T19:38:46Z",
+   "https://markdansi.md"
+  ],
+  [
+   "gifgrep",
+   "Go",
+   "Grep the GIF. Stick the landing.",
+   "gif,go,tui",
+   "134",
+   "2026-10-23T19:05:27Z",
+   "https://gifgrep.com"
+  ],
+  [
+   "canvas",
+   "Go",
+   "A browser canvas for your agents.",
+   "",
+   "51",
+   "2026-10-23T18:59:01Z",
+   "https://acanvas.ai"
+  ],
+  [
+   "metcli",
+   "Go",
+   "cli to get your data out of Meta. very WIP",
+   "",
+   "37",
+   "2026-10-23T18:38:37Z",
+   null
+  ],
+  [
+   "sonoscli",
+   "Go",
+   "Control SONOS speakers from your terminal.",
+   "cli,go,sonos",
+   "187",
+   "2026-10-23T17:53:13Z",
+   "https://sonoscli.sh"
+  ],
+  [
+   "osc-progress",
+   "TypeScript",
+   "Tiny lib for OSC 9;4 terminal progress.",
+   "osc,progress,progress-bar,typescipt",
+   "34",
+   "2026-10-23T13:54:40Z",
+   "https://osc-progress.dev"
+  ],
+  [
+   "lore.md",
+   "TypeScript",
+   "Random md website generator",
+   "",
+   "28",
+   "2026-10-23T11:01:06Z",
+   "https://lore.md"
+  ],
+  [
+   "mintlify-docs",
+   "MDX",
+   null,
+   "",
+   "6",
+   "2026-10-23T10:06:04Z",
+   null
+  ],
+  [
+   "tokentally",
+   "TypeScript",
+   "One tiny lib for LLM token + cost math",
+   "cost,token,typescript",
+   "91",
+   "2026-10-23T07:05:40Z",
+   "https://tokentally.dev"
+  ],
+  [
+   "inngest",
+   "TypeScript",
+   "CLI to query inngest jobs",
+   "",
+   "81",
+   "2026-10-23T05:23:52Z",
+   null
+  ],
+  [
+   "eightctl",
+   "Go",
+   "Eight Sleep cli to fetch data and control your pods.",
+   "cli,eightsleep",
+   "100",
+   "2026-10-21T03:57:48Z",
+   "https://eightctl.sh"
+  ],
+  [
+   "sweet-cookie",
+   "TypeScript",
+   "Extract cookies out of your browser. TypeScript. Any OS.",
+   "browser,cookies,typescript",
+   "222",
+   "2026-10-20T21:11:03Z",
+   "https://sweetcookie.dev"
+  ],
+  [
+   "agent-scripts",
+   "Shell",
+   "Scripts for agents, shared between my repositories.",
+   "ai-agents",
+   "7411",
+   "2026-10-20T04:35:51Z",
+   "https://steipete.me"
+  ],
+  [
+   "demark-landing",
+   "TypeScript",
+   "Website for Demark Markdown Parser",
+   "markdown,parser,swift,website",
+   "7",
+   "2026-10-20T01:29:49Z",
+   "https://demark.md"
+  ],
+  [
+   "ElevenLabsKit",
+   "Swift",
+   "Swift SDK to stream ElevenLabs Voices",
+   "",
+   "114",
+   "2026-10-19T12:26:41Z",
+   null
+  ],
+  [
+   "Demark",
+   "Swift",
+   "HTML in. MD out. Blink-fast. The little helper that chomps HTML and spits pristine Markdown. Goodbye <div>, hello ##.",
+   "markdown,swift",
+   "256",
+   "2026-10-19T12:07:49Z",
+   "https://demark.md"
+  ],
+  [
+   "Commander",
+   "Swift",
+   "A Swifty take on Commander.js and alternative to Swift's ArgumentParser.",
+   "argument-parser,swift",
+   "48",
+   "2026-10-19T11:36:16Z",
+   "https://commander.to"
+  ],
+  [
+   "TauTUI",
+   "Swift",
+   "Port of pi-tui - a simple yet powerful tui for Swift.",
+   "swift,tui",
+   "156",
+   "2026-10-19T10:04:02Z",
+   "https://tautui.dev"
+  ],
+  [
+   "Swiftdansi",
+   "Swift",
+   "Markdown to ANSI for Swift. The ltitle sister of Markdansi, powered by swift-markdown",
+   "",
+   "24",
+   "2026-10-19T09:43:36Z",
+   null
+  ],
+  [
+   "SwiftUITouchHandling",
+   "Swift",
+   "Testing touch handling from embedded SwiftUI views",
+   "",
+   "42",
+   "2026-10-19T09:17:56Z",
+   null
+  ],
+  [
+   "fluegel",
+   "Swift",
+   "Mac app to elevate permissions, when your cli needs wings.",
+   "",
+   "45",
+   "2026-10-19T08:59:58Z",
+   null
+  ],
+  [
+   "ObservationTrackingExample",
+   "Swift",
+   null,
+   "",
+   "13",
+   "2026-10-19T08:06:18Z",
+   null
+  ],
+  [
+   "speaking",
+   null,
+   "Upcoming and past speaking engagements for Peter Steinberger @steipete",
+   "ai,schedule,speaking",
+   "237",
+   "2026-10-02T17:59:23Z",
+   "https://steipete.me"
+  ],
+  [
+   "macos-automator-mcp",
+   "TypeScript",
+   "An MCP server to run AppleScript and JXA (JavaScript for Automation) to macOS.",
+   "",
+   "883",
+   "2026-09-13T04:39:18Z",
+   ""
+  ],
+  [
+   "steipete",
+   null,
+   "Public readme",
+   "",
+   "144",
+   "2026-08-28T08:51:31Z",
+   null
+  ]
+ ],
+ "recordedAt": "2026-10-26T11:32:44.569Z"
+}

@@ -6,11 +6,12 @@
 //   npx tsx --env-file=.env scripts/zetaris-setup.ts
 //   --dry-run    print the statements only
 //   --refresh    re-fetch every live source (UNCACHE + CACHE), e.g. after a Zetaris restart
+//   --views      drop and recreate the views (after a source table is re-registered under a new name)
 
 import { ZetarisClient, type ZetarisError } from "../src/adapters/zetaris.ts";
-import { CONTAINER, VIEWS, zetarisDdl, zetarisRecache } from "../src/sources.ts";
+import { CONTAINER, VIEWS, zetarisDdl, zetarisRebuildViews, zetarisRecache } from "../src/sources.ts";
 
-const statements = process.argv.includes("--refresh") ? zetarisRecache() : zetarisDdl();
+const statements = process.argv.includes("--refresh") ? zetarisRecache() : process.argv.includes("--views") ? zetarisRebuildViews() : zetarisDdl();
 if (process.argv.includes("--dry-run")) {
   for (const s of statements) console.log(s + ";\n");
   process.exit(0);

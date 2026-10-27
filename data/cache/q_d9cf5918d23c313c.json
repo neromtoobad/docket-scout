@@ -1,0 +1,12 @@
+{
+ "sql": "SELECT content FROM scout.readme_rauchg",
+ "columns": [
+  "content"
+ ],
+ "rows": [
+  [
+   "CiMgcmF1Y2hnCgohW10oaHR0cHM6Ly9jbGR1cC5jb20vdEJER1pjcjhqdC5n\naWYpCgpgYGBiYXNoCiQgbnBtIGluc3RhbGwgcmF1Y2hnCmBgYAoKYW5kCgpg\nYGBqcwpjb25zb2xlLmxvZyhyZXF1aXJlKCdyYXVjaGcnKSk7CmBgYAoKVG8g\nZ2V0IG15IGNvbnRhY3QgaW5mb3JtYXRpb24uCgojIyBDcmVkaXRzCgpUaGFu\na3MgdG8gSm9obiBLIFBhdWwgZm9yIHRoZSBpZGVhLCBhbmQgdGhpcwpbdHdl\nZXRdKGh0dHBzOi8vdHdpdHRlci5jb20vUmVkV29sdmVzL3N0YXR1cy82Njc4\nNDg3OTg0ODQzMjQzNTIpIGZvciAKcG9pbnRpbmcgaXQgb3V0IQo=\n"
+  ]
+ ],
+ "recordedAt": "2026-10-27T09:48:41.468Z"
+}

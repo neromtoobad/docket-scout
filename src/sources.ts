@@ -33,7 +33,7 @@ export const RAW_SOURCES: RawSource[] = [
   { table: "devpost_open_p1", system: "Devpost", endpoint: "https://devpost.com/api/hackathons?status[]=open&per_page=40&page=1", method: "get", file: "devpost_open_p1.json" },
   { table: "devpost_open_p2", system: "Devpost", endpoint: "https://devpost.com/api/hackathons?status[]=open&per_page=40&page=2", method: "get", file: "devpost_open_p2.json" },
   { table: "devpost_upcoming", system: "Devpost", endpoint: "https://devpost.com/api/hackathons?status[]=upcoming&per_page=40&page=1", method: "get", file: "devpost_upcoming.json" },
-  { table: "devfolio_open", system: "Devfolio", endpoint: "https://api.devfolio.co/api/search/hackathons", method: "post", body: { type: "application_open", from: "0", size: "50" }, file: "devfolio_open.json" },
+  { table: "devfolio_open2", system: "Devfolio", endpoint: "https://api.devfolio.co/api/search/hackathons", method: "post", body: { type: "application_open", from: "0", size: "50" }, file: "devfolio_open.json" },
   { table: "fx_usd", system: "open.er-api.com", endpoint: "https://open.er-api.com/v6/latest/USD", method: "get", file: "fx_usd.json" },
 ];
 
@@ -123,7 +123,7 @@ function devpostSpark(table: string, state: string): string {
   return `SELECT 'Devpost' AS source, CAST(h.id AS STRING) AS source_id, h.title AS name, h.url AS url, h.organization_name AS organizer, CASE WHEN h.displayed_location.location = 'Online' THEN 1 ELSE 0 END AS online, h.displayed_location.location AS location, h.submission_period_dates AS dates_text, CAST(NULL AS STRING) AS starts_at, CAST(NULL AS STRING) AS ends_at, ${p.text} AS prize_text, ${p.currency} AS prize_currency, ${p.amount} AS prize_amount, CAST(h.registrations_count AS BIGINT) AS registrations, concat_ws(', ', transform(h.themes, t -> t.name)) AS themes, CASE WHEN h.invite_only THEN 1 ELSE 0 END AS invite_only, '${state}' AS state FROM ${live(table)} LATERAL VIEW explode(hackathons) AS h`;
 }
 
-const devfolioSpark = `SELECT 'Devfolio' AS source, CAST(h._source.uuid AS STRING) AS source_id, h._source.name AS name, concat('https://', h._source.slug, '.devfolio.co') AS url, CAST(h._source.hosted_by AS STRING) AS organizer, CASE WHEN h._source.is_online THEN 1 ELSE 0 END AS online, CASE WHEN h._source.is_online THEN 'Online' ELSE concat_ws(', ', h._source.city, h._source.country) END AS location, CAST(NULL AS STRING) AS dates_text, h._source.starts_at AS starts_at, h._source.ends_at AS ends_at, CAST(NULL AS STRING) AS prize_text, 'USD' AS prize_currency, CAST(NULL AS DOUBLE) AS prize_amount, CAST(h._source.participants_count AS BIGINT) AS registrations, concat_ws(', ', transform(h._source.themes, t -> t.name)) AS themes, 0 AS invite_only, 'open' AS state FROM ${live("devfolio_open")} LATERAL VIEW explode(hits.hits) AS h`;
+const devfolioSpark = `SELECT 'Devfolio' AS source, CAST(h._source.uuid AS STRING) AS source_id, h._source.name AS name, concat('https://', h._source.slug, '.devfolio.co') AS url, CAST(NULL AS STRING) AS organizer, CASE WHEN h._source.is_online THEN 1 ELSE 0 END AS online, CASE WHEN h._source.is_online THEN 'Online' ELSE concat_ws(', ', h._source.city, h._source.country) END AS location, CAST(NULL AS STRING) AS dates_text, h._source.starts_at AS starts_at, h._source.ends_at AS ends_at, CAST(NULL AS STRING) AS prize_text, 'USD' AS prize_currency, CAST(NULL AS DOUBLE) AS prize_amount, CAST(h._source.participants_count AS BIGINT) AS registrations, concat_ws(', ', transform(h._source.themes, t -> t.name)) AS themes, 0 AS invite_only, 'open' AS state FROM ${live("devfolio_open2")} LATERAL VIEW explode(hits.hits) AS h`;
 
 export function zetarisDdl(): string[] {
   const out = [
@@ -140,6 +140,12 @@ export function zetarisDdl(): string[] {
     `CREATE SCHEMASTORE VIEW fx WITH CONTAINER ${CONTAINER} AS SELECT CAST(rates.INR AS DOUBLE) AS INR, CAST(rates.EUR AS DOUBLE) AS EUR, CAST(rates.GBP AS DOUBLE) AS GBP, CAST(rates.NGN AS DOUBLE) AS NGN, time_last_update_utc AS updated FROM ${live("fx_usd")}`
   );
   return out;
+}
+
+// Rebuild the views (after a source table is re-registered under a new name).
+export function zetarisRebuildViews(): string[] {
+  const ddl = zetarisDdl();
+  return [...VIEWS.map((v) => `DROP VIEW ${CONTAINER}.${v.name}`), ...ddl.filter((x) => x.startsWith("CREATE SCHEMASTORE VIEW"))];
 }
 
 // Statements to re-run after Zetaris restarts (CACHE TABLE is in-memory), and to refresh live data.
@@ -160,7 +166,7 @@ export function mirrorViews(file: (name: string) => string, builders: string[]):
     const p = prizeDuck("h.prize_amount");
     return `SELECT 'Devpost' AS source, CAST(h.id AS VARCHAR) AS source_id, h.title AS name, h.url AS url, h.organization_name AS organizer, CASE WHEN h.displayed_location.location = 'Online' THEN 1 ELSE 0 END AS online, h.displayed_location.location AS location, h.submission_period_dates AS dates_text, CAST(NULL AS VARCHAR) AS starts_at, CAST(NULL AS VARCHAR) AS ends_at, ${p.text} AS prize_text, ${p.currency} AS prize_currency, ${p.amount} AS prize_amount, CAST(h.registrations_count AS BIGINT) AS registrations, array_to_string(list_transform(h.themes, t -> t.name), ', ') AS themes, CASE WHEN h.invite_only THEN 1 ELSE 0 END AS invite_only, '${state}' AS state FROM (SELECT unnest(hackathons) AS h FROM read_json('${file(f)}', maximum_object_size=67108864))`;
   };
-  const df = `SELECT 'Devfolio' AS source, CAST(h._source.uuid AS VARCHAR) AS source_id, h._source.name AS name, 'https://' || h._source.slug || '.devfolio.co' AS url, CAST(h._source.hosted_by AS VARCHAR) AS organizer, CASE WHEN h._source.is_online THEN 1 ELSE 0 END AS online, CASE WHEN h._source.is_online THEN 'Online' ELSE concat_ws(', ', h._source.city, h._source.country) END AS location, CAST(NULL AS VARCHAR) AS dates_text, CAST(h._source.starts_at AS VARCHAR) AS starts_at, CAST(h._source.ends_at AS VARCHAR) AS ends_at, CAST(NULL AS VARCHAR) AS prize_text, 'USD' AS prize_currency, CAST(NULL AS DOUBLE) AS prize_amount, CAST(h._source.participants_count AS BIGINT) AS registrations, array_to_string(list_transform(h._source.themes, t -> t.name), ', ') AS themes, 0 AS invite_only, 'open' AS state FROM (SELECT unnest(hits.hits) AS h FROM read_json('${file("devfolio_open.json")}', maximum_object_size=67108864))`;
+  const df = `SELECT 'Devfolio' AS source, CAST(h._source.uuid AS VARCHAR) AS source_id, h._source.name AS name, 'https://' || h._source.slug || '.devfolio.co' AS url, CAST(NULL AS VARCHAR) AS organizer, CASE WHEN h._source.is_online THEN 1 ELSE 0 END AS online, CASE WHEN h._source.is_online THEN 'Online' ELSE concat_ws(', ', h._source.city, h._source.country) END AS location, CAST(NULL AS VARCHAR) AS dates_text, CAST(h._source.starts_at AS VARCHAR) AS starts_at, CAST(h._source.ends_at AS VARCHAR) AS ends_at, CAST(NULL AS VARCHAR) AS prize_text, 'USD' AS prize_currency, CAST(NULL AS DOUBLE) AS prize_amount, CAST(h._source.participants_count AS BIGINT) AS registrations, array_to_string(list_transform(h._source.themes, t -> t.name), ', ') AS themes, 0 AS invite_only, 'open' AS state FROM (SELECT unnest(hits.hits) AS h FROM read_json('${file("devfolio_open.json")}', maximum_object_size=67108864))`;
   const out = [
     `CREATE VIEW ${CONTAINER}.hackathons AS ${dp("devpost_open_p1.json", "open")} UNION ALL ${dp("devpost_open_p2.json", "open")} UNION ALL ${dp("devpost_upcoming.json", "upcoming")} UNION ALL ${df}`,
     `CREATE VIEW ${CONTAINER}.fx AS SELECT CAST(rates.INR AS DOUBLE) AS INR, CAST(rates.EUR AS DOUBLE) AS EUR, CAST(rates.GBP AS DOUBLE) AS GBP, CAST(rates.NGN AS DOUBLE) AS NGN, time_last_update_utc AS updated FROM read_json('${file("fx_usd.json")}')`,

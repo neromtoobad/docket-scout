@@ -1,0 +1,38 @@
+{
+ "sql": "SELECT language, COUNT(*) AS repos FROM scout.repos_steipete WHERE is_fork = 0 AND language IS NOT NULL GROUP BY language ORDER BY repos DESC",
+ "columns": [
+  "language",
+  "repos"
+ ],
+ "rows": [
+  [
+   "TypeScript",
+   "17"
+  ],
+  [
+   "Swift",
+   "14"
+  ],
+  [
+   "Go",
+   "12"
+  ],
+  [
+   "MDX",
+   "1"
+  ],
+  [
+   "JavaScript",
+   "1"
+  ],
+  [
+   "Ruby",
+   "1"
+  ],
+  [
+   "Shell",
+   "1"
+  ]
+ ],
+ "recordedAt": "2026-10-26T11:32:45.115Z"
+}

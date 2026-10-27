@@ -1,0 +1,12 @@
+{
+ "sql": "SELECT COUNT(*) AS n FROM scout.repos_steipete WHERE is_fork = 0",
+ "columns": [
+  "n"
+ ],
+ "rows": [
+  [
+   "49"
+  ]
+ ],
+ "recordedAt": "2026-10-26T11:32:44.192Z"
+}
